@@ -1,5 +1,4 @@
 UUID (Universally Unique Identifier)
-
 - 시스템 간, 시간에 관계없이 객체를 유일하게 식별하기 위한 전역 ID
 - Scene 정보를 불러올 때
     - A → B 라는 연결 관계가 있다고 했을 때 ID 기반의 참조 정보를 저장함으로써 적절하게 연결될 수 있도록 함

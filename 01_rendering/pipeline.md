@@ -1,0 +1,15 @@
+- Local Space → Clip Space 변환 과정
+    - M = SRT
+    - V = 카메라 RT 역행렬
+    - Projection
+        - 3D 를 x = 0 인 평면으로 2D 로 자르고 (0, vy, vz) 를 (0, ny, depth) 으로 mapping 시키는 과정으로 유도
+        - Perspective 든 Orthogonal 이든 nx, ny = … 을 구하면 행렬의 결과가 nx, ny 로 나오도록 하면 됨
+        - 직선에 있는 애들이 하나의 점으로 매핑되게 z 값으로 나눠주면 기울기가 같은 애들이 전부 하나로 매핑
+        - Clip Space 에서 Clip 하는 이유는 W 로 나눌 때 0에 가까운 값들때문에 Perspective divide 작동 불안정
+        - 보통 DX11 의 경우 FOV_y 만 사용하고 이를 바탕으로 aspect ratio 를 기반으로 x축에 대한 값 조정
+        - Z-fighting
+            - depth 를 1/z 로 구하는데 z 가 클수록 (멀리있는 물체일수록) 1/z 이 굉장히 작아지기 때문에 floating point 의 정밀도에 의해 서로의 depth 가 동일해짐 ⇒ depth 가 동일하다보니 서로가 서로를 가리려고 함. 이를 z-fighting 이라 함.
+            - 가까이에 위치한 물체들의 정밀도를 더욱 높이기 위해 near = 1, far = 0 으로 바꾸는 방식도 있음
+                - 0 에 아주 가까운 subnormal 에선 0이라는 값을 표현하기 위해 [1.xxx](http://1.xxx) 라는 가정을 포기하고 [0.xxx](http://0.xxx) 로 표현함
+                - 기존엔 항상 앞이 1 이라는 가정을 바탕으로 bit 개수가 1 이 많았는데 [0.xxx](http://0.xxx) 에선 그 가정이 사라지므로 bit 개수 손해 ⇒ 정밀도 감소
+                - 즉, near 를 1 로 만들면 near 근처에선 subnormal 이 발생하지 않으므로 정밀도가 증가하는 효과
