@@ -1,0 +1,4 @@
+- 그래픽스 컨벤션 정의
+    - 왼손 좌표계, Z-Up, X-Forward, Y-Right (언리얼 좌표계를 따라감)
+    - row-vector 기준 계산 (mul(v, M) 또는 v * S * R * T 등)
+    - 오일러각 회전 순서: Z (yaw) → X (roll) → Y (pitch)
