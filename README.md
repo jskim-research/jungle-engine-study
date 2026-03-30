@@ -16,8 +16,8 @@
 02. [Math](./02_math/)
 Ray, Intersection, Bounding Volume 등 기하/수학
 03. [Engine](./03_engine/)
-UUID, RTTI, FName 등 엔진 시스템
+UUID, RTTI 등 엔진 시스템
 04. [Optimization](./04_optimization/)
-Batch Rendering, Texture Atlas 등 성능 최적화
+Batch Rendering, Texture Atlas, FName 등 성능 최적화
 05. [Misc](./05_misc/)
-기타 개념 (Picking, SubUV 등)
+기타 개념
