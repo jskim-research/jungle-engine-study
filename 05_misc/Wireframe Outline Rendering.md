@@ -3,8 +3,8 @@
 윈도우 3D viewer를 모방해 obj 파일을 띄울 수 있는 viewer를 만들었고 그 결과는 아래와 같았다. 좌측이 윈도우의 것, 우측이 모방한 결과이다.
 
 <p>
-  <img src="../99_resource/images/mario_win3D_viewer.png" width="300">
-  <img src="../99_resource/images/mario_simple_viewer.png" width="300">
+  <img src="../99_resource/images/mario_win3D_viewer.png" width="300" height ="240">
+  <img src="../99_resource/images/mario_simple_viewer.png" width="300" height ="240">
 </p>
 
 모방의 과정에서 와이어프레임을 별도의 패스로 다시 그리는 방식을 채택했으며 결국 동일한 geometry를 두 번 렌더링하게 된다.
