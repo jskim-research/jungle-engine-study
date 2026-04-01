@@ -23,8 +23,8 @@ depth bias는 이 같은 문제를 완화하기 위해 depth를 미세하게 앞
 이 문제를 해결하는 접근은 목적에 따라 두 가지로 나뉜다.\
 하나는 화면에서 보이는 경계를 강조하는 방식이고,\
 다른 하나는 삼각형의 실제 edge를 표현하는 방식이다.\
- 각각 먼저 screen-space edge detection이고, 그 다음은 barycentric coordinate 기반의 edge 구분이다.\
- 이 기법은 geometry를 다시 그리지 않고, 이미 렌더링이 완료된 화면 정보를 기반으로 경계를 추출한다.
+각각 먼저 screen-space edge detection이고, 그 다음은 barycentric coordinate 기반의 edge 구분이다.\
+이 기법은 geometry를 다시 그리지 않고, 이미 렌더링이 완료된 화면 정보를 기반으로 경계를 추출한다.
 
 ### screen-space edge detection - 일단 그려보고 edge를 찾아내겠다
 최종 color buffer나 그 이전 단계에서 생성된 depth buffer와 normal buffer를 입력으로 사용하여,\
