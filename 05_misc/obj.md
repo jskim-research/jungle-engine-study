@@ -91,8 +91,20 @@ e.g. s 1 \n f 1/1/1 2/2/1 3/3/1
 smoothing 처리를 명시하며 같이 묶이면 face는 normal을 공유해 \
 마치 이어진 표면처럼 부드럽게 처리된다.
 
-### 아래는 예시다
+### 이걸 그대로 쓸 수는 없을 텐데
+그렇다. 파싱이 필요하다.\
+아래는 언리얼 코드에서 사용하는 방식이다.\
+결국 obj는 파서가 필요하고 그 비용이 꽤 크다.
+```
+KeywordMap = {
+    "v"  -> ParseVertex,
+    "vt" -> ParseUV,
+    "vn" -> ParseNormal,
+    ...
+```
 
+### 공부자료
+아래 예시 obj 파일을 보고 복기해보자.
 ```
 # Exported by Blender
 mtllib sample.mtl
