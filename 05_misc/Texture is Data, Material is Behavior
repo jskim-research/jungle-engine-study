@@ -28,6 +28,11 @@
 결국 렌더링은 데이터가 아니라 규칙으로 결정된다.\
 그리고 그 규칙을 정의하는 것이 바로 머테리얼이다.
 
+<img src="../99_resource/images/Texture,Material.png" width="402" height ="220">
+
+제미나이 Nano Banana 2가 생성한 이미지다.\
+생각보다 잘 만들어진 거 같아 첨부한다.
+
 ### (여담) geometry는 최대한 간단하게, material은 최대한 복잡한 걸로
 오늘날 렌더링은 결국 눈속임에 가깝다.\
 초기에는 디테일을 표현하기 위해 vertex의 개수를 늘려 geometry을 촘촘하게 만드는 방식이\
