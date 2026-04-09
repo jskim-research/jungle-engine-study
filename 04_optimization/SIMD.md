@@ -7,7 +7,7 @@ SIMD는 Single Instruction, Multiple Data의 약자다.
 병렬로 수행하는 것이다. 아래 이미지가 그럴듯 하다.
 
 <p>
-  <img src="../99_resource/images/SIMD.jpg" width="300" height ="300">
+  <img src="../99_resource/images/SIMD.jpg" width="307" height ="300">
 </p>
 
 DirectXMath 같은 수학 라이브러리도 내부적으로 SIMD를 활용한다. 다만 SIMD가 무한히\
