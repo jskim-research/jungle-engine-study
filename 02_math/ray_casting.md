@@ -8,9 +8,10 @@
 
 - 광선 위의 한 점에 대한 표현
 
-  $$
-  r(t) = o + t d \text{(o는 원점, d는 방향벡터)}
-  $$
+$$
+r(t) = o + t d
+$$
+(o는 원점, d는 방향벡터)
 
 - 방향벡터가 항상 단위 벡터임이 보장되지는 않지만, 관련 연산 대부분에서 방향벡터를 정규화하여 사용함
 
@@ -24,23 +25,23 @@
 
 - 한 변수를 다른 변수들의 함수로 직접 표현하는 방식
 
-  $$
-  z = f(x, y)
-  $$
+$$
+z = f(x, y)
+$$
 
 - 예시: 포물선의 표면
 
-  $$
-  z = x^2 + y^2
-  $$
+$$
+z = x^2 + y^2
+$$
 
 - 명시적 표면과 Ray 간 교차를 검사할 때, 함수에 $x$, $y$ 값을 대입해보고 그 값을 z값과 비교하여 표면에 있는 점인지, 표면을 지난 점인지, 표면에 닿지 못한 점인지 결정
 
 - 구의 경우 처럼 $x$, $y$ 값을 대입하면 $z$가 두 개의 값이 가능한 경우는 명시적 표현으로 표현하지 못함
 
-  $$
-  x^2 + y^2 + z^2 = r^2
-  $$
+$$
+x^2 + y^2 + z^2 = r^2
+$$
 
     - 기하학적으로 이해하면, 특정 $x$, $y$에 대해 위쪽 반구의 $z$ 지점과 아래쪽 반구의 $z$ 지점 총 두 개가 생기기 때문에 표현 불가
 
@@ -49,15 +50,15 @@
 
 - 함수값이 0이되는 점들의 집합이 표면
 
-  $$
-  F(x, y, z) = 0
-  $$
+$$
+F(x, y, z) = 0
+$$
 
 - 예시: 구의 표면
 
-  $$
-  F(x, y, z) = x^2 + y^2 + z^2 - r^2
-  $$
+$$
+F(x, y, z) = x^2 + y^2 + z^2 - r^2
+$$
 
 - 함수에 $x$, $y$, $z$ 값을 대입해보고 그 값이 0인지 검사하여 표면에 있는 점인지, 표면을 지난 점인지, 표면에 닿지 못한 점인지 결정
 
@@ -65,9 +66,9 @@
 
     - 명시적 표면 또한 음함수 표면으로 바꿀 수 있으며, 때문에 명시적 표면은 음함수 표현의 특별한 경우로 볼 수 있음
 
-      $$
-      F(x, y, z) = z - f(x, y)
-      $$
+$$
+F(x, y, z) = z - f(x, y)
+$$
 
     - 그래픽스에서는 주로 음함수 표면을 교차 검사에 사용
 
@@ -123,9 +124,9 @@
 
         - AABB를 생성한 후 `Origin` 저장
 
-          $$
-          c = \frac{\mathrm{min} + \mathrm{max}}{2}
-          $$
+$$
+c = \frac{min + max}{2}
+$$
 
     - `USceneComponent`에서 Transform 변경 발생 시 BV 업데이트
 
@@ -137,19 +138,28 @@
 
     - `Origin`은 단순히 $M$의 이동 연산 부분만 활용하여 물체와 함께 이동만 시켜주면 됨
 
-    - 변환 행렬의 선형 변환 부분을 $A = \begin{bmatrix} a_{11} & a_{12} & a_{13} \\\\ a_{21} & a_{22} & a_{23} \\\\ a_{31} & a_{32} & a_{33} \end{bmatrix}$, `BoxExtents` 벡터를 $e$라 하면, `BoxExtents`는 $e' = e|A|$로 계산할 수 있음
+    - 변환 행렬의 선형 변환 부분을
+$$
+A =
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{bmatrix}
+$$
+`BoxExtents` 벡터를 $e$라 하면, `BoxExtents`는 $e' = e |A|$로 계산할 수 있음
 
-      $$
-      e_x^{'} = |a_{11}|e_x + |a_{21}|e_y + |a_{31}|e_z
-      $$
+$$
+e_x' = |a_{11}|e_x + |a_{21}|e_y + |a_{31}|e_z
+$$
 
-      $$
-      e_y^{'} = |a_{12}|e_x + |a_{22}|e_y + |a_{32}|e_z
-      $$
+$$
+e_y' = |a_{12}|e_x + |a_{22}|e_y + |a_{32}|e_z
+$$
 
-      $$
-      e_z^{'} = |a_{13}|e_x + |a_{23}|e_y + |a_{33}|e_z
-      $$
+$$
+e_z' = |a_{13}|e_x + |a_{23}|e_y + |a_{33}|e_z
+$$
 
 
 ### Bounding Sphere 생성과 변형
@@ -173,33 +183,33 @@
 
 - 기본적으로 구의 음함수 표면 검사
 
-  $$
-  f(p) = |p - c| - r = 0
-  $$
+$$
+f(p) = |p - c| - r = 0
+$$
 
 - 광선을 대입하여 정리
 
-  $$
-  f(r(t)) = |r(t) - c| - r = 0;
-  $$
+$$
+f(r(t)) = |r(t) - c| - r = 0
+$$
 
-  $$
-  |o + td - c| = r
-  $$
+$$
+|o + t d - c| = r
+$$
 
-  $$
-  (o + td - c) \cdot (o + td - c) = r^2
-  $$
+$$
+(o + t d - c) \cdot (o + t d - c) = r^2
+$$
 
-  $$
-  t^2(d \cdot d) + 2t(d \cdot (o - c)) + (o - c) \cdot (o - c) - r^2 = 0
-  $$
+$$
+t^2(d \cdot d) + 2t(d \cdot (o - c)) + (o - c) \cdot (o - c) - r^2 = 0
+$$
 
 - 만약 광선의 $d$가 단위 벡터이고, $b = d \cdot (o - c), c = (o - c) \cdot (o - c) - r^2$라고 가정하면, $t$에 대해 아래 식으로 정리됨
 
-  $$
-  t = -b^2 \pm \sqrt{b^2 - c}
-  $$
+$$
+t = -b \pm \sqrt{b^2 - c}
+$$
 
 - 즉, $b^2 - c$에 따라 광선이 구에 맞는지 맞지 않는지를 검사할 수 있음
 
@@ -216,9 +226,9 @@
 
 - $t$의 각 축을 다음과 같이 정의
 
-  $$
-  t.A = \frac{Box.Min.A - Start.A}{End.A - Start.A}
-  $$
+$$
+t_A = \frac{Box.Min_A - Start_A}{End_A - Start_A}
+$$
 
     - 단, 계산 시 광선의 시작점과 끝점이 모두 AABB를 지나지 않는다면 연산 자체를 하지 않음
 
@@ -243,35 +253,35 @@
 
 - 삼각형 내부의 한 점에 대한 표현($V_{0, 1, 2}$는 삼각형의 각 정점, $u$, $v$는 삼각형 무게중심 좌표계 내 임의의 스칼라)
 
-  $$
-  P = V_0 + u E_1 + v E_2
-  $$
+$$
+P = V_0 + u E_1 + v E_2
+$$
 
-  $$
-  E_1 = V_1 - V_0
-  $$
+$$
+E_1 = V_1 - V_0
+$$
 
-  $$
-  E_2 = V_2 - V_0
-  $$
+$$
+E_2 = V_2 - V_0
+$$
 
 - 광선과 삼각형이 만날 때의 식
 
-  $$
-  O + t D = V_0 + u E_1 + v E_2
-  $$
+$$
+O + t D = V_0 + u E_1 + v E_2
+$$
 
   정리하면,
 
-  $$
-  O - V_0 = u E_1 + v E_2 - t D
-  $$
+$$
+O - V_0 = u E_1 + v E_2 - t D
+$$
 
     - 각 변수의 조건은 다음과 같음
 
-      $$
-      u \ge 0, v \ge 0, u + v \le 1, t \gt 0
-      $$
+$$
+u \ge 0,\quad v \ge 0,\quad u + v \le 1,\quad t > 0
+$$
 
 - 광선의 방향 벡터 $D$는 필수는 아니지만 정규화해두는 편이 좋음(숫자가 깔끔해짐)
 
@@ -279,13 +289,13 @@
 
     1. 먼저 $P$ 벡터와 $\mathrm{Det}$를 계산
 
-       $$
-       P = D \times E_2
-       $$
+$$
+P = D \times E_2
+$$
 
-       $$
-       \mathrm{Det} = E_1 \cdot P = E_1 \cdot (D \times E_2)
-       $$
+$$
+Det = E_1 \cdot (D \times E_2)
+$$
 
         - $\mathrm{Det}$는 스칼라 삼중곱으로, $E_1$, $E_2$, $D$가 만드는 부피에 해당하는 값으로도 볼 수 있음
 
@@ -299,13 +309,13 @@
         
     2. $u$ 계산
 
-       $$
-       T = O - v
-       $$
+$$
+T = O - V_0
+$$
 
-       $$
-       u = \frac{T \cdot P}{\mathrm{Det}}
-       $$
+$$
+u = \frac{T \cdot P}{Det}
+$$
 
         - $T$는 삼각형의 기준점 $V_0$에서 광선의 원점 $O$까지 가는 벡터
 
@@ -317,13 +327,13 @@
     
     3. $v$ 계산
 
-       $$
-       Q = T \cdot E_1
-       $$
+$$
+Q = T \times E_1
+$$
 
-       $$
-       v = \frac{D \cdot Q}{\mathrm{Det}}
-       $$
+$$
+v = \frac{D \cdot Q}{Det}
+$$
 
         - $v$의 범위나 $u + v$의 범위가 벗어나면 연산을 멈춤
 
@@ -333,9 +343,9 @@
 
     4. 마지막으로 $t$ 계산
 
-       $$
-       t = \frac{E_2 \cdot Q}{\mathrm{Det}}
-       $$
+$$
+t = \frac{E_2 \cdot Q}{Det}
+$$
 
         - 만약 $t < 0$이라면 광선이 삼각형의 지나친 곳에서 발사되었다는 뜻이므로 교차 부정
 
@@ -350,17 +360,17 @@
 
 - Ray casting은 결국 World 공간에서 일어나지만, 마우스 선택 자체는 Screen 공간에서 일어나기 때문에 렌더링 파이프라인의 공간 좌표계 변환 과정을 역으로 수행할 필요가 있음
 
-- 화면의 마우스 좌표$(s_x, s_y)$에 대한 공간 좌표계 역변환
+- 화면의 마우스 좌표 $(s_x, s_y)$에 대한 공간 좌표계 역변환
 
     1. Screen 공간 -> NDC 공간: 화면 위의 마우스 위치를 정규화된 좌표로 변환
 
-       $$
-       x_{\mathrm{NDC}} = \frac{2s_x}{\mathrm{width}} - 1
-       $$
+$$
+x_{\mathrm{NDC}} = \frac{2 s_x}{width} - 1
+$$
 
-       $$
-       y_{\mathrm{NDC}} = 1 - \frac{2s_y}{\mathrm{height}}
-       $$
+$$
+y_{\mathrm{NDC}} = 1 - \frac{2 s_y}{height}
+$$
 
     2. Near / Far 점 만들기: 같은 $(x, y)$에 $z$만 다르게 하여 두 점을 생성
 
@@ -372,33 +382,33 @@
 
     3. Inverse Projection: NDC 공간 -> View 공간
 
-       $$
-       P_{\mathrm{view}} = P_{\mathrm{clip}} \cdot M_{\mathrm{projection}}^{-1}
-       $$
+$$
+P_{\mathrm{view}} = P_{\mathrm{clip}} \cdot M_{\mathrm{projection}}^{-1}
+$$
 
         - 역변환의 결과는 보통 $(x, y, z, w)$의 형태로 나오는데, 이를 실제 3D 점처럼 쓰기위해 $w$로 나누어주는 homogeneous divide를 수행함
 
-          $$
-          (x' = \frac{x}{w}, y' = \frac{y}{w}, z' = \frac{z}{w}, 1)
-          $$
+$$
+(x' = \frac{x}{w},\quad y' = \frac{y}{w},\quad z' = \frac{z}{w},\quad 1)
+$$
 
     4. Inverse View: View 공간 -> World 공간
 
-       $$
-       P_{\mathrm{world}} = P_{\mathrm{view}} \cdot M_{\mathrm{view}}^{-1}
-       $$
+$$
+P_{\mathrm{world}} = P_{\mathrm{view}} \cdot M_{\mathrm{view}}^{-1}
+$$
 
         - 사실 View 공간에서도 이미 광선은 View 공간의 원점에서 출발하는 광선으로써 사용할 수 있기 때문에 View 공간에서 연산을 수행해도 되지만, 보통 최종적으로 Inverse View까지 수행함
 
     5. World Ray 생성: $P_{\mathrm{near}^{\mathrm{world}}}$, $P_{\mathrm{far}^{\mathrm{world}}}$ 두 점을 이용하여 World 공간 내 광선 생성
 
-       $$
-       O = P_{\mathrm{near}^{\mathrm{world}}} = \mathrm{CameraPosition}
-       $$
+$$
+O = P_{\mathrm{near}}^{\mathrm{world}}
+$$
 
-       $$
-       D = \mathrm{normalize}(P_{\mathrm{far}^{\mathrm{world}}} - O)
-       $$
+$$
+D = \mathrm{normalize}(P_{\mathrm{far}}^{\mathrm{world}} - O)
+$$
 
 
 ## 6. 상용 엔진에서 Ray Casting을 활용하는 방법
