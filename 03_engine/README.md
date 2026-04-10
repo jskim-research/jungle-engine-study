@@ -11,3 +11,9 @@
 
 * [UUID](./uuid.md)
   - 전역 객체 식별, Scene 참조 관리
+
+* [Reflection](./reflection.md)
+  - 런타임 타입/멤버 정보 노출, 언리얼 리플렉션 시스템
+
+* [Serialization](./serialization.md)
+  - 객체 상태 저장/복원, 복제, GC 추적의 기반 메커니즘
