@@ -1,3 +1,5 @@
+## Scene BVH
+
 여기서 소개하는 BVH(Bounding Volume Hierarchy)는 씬 안의 오브젝트들을 계층적으로 묶어\
 빠르게 후보를 줄이는 Scene BVH를 뜻한다.
 
