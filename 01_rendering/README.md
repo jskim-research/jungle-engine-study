@@ -6,6 +6,9 @@
 
 ## 📂 목록
 
+* [Decal](./Decal.md)
+  - Decal에 대한 이해와 UDecalComponent
+
 * [Pipeline](./pipeline.md)
   - MVP 변환
 
