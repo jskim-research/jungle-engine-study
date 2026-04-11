@@ -30,9 +30,9 @@
       "<div class='author-rank' id='author-rank'>",
       "<img id='meta-monster-image' src='" + (cfg.baseurl || "") + "/assets/images/monsters/slime.png' alt='monster badge' class='rank-image monster-image' />",
       "<div class='rank-copy'>",
-      "<span class='rank-label'>AUTHOR CLASS</span>",
+      "<span class='rank-label'>FIRST AUTHOR CLASS</span>",
       "<strong id='meta-level'>계산 중...</strong>",
-      "<em id='meta-post-count'>작성 글 수: 조회 중...</em>",
+      "<em id='meta-post-count'>최초 작성자 기여 문서: 조회 중...</em>",
       "<div class='exp-wrap'>",
       "<div class='exp-bar'><span id='meta-exp-fill'></span></div>",
       "<small id='meta-exp-text'>EXP 계산 중...</small>",
@@ -41,6 +41,7 @@
       "</div>",
       "<div class='page-meta-grid'>",
       "<div class='meta-item'><span>최초 작성자</span><strong id='meta-first-author'>조회 중...</strong></div>",
+      "<div class='meta-item'><span>현재 대표 기여자</span><strong id='meta-lead-authors'>조회 중...</strong></div>",
       "<div class='meta-item'><span>최초 작성일</span><strong id='meta-first-date'>조회 중...</strong></div>",
       "<div class='meta-item'><span>최근 수정자</span><strong id='meta-last-author'>조회 중...</strong></div>",
       "<div class='meta-item'><span>최근 수정일</span><strong id='meta-last-date'>조회 중...</strong></div>",
@@ -85,6 +86,19 @@
     return 1;
   }
 
+  function formatLeadAuthors(leadAuthors) {
+    if (Array.isArray(leadAuthors)) {
+      var filtered = leadAuthors.filter(Boolean);
+      return filtered.length ? filtered.join(", ") : "정보 없음";
+    }
+
+    if (leadAuthors) {
+      return String(leadAuthors);
+    }
+
+    return "정보 없음";
+  }
+
   function updateAuthorRank(authorName, authors) {
     var profile = (authors && authors[authorName]) || { concept_doc_count: 0, total_score: 0, exp: 0, monster: "Slime", level: "Slime Apprentice" };
     var docCount = profile.concept_doc_count || 0;
@@ -96,7 +110,7 @@
     var level = profile.level || getLevel(totalScore);
     var levelNo = getLevelNumber(totalScore);
     setText("meta-level", "Lv." + levelNo + " " + level);
-    setText("meta-post-count", "기여 문서: " + docCount + "개 | SCORE: " + totalScore + " | EXP: " + exp);
+    setText("meta-post-count", "최초 작성자 기여 문서: " + docCount + "개 | SCORE: " + totalScore + " | EXP: " + exp);
     updateMonsterImage(monster);
     updateExpBar(expCurrent, expNext, exp);
   }
@@ -151,11 +165,12 @@
 
       if (!meta) {
         setText("meta-first-author", "정보 없음");
+        setText("meta-lead-authors", "정보 없음");
         setText("meta-first-date", "정보 없음");
         setText("meta-last-author", "정보 없음");
         setText("meta-last-date", "정보 없음");
         setText("meta-level", "정보 없음");
-        setText("meta-post-count", "기여 문서: 정보 없음 | SCORE: 정보 없음 | EXP: 정보 없음");
+        setText("meta-post-count", "최초 작성자 기여 문서: 정보 없음 | SCORE: 정보 없음 | EXP: 정보 없음");
         updateExpBar(0, 1, 0);
         return;
       }
@@ -163,6 +178,7 @@
       var firstAuthor = meta.first_author || "정보 없음";
 
       setText("meta-first-author", firstAuthor);
+      setText("meta-lead-authors", formatLeadAuthors(meta.lead_authors));
       setText("meta-first-date", formatDate(meta.first_date));
       setText("meta-last-author", meta.latest_author || "정보 없음");
       setText("meta-last-date", formatDate(meta.latest_date));
@@ -170,11 +186,12 @@
     })
     .catch(function () {
       setText("meta-first-author", "조회 실패");
+      setText("meta-lead-authors", "조회 실패");
       setText("meta-first-date", "조회 실패");
       setText("meta-last-author", "조회 실패");
       setText("meta-last-date", "조회 실패");
       setText("meta-level", "조회 실패");
-      setText("meta-post-count", "기여 문서: 조회 실패 | SCORE: 조회 실패 | EXP: 조회 실패");
+      setText("meta-post-count", "최초 작성자 기여 문서: 조회 실패 | SCORE: 조회 실패 | EXP: 조회 실패");
       updateExpBar(0, 1, 0);
     });
 })();

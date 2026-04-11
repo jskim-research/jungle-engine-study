@@ -1,3 +1,9 @@
+[CmdletBinding()]
+param(
+  [string]$AuthorStatsOutputPath = "assets\data\author-stats.json",
+  [string]$SiteMetaOutputPath = "assets\data\site-meta.json"
+)
+
 $ErrorActionPreference = "Stop"
 
 $files = git ls-files -- "*.md"
@@ -59,7 +65,9 @@ function Get-QualityScore([string]$content) {
   $textWithoutCode = [regex]::Replace($content, '```[\s\S]*?```', ' ')
   $words = ([regex]::Matches($textWithoutCode, '[\p{L}\p{N}_-]+')).Count
   $headings = ([regex]::Matches($content, '(?m)^\s*#{1,6}\s+')).Count
-  $images = ([regex]::Matches($content, '!\[[^\]]*\]\([^)]+\)')).Count
+  $markdownImages = ([regex]::Matches($content, '!\[[^\]]*\]\([^)]+\)')).Count
+  $htmlImages = ([regex]::Matches($content, '<img\b[^>]*\bsrc\s*=\s*["''][^>"'']+["''][^>]*>')).Count
+  $images = $markdownImages + $htmlImages
   $codeBlocks = ([regex]::Matches($content, '```')).Count / 2
   $formula = ([regex]::Matches($content, '\\\(|\\\[|\$\$')).Count
   $refs = ([regex]::Matches($content, 'https?://')).Count
@@ -84,6 +92,9 @@ foreach ($file in $files) {
   $content = Get-Content -LiteralPath $file -Raw
   if ($null -eq $content) {
     $content = ""
+  }
+  if ([string]::IsNullOrWhiteSpace($content)) {
+    continue
   }
   $qualityScore = Get-QualityScore $content
   $history = git log --follow --format="%an|%aI" -- "$file"
@@ -136,6 +147,12 @@ foreach ($file in $files) {
     }
   }
 
+  $leadAuthors = @(
+    $lineOwners.Keys |
+      Where-Object { [int]$lineOwners[$_] -eq $leadLineCount -and $leadLineCount -gt 0 } |
+      Sort-Object
+  )
+
   foreach ($name in $lineOwners.Keys) {
     Ensure-Author $name
     $count = [int]$lineOwners[$name]
@@ -155,6 +172,8 @@ foreach ($file in $files) {
   $pageMeta[$file] = [ordered]@{
     first_author = $firstAuthor
     first_date = $firstDate
+    lead_authors = $leadAuthors
+    lead_line_count = $leadLineCount
     latest_author = $latestAuthor
     latest_date = $latestDate
     revision_count = $lines.Count
@@ -205,7 +224,16 @@ foreach ($name in $authorStats.Keys) {
   $authorStats[$name].monster = $rank.monster
 }
 
-New-Item -ItemType Directory -Force -Path "assets\data" | Out-Null
+$authorOutputDir = Split-Path -Path $AuthorStatsOutputPath -Parent
+$siteOutputDir = Split-Path -Path $SiteMetaOutputPath -Parent
+
+if (-not [string]::IsNullOrWhiteSpace($authorOutputDir)) {
+  New-Item -ItemType Directory -Force -Path $authorOutputDir | Out-Null
+}
+
+if (-not [string]::IsNullOrWhiteSpace($siteOutputDir)) {
+  New-Item -ItemType Directory -Force -Path $siteOutputDir | Out-Null
+}
 
 $authorPayload = [ordered]@{
   generated_at = (Get-Date).ToString("o")
@@ -220,6 +248,6 @@ $sitePayload = [ordered]@{
   pages = $pageMeta
 }
 
-$authorPayload | ConvertTo-Json -Depth 8 | Set-Content -Path "assets\data\author-stats.json" -Encoding UTF8
-$sitePayload | ConvertTo-Json -Depth 8 | Set-Content -Path "assets\data\site-meta.json" -Encoding UTF8
-Write-Host "Updated assets/data/author-stats.json and assets/data/site-meta.json"
+$authorPayload | ConvertTo-Json -Depth 8 | Set-Content -Path $AuthorStatsOutputPath -Encoding UTF8
+$sitePayload | ConvertTo-Json -Depth 8 | Set-Content -Path $SiteMetaOutputPath -Encoding UTF8
+Write-Host "Updated $AuthorStatsOutputPath and $SiteMetaOutputPath"
