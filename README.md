@@ -25,3 +25,22 @@ UUID, RTTI 등 엔진 시스템
 Batch Rendering, Texture Atlas, FName 등 성능 최적화
 05. [Misc](./05_misc/)
 기타 개념
+
+## 깃허브 페이지 로컬 테스트 방법
+- 필요 프로그램 설치
+```
+cmd
+winget install RubyInstallerTeam.RubyWithDevKit.3.3
+터미널 닫고 다시 열기
+ruby -v, gem -v 가 정상적으로 작동하면 됨
+gem install bundler
+bundle -v 가 정상적으로 작동하면 됨
+```
+
+- 테스트 환경 실행
+```
+cd C:\jungle-engine-study  (jungle-engine-study 폴더로 이동)
+bundle install
+bundle exec jekyll serve --livereload
+http://127.0.0.1:4000/jungle-engine-study/
+```
