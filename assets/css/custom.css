@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap");
 
 :root {
-  --bg: #f2f8fb;
-  --grid: rgba(18, 94, 123, 0.08);
+  --bg: #e9f2f7;
+  --grid: rgba(18, 94, 123, 0.12);
   --surface: #ffffff;
   --line: #c9dae4;
   --ink: #13202d;
@@ -15,13 +15,87 @@
 body {
   font-family: "Noto Sans KR", "Segoe UI", sans-serif;
   color: var(--ink);
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
   background:
     linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px),
-    radial-gradient(circle at 100% 0%, rgba(255, 206, 152, 0.35) 0%, rgba(255, 206, 152, 0) 40%),
-    radial-gradient(circle at 0% 0%, rgba(128, 223, 255, 0.25) 0%, rgba(128, 223, 255, 0) 35%),
+    radial-gradient(circle at 100% 0%, rgba(255, 206, 152, 0.30) 0%, rgba(255, 206, 152, 0) 42%),
+    radial-gradient(circle at 0% 0%, rgba(128, 223, 255, 0.22) 0%, rgba(128, 223, 255, 0) 37%),
     var(--bg);
   background-size: 24px 24px, 24px 24px, auto, auto, auto;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::before {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(15, 106, 142, 0.12) 0 1px,
+      transparent 1px 64px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(15, 106, 142, 0.12) 0 1px,
+      transparent 1px 64px
+    );
+}
+
+body::after {
+  background:
+    linear-gradient(140deg, rgba(7, 85, 113, 0.09) 0%, rgba(7, 85, 113, 0) 35%),
+    radial-gradient(circle at 82% 12%, rgba(234, 138, 47, 0.14) 0 90px, transparent 140px),
+    radial-gradient(circle at 10% 88%, rgba(15, 134, 177, 0.12) 0 110px, transparent 160px);
+}
+
+.site-header,
+.site-footer,
+.page-content,
+.hero,
+.category-grid,
+.post,
+.page {
+  position: relative;
+  z-index: 1;
+}
+
+.page-content {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(10, 92, 125, 0.28) 0 1px,
+      transparent 1px 44px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(10, 92, 125, 0.28) 0 1px,
+      transparent 1px 44px
+    ),
+    linear-gradient(180deg, rgba(230, 243, 250, 0.98) 0%, rgba(230, 243, 250, 0.9) 100%);
+  border-top: 1px solid #d4e5ef;
+  border-bottom: 1px solid #d4e5ef;
+}
+
+.page-content::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  pointer-events: none;
+  border: 1px solid rgba(8, 76, 103, 0.22);
+  border-radius: 8px;
+}
+
+.wrapper {
+  max-width: 1120px;
 }
 
 .site-title,
@@ -162,7 +236,9 @@ a:hover {
   background: #ffffff;
   border: 1px solid var(--line);
   border-radius: 14px;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
+  width: 100%;
+  box-sizing: border-box;
   box-shadow: 0 8px 18px rgba(17, 65, 89, 0.08);
   overflow: hidden;
 }
@@ -244,6 +320,48 @@ a:hover {
   font-size: 0.95rem;
 }
 
+.post,
+.page {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #cfe0e8;
+  border-radius: 14px;
+  padding: 1.1rem 1rem;
+  box-shadow: 0 10px 22px rgba(17, 65, 89, 0.08);
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.post-content {
+  background: #ffffff;
+  border: 1px solid #e1edf3;
+  border-radius: 12px;
+  padding: 1.15rem 1.2rem;
+  line-height: 1.78;
+  font-size: 1.03rem;
+}
+
+.post-content pre {
+  background: #f4fbff;
+  border: 1px solid #d7e7ef;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  overflow-x: hidden;
+  padding: 0.85rem;
+  border-radius: 10px;
+}
+
+.post-content code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.post-content .MathJax {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 @media (max-width: 700px) {
   .hero {
     padding: 1.55rem 1rem;
@@ -265,5 +383,16 @@ a:hover {
 
   .author-rank {
     margin: 0.65rem;
+  }
+
+  .post,
+  .page {
+    padding: 0.8rem 0.6rem;
+    max-width: 100%;
+  }
+
+  .post-content {
+    padding: 0.8rem;
+    font-size: 1rem;
   }
 }

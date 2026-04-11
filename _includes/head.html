@@ -5,6 +5,7 @@
   {%- seo -%}
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
   {%- feed_meta -%}
   <script>
     window.JUNGLE_PAGE_META = {
@@ -14,6 +15,16 @@
       pagePath: {{ page.path | jsonify }},
       pageUrl: {{ page.url | jsonify }}
     };
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]]
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    };
   </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script src="{{ '/assets/js/page-meta.js' | relative_url }}" defer></script>
 </head>

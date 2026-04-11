@@ -6,5 +6,8 @@ baseurl: "/jungle-engine-study"
 lang: ko-KR
 timezone: Asia/Seoul
 markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
 show_excerpts: true
 header_pages: []

@@ -7,7 +7,6 @@ title: Jungle Engine Tech Lab
   <p class="hero-kicker">Jungle Engine Study Archive</p>
   <h1>Jungle Engine Tech Lab</h1>
   <p class="hero-desc">게임테크랩에서 학습한 그래픽스, 렌더링, 수학, 엔진 구조 문서를 카테고리별로 정리한 기술 아카이브입니다.</p>
-  <a class="hero-link" href="https://jskim-research.github.io/jungle-engine-study/">사이트 바로가기</a>
 </section>
 
 <section class="category-grid">
@@ -23,8 +22,8 @@ title: Jungle Engine Tech Lab
     <h2>01. Rendering</h2>
     <p>렌더링 파이프라인과 GPU 동작 개념.</p>
     <ul>
-      <li><a href="./01_rendering/Decal">Decal</a></li>
       <li><a href="./01_rendering/pipeline">Pipeline</a></li>
+      <li><a href="./01_rendering/Decal">Decal</a></li>
       <li><a href="./01_rendering/ui">UI</a></li>
     </ul>
   </article>

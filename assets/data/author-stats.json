@@ -1,17 +1,17 @@
 ﻿{
-    "generated_at":  "2026-04-11T15:18:29.1339067+09:00",
+    "generated_at":  "2026-04-11T15:41:24.1619039+09:00",
     "authors":  {
                     "LEE SangHoon":  {
-                                         "post_count":  11
+                                         "post_count":  11,
+                                         "level":  "Veteran Engineer"
                                      },
-                    "Jisoo Kim":  {
-                                      "post_count":  1
-                                  },
                     "Myeoungho Kang (강명호)":  {
-                                                 "post_count":  1
+                                                 "post_count":  1,
+                                                 "level":  "Novice Engineer"
                                              },
                     "jskim-research":  {
-                                           "post_count":  15
+                                           "post_count":  16,
+                                           "level":  "Veteran Engineer"
                                        }
                 }
 }

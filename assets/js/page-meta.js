@@ -8,10 +8,7 @@
     return;
   }
 
-  var owner = cfg.owner || "jskim-research";
-  var repo = cfg.repo || "jungle-engine-study";
-  var endpoint = "https://api.github.com/repos/" + owner + "/" + repo + "/commits?path=" + encodeURIComponent(pagePath) + "&per_page=100";
-  var statsEndpoint = (cfg.baseurl || "") + "/assets/data/author-stats.json";
+  var metaEndpoint = (cfg.baseurl || "") + "/assets/data/site-meta.json";
 
   function formatDate(iso) {
     try {
@@ -49,11 +46,16 @@
   }
 
   function placePanel(panel) {
-    var content = document.querySelector(".post-content, .page-content, .post, .page");
-    if (!content) {
+    var article = document.querySelector(".post, .page");
+    if (article) {
+      article.insertBefore(panel, article.firstChild);
       return;
     }
-    content.parentNode.insertBefore(panel, content);
+
+    var content = document.querySelector(".post-content, .page-content");
+    if (content && content.parentNode) {
+      content.parentNode.insertBefore(panel, content);
+    }
   }
 
   function setText(id, value) {
@@ -71,55 +73,46 @@
     return "Novice Engineer";
   }
 
-  function updateAuthorRank(authorName) {
-    fetch(statsEndpoint)
-      .then(function (res) {
-        if (!res.ok) {
-          throw new Error("Author stats not found");
-        }
-        return res.json();
-      })
-      .then(function (statsPayload) {
-        var authors = (statsPayload && statsPayload.authors) || {};
-        var profile = authors[authorName] || { post_count: 1 };
-        var postCount = profile.post_count || 1;
-        setText("meta-level", getLevel(postCount));
-        setText("meta-post-count", "작성 글 수: " + postCount + "개");
-      })
-      .catch(function () {
-        setText("meta-level", "Unranked");
-        setText("meta-post-count", "작성 글 수: 통계 없음");
-      });
+  function updateAuthorRank(authorName, authors) {
+    var profile = (authors && authors[authorName]) || { post_count: 1 };
+    var postCount = profile.post_count || 1;
+    var level = profile.level || getLevel(postCount);
+    setText("meta-level", level);
+    setText("meta-post-count", "작성 글 수: " + postCount + "개");
   }
 
   var panel = createMetaShell();
   placePanel(panel);
 
-  fetch(endpoint)
+  fetch(metaEndpoint)
     .then(function (res) {
       if (!res.ok) {
-        throw new Error("GitHub API error: " + res.status);
+        throw new Error("site-meta load failed: " + res.status);
       }
       return res.json();
     })
-    .then(function (commits) {
-      if (!Array.isArray(commits) || commits.length === 0) {
+    .then(function (siteMeta) {
+      var pages = (siteMeta && siteMeta.pages) || {};
+      var authors = (siteMeta && siteMeta.authors) || {};
+      var meta = pages[pagePath];
+
+      if (!meta) {
         setText("meta-first-author", "정보 없음");
         setText("meta-first-date", "정보 없음");
         setText("meta-last-author", "정보 없음");
         setText("meta-last-date", "정보 없음");
+        setText("meta-level", "정보 없음");
+        setText("meta-post-count", "작성 글 수: 정보 없음");
         return;
       }
 
-      var latest = commits[0];
-      var first = commits[commits.length - 1];
-      var firstAuthor = (first.commit && first.commit.author && first.commit.author.name) || "정보 없음";
+      var firstAuthor = meta.first_author || "정보 없음";
 
       setText("meta-first-author", firstAuthor);
-      setText("meta-first-date", formatDate(first.commit && first.commit.author && first.commit.author.date));
-      setText("meta-last-author", (latest.commit && latest.commit.author && latest.commit.author.name) || "정보 없음");
-      setText("meta-last-date", formatDate(latest.commit && latest.commit.author && latest.commit.author.date));
-      updateAuthorRank(firstAuthor);
+      setText("meta-first-date", formatDate(meta.first_date));
+      setText("meta-last-author", meta.latest_author || "정보 없음");
+      setText("meta-last-date", formatDate(meta.latest_date));
+      updateAuthorRank(firstAuthor, authors);
     })
     .catch(function () {
       setText("meta-first-author", "조회 실패");
