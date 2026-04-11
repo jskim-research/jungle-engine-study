@@ -2,6 +2,10 @@
 
 게임테크랩에서 학습한 그래픽스, 렌더링, 엔진 구조를 정리한 협업 기술 아카이브
 
+🌐 사이트
+
+[https://jskim-research.github.io/jungle-engine-study/](https://jskim-research.github.io/jungle-engine-study/)
+
 📌 소개
 
 이 레포지토리는 그래픽스 파이프라인, 수학적 개념, 엔진 구조를 중심으로

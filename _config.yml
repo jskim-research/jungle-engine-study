@@ -1,0 +1,9 @@
+title: Jungle Engine Tech Lab
+description: 그래픽스, 렌더링, 수학, 엔진 구조 학습 아카이브
+theme: minima
+url: "https://jskim-research.github.io"
+baseurl: "/jungle-engine-study"
+lang: ko-KR
+timezone: Asia/Seoul
+markdown: kramdown
+show_excerpts: true

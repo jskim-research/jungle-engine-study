@@ -6,7 +6,7 @@
 
 ## 📂 목록
 
-* [RTTI](./rtti.md)
+* [RTTI](./RTTI.md)
   - 런타임 타입 식별, 클래스 구분
 
 * [UUID](./uuid.md)
