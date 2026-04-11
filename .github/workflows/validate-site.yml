@@ -1,0 +1,29 @@
+name: Validate Site
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Validate metadata and index structure
+        shell: pwsh
+        run: .\scripts\validate-site.ps1
+
+      - name: Build Jekyll site
+        shell: pwsh
+        run: bundle exec jekyll build
