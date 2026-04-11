@@ -26,7 +26,7 @@ Batch Rendering, Texture Atlas, FName 등 성능 최적화
 05. [Misc](./05_misc/)
 기타 개념
 
-## 깃허브 페이지 로컬 테스트 방법
+## 깃허브 페이지 관련 가이드
 - 필요 프로그램 설치
 ```
 cmd
@@ -41,6 +41,16 @@ bundle -v 가 정상적으로 작동하면 됨
 ```
 cd C:\jungle-engine-study  (jungle-engine-study 폴더로 이동)
 bundle install
+bundle exec jekyll clean
+bundle exec jekyll build
+
 bundle exec jekyll serve --livereload
-http://127.0.0.1:4000/jungle-engine-study/
+
+홈페이지 => http://127.0.0.1:4000/jungle-engine-study/
+```
+
+- 작성자 레벨 업데이트
+```
+// 해당 프로젝트 폴더 내에서
+powershell -ExecutionPolicy Bypass -File .\scripts\update-author-stats.ps1
 ```

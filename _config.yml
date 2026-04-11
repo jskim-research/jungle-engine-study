@@ -7,3 +7,4 @@ lang: ko-KR
 timezone: Asia/Seoul
 markdown: kramdown
 show_excerpts: true
+header_pages: []
