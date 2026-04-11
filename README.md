@@ -65,8 +65,40 @@ bundle exec jekyll serve --livereload
 홈페이지 => http://127.0.0.1:4000/jungle-engine-study/
 ```
 
-- 작성자 레벨, 작성자 정보 등 업데이트
+## 작성자 레벨 산정 기준 (공정성 v3)
+
+`README.md`, `index.md`, 각 카테고리 `README.md`는 제외하고 실제 개념 문서 `*.md`만 집계합니다.
+
+핵심 원칙:
+- 커밋 횟수보다 `최종 남아있는 내용`을 더 크게 반영
+- 각 문서의 현재 내용 기준으로 `git blame` 라인 소유 비율을 계산
+- 품질 점수도 문서 내 라인 점유율 비율로 작성자에게 분배
+
+총점 계산식:
+`총점 = 콘텐츠 점수 + 품질 점수 + 리드 보너스 + 협업 보너스`
+
+세부 기준:
+- 콘텐츠 점수: `sqrt(보유 콘텐츠 라인 수) * 12`
+- 품질 점수(문서당 최대 40):
+  - 분량, 헤딩 구조, 이미지, 코드 블록, 수식, 외부 링크 포함 여부 반영
+  - 문서 내 라인 점유율 비율로 각 작성자에게 배분
+- 리드 보너스: 문서 내 최다 라인 기여자(동률 포함) 1건당 `+10`
+- 협업 보너스(타인 문서 보강 문서 수):
+  - 1개 이상: `+5`
+  - 4개 이상: `+12`
+  - 8개 이상: `+25`
+
+EXP:
+- `EXP = 총점 * 25`
+
+레벨/몬스터:
+- `0~179`: Slime Apprentice (Slime)
+- `180~319`: Wolf Vanguard (Wolf)
+- `320~519`: Golem Strategist (Golem)
+- `520~759`: Wyvern Marshal (Wyvern)
+- `760+`: Dragon Sovereign (Dragon)
+
+실행 커맨드(한 번에 전체 업데이트):
 ```
-// 해당 프로젝트 폴더 내에서
 powershell -ExecutionPolicy Bypass -File .\update-metadata.ps1
 ```

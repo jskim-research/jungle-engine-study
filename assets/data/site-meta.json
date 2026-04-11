@@ -1,215 +1,280 @@
 ﻿{
-    "generated_at":  "2026-04-11T15:41:24.1629073+09:00",
+    "generated_at":  "2026-04-11T16:51:18.2846995+09:00",
+    "scoring_version":  "v3",
     "authors":  {
-                    "LEE SangHoon":  {
-                                         "post_count":  11,
-                                         "level":  "Veteran Engineer"
-                                     },
                     "Myeoungho Kang (강명호)":  {
-                                                 "post_count":  1,
-                                                 "level":  "Novice Engineer"
+                                                 "concept_doc_count":  1,
+                                                 "content_line_count":  153,
+                                                 "lead_doc_count":  1,
+                                                 "quality_score":  17,
+                                                 "collaboration_score":  0,
+                                                 "total_score":  175,
+                                                 "exp":  4375,
+                                                 "exp_current":  4375,
+                                                 "exp_next":  4500,
+                                                 "level":  "Slime Apprentice",
+                                                 "monster":  "Slime"
                                              },
+                    "LEE SangHoon":  {
+                                         "concept_doc_count":  13,
+                                         "content_line_count":  813,
+                                         "lead_doc_count":  12,
+                                         "quality_score":  175,
+                                         "collaboration_score":  5,
+                                         "total_score":  642,
+                                         "exp":  16050,
+                                         "exp_current":  3050,
+                                         "exp_next":  6000,
+                                         "level":  "Wyvern Marshal",
+                                         "monster":  "Wyvern"
+                                     },
                     "jskim-research":  {
-                                           "post_count":  16,
-                                           "level":  "Veteran Engineer"
-                                       }
+                                           "concept_doc_count":  10,
+                                           "content_line_count":  95,
+                                           "lead_doc_count":  9,
+                                           "quality_score":  33,
+                                           "collaboration_score":  5,
+                                           "total_score":  245,
+                                           "exp":  6125,
+                                           "exp_current":  1625,
+                                           "exp_next":  3500,
+                                           "level":  "Wolf Vanguard",
+                                           "monster":  "Wolf"
+                                       },
+                    "Jisoo Kim":  {
+                                      "concept_doc_count":  1,
+                                      "content_line_count":  1,
+                                      "lead_doc_count":  0,
+                                      "quality_score":  0,
+                                      "collaboration_score":  5,
+                                      "total_score":  17,
+                                      "exp":  425,
+                                      "exp_current":  425,
+                                      "exp_next":  4500,
+                                      "level":  "Slime Apprentice",
+                                      "monster":  "Slime"
+                                  },
+                    "Minjun Jang":  {
+                                        "concept_doc_count":  1,
+                                        "content_line_count":  107,
+                                        "lead_doc_count":  0,
+                                        "quality_score":  14,
+                                        "collaboration_score":  5,
+                                        "total_score":  143,
+                                        "exp":  3575,
+                                        "exp_current":  3575,
+                                        "exp_next":  4500,
+                                        "level":  "Slime Apprentice",
+                                        "monster":  "Slime"
+                                    }
                 },
     "pages":  {
-                  "04_optimization/LOD.md":  {
-                                                 "first_author":  "LEE SangHoon",
-                                                 "first_date":  "2026-04-09T21:35:59+09:00",
-                                                 "latest_author":  "LEE SangHoon",
-                                                 "latest_date":  "2026-04-10T08:35:02+09:00",
-                                                 "revision_count":  2
-                                             },
-                  "04_optimization/fname.md":  {
-                                                   "first_author":  "jskim-research",
-                                                   "first_date":  "2026-03-30T19:49:27+09:00",
-                                                   "latest_author":  "jskim-research",
-                                                   "latest_date":  "2026-03-30T19:51:34+09:00",
-                                                   "revision_count":  2
-                                               },
-                  "03_engine/uuid.md":  {
-                                            "first_author":  "jskim-research",
-                                            "first_date":  "2026-03-30T19:49:27+09:00",
-                                            "latest_author":  "jskim-research",
-                                            "latest_date":  "2026-03-30T19:53:11+09:00",
-                                            "revision_count":  3
-                                        },
-                  "04_optimization/batch_rendering.md":  {
-                                                             "first_author":  "jskim-research",
-                                                             "first_date":  "2026-03-30T19:49:27+09:00",
-                                                             "latest_author":  "jskim-research",
-                                                             "latest_date":  "2026-03-30T19:51:34+09:00",
-                                                             "revision_count":  2
-                                                         },
-                  "00_conventions/graphics_conventions.md":  {
-                                                                 "first_author":  "jskim-research",
-                                                                 "first_date":  "2026-03-30T19:49:27+09:00",
-                                                                 "latest_author":  "jskim-research",
-                                                                 "latest_date":  "2026-03-30T19:49:27+09:00",
-                                                                 "revision_count":  1
-                                                             },
-                  "02_math/bounding_volume.md":  {
-                                                     "first_author":  "jskim-research",
-                                                     "first_date":  "2026-03-30T19:49:27+09:00",
-                                                     "latest_author":  "jskim-research",
-                                                     "latest_date":  "2026-03-30T19:49:27+09:00",
-                                                     "revision_count":  1
-                                                 },
+                  "04_optimization/texture_atlas.md":  {
+                                                           "first_author":  "jskim-research",
+                                                           "first_date":  "2026-03-30T19:49:27+09:00",
+                                                           "latest_author":  "jskim-research",
+                                                           "latest_date":  "2026-03-30T19:49:27+09:00",
+                                                           "revision_count":  1,
+                                                           "quality_score":  2,
+                                                           "word_count":  18
+                                                       },
+                  "04_optimization/Scene BVH.md":  {
+                                                       "first_author":  "LEE SangHoon",
+                                                       "first_date":  "2026-04-08T01:01:14+09:00",
+                                                       "latest_author":  "LEE SangHoon",
+                                                       "latest_date":  "2026-04-10T20:47:12+09:00",
+                                                       "revision_count":  2,
+                                                       "quality_score":  15,
+                                                       "word_count":  580
+                                                   },
                   "03_engine/RTTI.md":  {
                                             "first_author":  "jskim-research",
                                             "first_date":  "2026-03-30T19:49:27+09:00",
                                             "latest_author":  "Jisoo Kim",
                                             "latest_date":  "2026-04-11T14:29:56+09:00",
-                                            "revision_count":  7
+                                            "revision_count":  7,
+                                            "quality_score":  12,
+                                            "word_count":  186
                                         },
-                  "04_optimization/Mesh BVH.md":  {
-                                                      "first_author":  "LEE SangHoon",
-                                                      "first_date":  "2026-04-09T21:57:00+09:00",
-                                                      "latest_author":  "LEE SangHoon",
-                                                      "latest_date":  "2026-04-10T08:35:02+09:00",
-                                                      "revision_count":  2
-                                                  },
+                  "04_optimization/SIMD.md":  {
+                                                  "first_author":  "LEE SangHoon",
+                                                  "first_date":  "2026-04-09T18:42:10+09:00",
+                                                  "latest_author":  "LEE SangHoon",
+                                                  "latest_date":  "2026-04-09T21:57:00+09:00",
+                                                  "revision_count":  2,
+                                                  "quality_score":  17,
+                                                  "word_count":  416
+                                              },
+                  "03_engine/uuid.md":  {
+                                            "first_author":  "jskim-research",
+                                            "first_date":  "2026-03-30T19:49:27+09:00",
+                                            "latest_author":  "jskim-research",
+                                            "latest_date":  "2026-03-30T19:53:11+09:00",
+                                            "revision_count":  3,
+                                            "quality_score":  2,
+                                            "word_count":  50
+                                        },
+                  "01_rendering/pipeline.md":  {
+                                                   "first_author":  "jskim-research",
+                                                   "first_date":  "2026-03-30T19:49:27+09:00",
+                                                   "latest_author":  "jskim-research",
+                                                   "latest_date":  "2026-03-30T19:51:34+09:00",
+                                                   "revision_count":  2,
+                                                   "quality_score":  7,
+                                                   "word_count":  233
+                                               },
+                  "05_misc/Texture is Data, Material is Behavior.md":  {
+                                                                           "first_author":  "LEE SangHoon",
+                                                                           "first_date":  "2026-04-01T10:39:10+09:00",
+                                                                           "latest_author":  "LEE SangHoon",
+                                                                           "latest_date":  "2026-04-01T13:03:00+09:00",
+                                                                           "revision_count":  3,
+                                                                           "quality_score":  8,
+                                                                           "word_count":  361
+                                                                       },
+                  "04_optimization/batch_rendering.md":  {
+                                                             "first_author":  "jskim-research",
+                                                             "first_date":  "2026-03-30T19:49:27+09:00",
+                                                             "latest_author":  "jskim-research",
+                                                             "latest_date":  "2026-03-30T19:51:34+09:00",
+                                                             "revision_count":  2,
+                                                             "quality_score":  2,
+                                                             "word_count":  29
+                                                         },
+                  "04_optimization/fname.md":  {
+                                                   "first_author":  "jskim-research",
+                                                   "first_date":  "2026-03-30T19:49:27+09:00",
+                                                   "latest_author":  "jskim-research",
+                                                   "latest_date":  "2026-03-30T19:51:34+09:00",
+                                                   "revision_count":  2,
+                                                   "quality_score":  2,
+                                                   "word_count":  56
+                                               },
+                  "05_misc/Dynamic Glyph Atlas for Korean Text Rendering.md":  {
+                                                                                   "first_author":  "LEE SangHoon",
+                                                                                   "first_date":  "2026-03-31T17:12:28+09:00",
+                                                                                   "latest_author":  "LEE SangHoon",
+                                                                                   "latest_date":  "2026-04-01T10:39:10+09:00",
+                                                                                   "revision_count":  2,
+                                                                                   "quality_score":  10,
+                                                                                   "word_count":  319
+                                                                               },
                   "02_math/ray_casting.md":  {
                                                  "first_author":  "jskim-research",
                                                  "first_date":  "2026-03-30T19:49:27+09:00",
                                                  "latest_author":  "LEE SangHoon",
                                                  "latest_date":  "2026-04-10T01:58:23+09:00",
-                                                 "revision_count":  6
+                                                 "revision_count":  6,
+                                                 "quality_score":  34,
+                                                 "word_count":  1795
                                              },
                   "03_engine/reflection.md":  {
                                                   "first_author":  "LEE SangHoon",
                                                   "first_date":  "2026-04-11T03:12:02+09:00",
                                                   "latest_author":  "LEE SangHoon",
                                                   "latest_date":  "2026-04-11T03:12:02+09:00",
-                                                  "revision_count":  1
+                                                  "revision_count":  1,
+                                                  "quality_score":  2,
+                                                  "word_count":  16
                                               },
-                  "02_math/From Vertices to Pixels, The Journey of Interpolation.md":  {
-                                                                                           "first_author":  "LEE SangHoon",
-                                                                                           "first_date":  "2026-04-01T20:45:17+09:00",
-                                                                                           "latest_author":  "LEE SangHoon",
-                                                                                           "latest_date":  "2026-04-01T20:45:17+09:00",
-                                                                                           "revision_count":  1
-                                                                                       },
-                  "04_optimization/SIMD.md":  {
-                                                  "first_author":  "LEE SangHoon",
-                                                  "first_date":  "2026-04-09T18:42:10+09:00",
-                                                  "latest_author":  "LEE SangHoon",
-                                                  "latest_date":  "2026-04-09T21:57:00+09:00",
-                                                  "revision_count":  2
-                                              },
-                  "02_math/README.md":  {
-                                            "first_author":  "jskim-research",
-                                            "first_date":  "2026-03-30T20:32:51+09:00",
-                                            "latest_author":  "LEE SangHoon",
-                                            "latest_date":  "2026-04-11T03:12:02+09:00",
-                                            "revision_count":  2
-                                        },
-                  "05_misc/obj.md":  {
-                                         "first_author":  "LEE SangHoon",
-                                         "first_date":  "2026-04-01T01:29:30+09:00",
-                                         "latest_author":  "LEE SangHoon",
-                                         "latest_date":  "2026-04-02T01:08:28+09:00",
-                                         "revision_count":  3
-                                     },
-                  "03_engine/README.md":  {
-                                              "first_author":  "jskim-research",
-                                              "first_date":  "2026-03-30T20:32:51+09:00",
-                                              "latest_author":  "jskim-research",
-                                              "latest_date":  "2026-04-11T14:26:50+09:00",
-                                              "revision_count":  3
-                                          },
-                  "01_rendering/pipeline.md":  {
-                                                   "first_author":  "jskim-research",
-                                                   "first_date":  "2026-03-30T19:49:27+09:00",
-                                                   "latest_author":  "jskim-research",
-                                                   "latest_date":  "2026-03-30T19:51:34+09:00",
-                                                   "revision_count":  2
-                                               },
                   "01_rendering/Decal.md":  {
                                                 "first_author":  "Myeoungho Kang (강명호)",
                                                 "first_date":  "2026-04-10T19:22:31+09:00",
                                                 "latest_author":  "LEE SangHoon",
                                                 "latest_date":  "2026-04-10T20:47:12+09:00",
-                                                "revision_count":  2
+                                                "revision_count":  2,
+                                                "quality_score":  34,
+                                                "word_count":  1591
                                             },
-                  "05_misc/README.md":  {
-                                            "first_author":  "jskim-research",
-                                            "first_date":  "2026-03-30T20:32:51+09:00",
-                                            "latest_author":  "LEE SangHoon",
-                                            "latest_date":  "2026-04-11T03:12:02+09:00",
-                                            "revision_count":  2
-                                        },
-                  "01_rendering/ui.md":  {
-                                             "first_author":  "jskim-research",
-                                             "first_date":  "2026-03-30T19:49:27+09:00",
-                                             "latest_author":  "jskim-research",
-                                             "latest_date":  "2026-03-30T19:51:34+09:00",
-                                             "revision_count":  2
-                                         },
-                  "04_optimization/Scene BVH.md":  {
-                                                       "first_author":  "LEE SangHoon",
-                                                       "first_date":  "2026-04-08T01:01:14+09:00",
-                                                       "latest_author":  "LEE SangHoon",
-                                                       "latest_date":  "2026-04-10T20:47:12+09:00",
-                                                       "revision_count":  2
-                                                   },
-                  "00_conventions/README.md":  {
-                                                   "first_author":  "jskim-research",
-                                                   "first_date":  "2026-03-30T20:32:51+09:00",
-                                                   "latest_author":  "LEE SangHoon",
-                                                   "latest_date":  "2026-04-11T03:12:02+09:00",
-                                                   "revision_count":  2
-                                               },
+                  "02_math/Test.md":  {
+                                          "first_author":  "jskim-research",
+                                          "first_date":  "2026-04-11T16:02:54+09:00",
+                                          "latest_author":  "jskim-research",
+                                          "latest_date":  "2026-04-11T16:02:54+09:00",
+                                          "revision_count":  1,
+                                          "quality_score":  2,
+                                          "word_count":  0
+                                      },
+                  "04_optimization/LOD.md":  {
+                                                 "first_author":  "LEE SangHoon",
+                                                 "first_date":  "2026-04-09T21:35:59+09:00",
+                                                 "latest_author":  "LEE SangHoon",
+                                                 "latest_date":  "2026-04-10T08:35:02+09:00",
+                                                 "revision_count":  2,
+                                                 "quality_score":  15,
+                                                 "word_count":  483
+                                             },
+                  "05_misc/obj.md":  {
+                                         "first_author":  "LEE SangHoon",
+                                         "first_date":  "2026-04-01T01:29:30+09:00",
+                                         "latest_author":  "LEE SangHoon",
+                                         "latest_date":  "2026-04-02T01:08:28+09:00",
+                                         "revision_count":  3,
+                                         "quality_score":  24,
+                                         "word_count":  360
+                                     },
+                  "02_math/bounding_volume.md":  {
+                                                     "first_author":  "jskim-research",
+                                                     "first_date":  "2026-03-30T19:49:27+09:00",
+                                                     "latest_author":  "jskim-research",
+                                                     "latest_date":  "2026-03-30T19:49:27+09:00",
+                                                     "revision_count":  1,
+                                                     "quality_score":  2,
+                                                     "word_count":  48
+                                                 },
+                  "04_optimization/Mesh BVH.md":  {
+                                                      "first_author":  "LEE SangHoon",
+                                                      "first_date":  "2026-04-09T21:57:00+09:00",
+                                                      "latest_author":  "LEE SangHoon",
+                                                      "latest_date":  "2026-04-10T08:35:02+09:00",
+                                                      "revision_count":  2,
+                                                      "quality_score":  12,
+                                                      "word_count":  380
+                                                  },
                   "03_engine/serialization.md":  {
                                                      "first_author":  "LEE SangHoon",
                                                      "first_date":  "2026-04-10T00:26:32+09:00",
                                                      "latest_author":  "LEE SangHoon",
                                                      "latest_date":  "2026-04-10T08:35:02+09:00",
-                                                     "revision_count":  2
+                                                     "revision_count":  2,
+                                                     "quality_score":  12,
+                                                     "word_count":  344
                                                  },
-                  "05_misc/Dynamic Glyph Atlas for Korean Text Rendering.md":  {
-                                                                                   "first_author":  "LEE SangHoon",
-                                                                                   "first_date":  "2026-03-31T17:12:28+09:00",
-                                                                                   "latest_author":  "LEE SangHoon",
-                                                                                   "latest_date":  "2026-04-01T10:39:10+09:00",
-                                                                                   "revision_count":  2
-                                                                               },
-                  "01_rendering/README.md":  {
-                                                 "first_author":  "jskim-research",
-                                                 "first_date":  "2026-03-30T20:32:51+09:00",
-                                                 "latest_author":  "LEE SangHoon",
-                                                 "latest_date":  "2026-04-10T21:12:51+09:00",
-                                                 "revision_count":  3
-                                             },
-                  "05_misc/Texture is Data, Material is Behavior.md":  {
-                                                                           "first_author":  "LEE SangHoon",
-                                                                           "first_date":  "2026-04-01T10:39:10+09:00",
-                                                                           "latest_author":  "LEE SangHoon",
-                                                                           "latest_date":  "2026-04-01T13:03:00+09:00",
-                                                                           "revision_count":  3
-                                                                       },
-                  "04_optimization/texture_atlas.md":  {
-                                                           "first_author":  "jskim-research",
-                                                           "first_date":  "2026-03-30T19:49:27+09:00",
-                                                           "latest_author":  "jskim-research",
-                                                           "latest_date":  "2026-03-30T19:49:27+09:00",
-                                                           "revision_count":  1
-                                                       },
                   "05_misc/Wireframe Outline Rendering.md":  {
                                                                  "first_author":  "LEE SangHoon",
                                                                  "first_date":  "2026-03-30T23:02:40+09:00",
                                                                  "latest_author":  "LEE SangHoon",
                                                                  "latest_date":  "2026-04-10T08:35:02+09:00",
-                                                                 "revision_count":  8
+                                                                 "revision_count":  8,
+                                                                 "quality_score":  15,
+                                                                 "word_count":  468
                                                              },
-                  "04_optimization/README.md":  {
-                                                    "first_author":  "jskim-research",
-                                                    "first_date":  "2026-03-30T20:32:51+09:00",
-                                                    "latest_author":  "LEE SangHoon",
-                                                    "latest_date":  "2026-04-11T03:12:02+09:00",
-                                                    "revision_count":  2
-                                                }
+                  "01_rendering/ui.md":  {
+                                             "first_author":  "jskim-research",
+                                             "first_date":  "2026-03-30T19:49:27+09:00",
+                                             "latest_author":  "jskim-research",
+                                             "latest_date":  "2026-03-30T19:51:34+09:00",
+                                             "revision_count":  2,
+                                             "quality_score":  2,
+                                             "word_count":  38
+                                         },
+                  "02_math/From Vertices to Pixels, The Journey of Interpolation.md":  {
+                                                                                           "first_author":  "LEE SangHoon",
+                                                                                           "first_date":  "2026-04-01T20:45:17+09:00",
+                                                                                           "latest_author":  "LEE SangHoon",
+                                                                                           "latest_date":  "2026-04-01T20:45:17+09:00",
+                                                                                           "revision_count":  1,
+                                                                                           "quality_score":  8,
+                                                                                           "word_count":  77
+                                                                                       },
+                  "00_conventions/graphics_conventions.md":  {
+                                                                 "first_author":  "jskim-research",
+                                                                 "first_date":  "2026-03-30T19:49:27+09:00",
+                                                                 "latest_author":  "jskim-research",
+                                                                 "latest_date":  "2026-03-30T19:49:27+09:00",
+                                                                 "revision_count":  1,
+                                                                 "quality_score":  2,
+                                                                 "word_count":  36
+                                                             }
               }
 }

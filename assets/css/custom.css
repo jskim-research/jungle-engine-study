@@ -265,9 +265,16 @@ a:hover {
 }
 
 .rank-image {
-  width: 52px;
-  height: 52px;
+  width: 64px;
+  height: 64px;
   flex: 0 0 auto;
+}
+
+.monster-image {
+  border-radius: 10px;
+  border: 1px solid #a7cadc;
+  background: #f3fbff;
+  box-shadow: inset 0 0 0 1px #ffffff;
 }
 
 .rank-copy {
@@ -293,6 +300,34 @@ a:hover {
   color: #5f7483;
   font-style: normal;
   font-size: 0.84rem;
+}
+
+.exp-wrap {
+  margin-top: 0.35rem;
+}
+
+.exp-bar {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: #dfeff7;
+  border: 1px solid #b9d6e5;
+  overflow: hidden;
+}
+
+.exp-bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #0f86b1 0%, #58b8d9 50%, #f2c27a 100%);
+  transition: width 280ms ease;
+}
+
+#meta-exp-text {
+  display: block;
+  margin-top: 0.18rem;
+  font-size: 0.74rem;
+  color: #4b6575;
 }
 
 .page-meta-grid {

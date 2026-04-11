@@ -28,11 +28,15 @@
     container.innerHTML = [
       "<div class='page-meta-head'>Document Metadata</div>",
       "<div class='author-rank' id='author-rank'>",
-      "<img src='" + (cfg.baseurl || "") + "/assets/images/author-badge.svg' alt='author badge' class='rank-image' />",
+      "<img id='meta-monster-image' src='" + (cfg.baseurl || "") + "/assets/images/monsters/slime.png' alt='monster badge' class='rank-image monster-image' />",
       "<div class='rank-copy'>",
       "<span class='rank-label'>AUTHOR CLASS</span>",
       "<strong id='meta-level'>계산 중...</strong>",
       "<em id='meta-post-count'>작성 글 수: 조회 중...</em>",
+      "<div class='exp-wrap'>",
+      "<div class='exp-bar'><span id='meta-exp-fill'></span></div>",
+      "<small id='meta-exp-text'>EXP 계산 중...</small>",
+      "</div>",
       "</div>",
       "</div>",
       "<div class='page-meta-grid'>",
@@ -65,20 +69,69 @@
     }
   }
 
-  function getLevel(postCount) {
-    if (postCount >= 20) return "Legend Engineer";
-    if (postCount >= 10) return "Veteran Engineer";
-    if (postCount >= 5) return "Advanced Engineer";
-    if (postCount >= 2) return "Rising Engineer";
-    return "Novice Engineer";
+  function getLevel(totalScore) {
+    if (totalScore >= 760) return "Dragon Sovereign";
+    if (totalScore >= 520) return "Wyvern Marshal";
+    if (totalScore >= 320) return "Golem Strategist";
+    if (totalScore >= 180) return "Wolf Vanguard";
+    return "Slime Apprentice";
+  }
+
+  function getLevelNumber(totalScore) {
+    if (totalScore >= 760) return 5;
+    if (totalScore >= 520) return 4;
+    if (totalScore >= 320) return 3;
+    if (totalScore >= 180) return 2;
+    return 1;
   }
 
   function updateAuthorRank(authorName, authors) {
-    var profile = (authors && authors[authorName]) || { post_count: 1 };
-    var postCount = profile.post_count || 1;
-    var level = profile.level || getLevel(postCount);
-    setText("meta-level", level);
-    setText("meta-post-count", "작성 글 수: " + postCount + "개");
+    var profile = (authors && authors[authorName]) || { concept_doc_count: 0, total_score: 0, exp: 0, monster: "Slime", level: "Slime Apprentice" };
+    var docCount = profile.concept_doc_count || 0;
+    var totalScore = profile.total_score || 0;
+    var exp = profile.exp || 0;
+    var expCurrent = profile.exp_current || 0;
+    var expNext = profile.exp_next;
+    var monster = profile.monster || "Slime";
+    var level = profile.level || getLevel(totalScore);
+    var levelNo = getLevelNumber(totalScore);
+    setText("meta-level", "Lv." + levelNo + " " + level);
+    setText("meta-post-count", "기여 문서: " + docCount + "개 | SCORE: " + totalScore + " | EXP: " + exp);
+    updateMonsterImage(monster);
+    updateExpBar(expCurrent, expNext, exp);
+  }
+
+  function getMonsterAsset(monsterName) {
+    var key = String(monsterName || "").toLowerCase();
+    if (key.indexOf("dragon") >= 0) return "dragon.png";
+    if (key.indexOf("wyvern") >= 0) return "wyvern.png";
+    if (key.indexOf("golem") >= 0) return "golem.png";
+    if (key.indexOf("wolf") >= 0) return "wolf.png";
+    return "slime.png";
+  }
+
+  function updateMonsterImage(monsterName) {
+    var img = document.getElementById("meta-monster-image");
+    if (!img) return;
+    var file = getMonsterAsset(monsterName);
+    img.src = (cfg.baseurl || "") + "/assets/images/monsters/" + file;
+    img.alt = monsterName + " badge";
+  }
+
+  function updateExpBar(expCurrent, expNext, expTotal) {
+    var fill = document.getElementById("meta-exp-fill");
+    var text = document.getElementById("meta-exp-text");
+    if (!fill || !text) return;
+
+    if (!expNext || expNext <= 0) {
+      fill.style.width = "100%";
+      text.textContent = "EXP " + expTotal + " | MAX LEVEL";
+      return;
+    }
+
+    var pct = Math.max(0, Math.min(100, Math.round((expCurrent / expNext) * 100)));
+    fill.style.width = pct + "%";
+    text.textContent = "EXP " + expCurrent + " / " + expNext + " (" + pct + "%)";
   }
 
   var panel = createMetaShell();
@@ -102,7 +155,8 @@
         setText("meta-last-author", "정보 없음");
         setText("meta-last-date", "정보 없음");
         setText("meta-level", "정보 없음");
-        setText("meta-post-count", "작성 글 수: 정보 없음");
+        setText("meta-post-count", "기여 문서: 정보 없음 | SCORE: 정보 없음 | EXP: 정보 없음");
+        updateExpBar(0, 1, 0);
         return;
       }
 
@@ -120,6 +174,7 @@
       setText("meta-last-author", "조회 실패");
       setText("meta-last-date", "조회 실패");
       setText("meta-level", "조회 실패");
-      setText("meta-post-count", "작성 글 수: 조회 실패");
+      setText("meta-post-count", "기여 문서: 조회 실패 | SCORE: 조회 실패 | EXP: 조회 실패");
+      updateExpBar(0, 1, 0);
     });
 })();
