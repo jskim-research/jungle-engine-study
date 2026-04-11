@@ -10,6 +10,48 @@ $files = git ls-files -- "*.md"
 $authorStats = @{}
 $pageMeta = @{}
 $authorDocSets = @{}
+$historyEntryLimit = 5
+
+function Get-GitHubRepoInfo {
+  $defaultBranch = "main"
+  $baseUrl = ""
+
+  $originHead = git symbolic-ref refs/remotes/origin/HEAD 2>$null
+  if ($LASTEXITCODE -eq 0 -and -not [string]::IsNullOrWhiteSpace($originHead)) {
+    $defaultBranch = Split-Path -Leaf $originHead.Trim()
+  }
+
+  $remoteUrl = git remote get-url origin 2>$null
+  if ($LASTEXITCODE -eq 0 -and -not [string]::IsNullOrWhiteSpace($remoteUrl)) {
+    $owner = ""
+    $repo = ""
+
+    if ($remoteUrl -match '^https://github\.com/(?<owner>[^/]+)/(?<repo>[^/]+?)(?:\.git)?$') {
+      $owner = $Matches.owner
+      $repo = $Matches.repo
+    } elseif ($remoteUrl -match '^git@github\.com:(?<owner>[^/]+)/(?<repo>[^/]+?)(?:\.git)?$') {
+      $owner = $Matches.owner
+      $repo = $Matches.repo
+    } elseif ($remoteUrl -match '^ssh://git@github\.com/(?<owner>[^/]+)/(?<repo>[^/]+?)(?:\.git)?$') {
+      $owner = $Matches.owner
+      $repo = $Matches.repo
+    }
+
+    if (-not [string]::IsNullOrWhiteSpace($owner) -and -not [string]::IsNullOrWhiteSpace($repo)) {
+      $baseUrl = "https://github.com/$owner/$repo"
+    }
+  }
+
+  return [ordered]@{
+    base_url = $baseUrl
+    default_branch = $defaultBranch
+  }
+}
+
+function Convert-ToGitHubPath([string]$path) {
+  $segments = $path -split '[\\/]'
+  return (($segments | ForEach-Object { [System.Uri]::EscapeDataString($_) }) -join '/')
+}
 
 function Get-RankInfo([int]$score) {
   if ($score -ge 760) {
@@ -83,6 +125,8 @@ function Get-QualityScore([string]$content) {
   return [Math]::Min([int]$score, 40)
 }
 
+$repoInfo = Get-GitHubRepoInfo
+
 foreach ($file in $files) {
   $baseName = [System.IO.Path]::GetFileName($file)
   if ($file -eq "index.md" -or $file -eq "README.md" -or $baseName -ieq "README.md") {
@@ -97,7 +141,7 @@ foreach ($file in $files) {
     continue
   }
   $qualityScore = Get-QualityScore $content
-  $history = git log --follow --format="%an|%aI" -- "$file"
+  $history = git log --follow --format="%H%x1f%an%x1f%aI%x1f%s" -- "$file"
   if (-not $history) {
     continue
   }
@@ -107,13 +151,13 @@ foreach ($file in $files) {
     continue
   }
 
-  $latestParts = $lines[0].Split("|", 2)
-  $firstParts = $lines[$lines.Count - 1].Split("|", 2)
+  $latestParts = $lines[0].Split([char]0x1f, 4)
+  $firstParts = $lines[$lines.Count - 1].Split([char]0x1f, 4)
 
-  $latestAuthor = $latestParts[0]
-  $latestDate = if ($latestParts.Count -gt 1) { $latestParts[1] } else { "" }
-  $firstAuthor = $firstParts[0]
-  $firstDate = if ($firstParts.Count -gt 1) { $firstParts[1] } else { "" }
+  $latestAuthor = if ($latestParts.Count -gt 1) { $latestParts[1] } else { "" }
+  $latestDate = if ($latestParts.Count -gt 2) { $latestParts[2] } else { "" }
+  $firstAuthor = if ($firstParts.Count -gt 1) { $firstParts[1] } else { "" }
+  $firstDate = if ($firstParts.Count -gt 2) { $firstParts[2] } else { "" }
 
   $blame = git blame --line-porcelain -- "$file"
   $lineOwners = @{}
@@ -153,6 +197,34 @@ foreach ($file in $files) {
       Sort-Object
   )
 
+  $historyEntries = New-Object System.Collections.Generic.List[object]
+  $historyCount = [Math]::Min($historyEntryLimit, $lines.Count)
+  for ($i = 0; $i -lt $historyCount; $i++) {
+    $parts = $lines[$i].Split([char]0x1f, 4)
+    $sha = if ($parts.Count -gt 0) { $parts[0] } else { "" }
+    $author = if ($parts.Count -gt 1) { $parts[1] } else { "" }
+    $date = if ($parts.Count -gt 2) { $parts[2] } else { "" }
+    $message = if ($parts.Count -gt 3) { $parts[3] } else { "" }
+    $commitUrl = ""
+
+    if (-not [string]::IsNullOrWhiteSpace($repoInfo.base_url) -and -not [string]::IsNullOrWhiteSpace($sha)) {
+      $commitUrl = "$($repoInfo.base_url)/commit/$sha"
+    }
+
+    $historyEntries.Add([ordered]@{
+      sha = $sha
+      message = $message
+      author = $author
+      date = $date
+      commit_url = $commitUrl
+    })
+  }
+
+  $historyUrl = ""
+  if (-not [string]::IsNullOrWhiteSpace($repoInfo.base_url)) {
+    $historyUrl = "{0}/commits/{1}/{2}" -f $repoInfo.base_url, $repoInfo.default_branch, (Convert-ToGitHubPath $file)
+  }
+
   foreach ($name in $lineOwners.Keys) {
     Ensure-Author $name
     $count = [int]$lineOwners[$name]
@@ -174,6 +246,8 @@ foreach ($file in $files) {
     first_date = $firstDate
     lead_authors = $leadAuthors
     lead_line_count = $leadLineCount
+    history_entries = $historyEntries
+    history_url = $historyUrl
     latest_author = $latestAuthor
     latest_date = $latestDate
     revision_count = $lines.Count

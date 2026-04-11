@@ -45,6 +45,11 @@
       "<div class='meta-item'><span>최초 작성일</span><strong id='meta-first-date'>조회 중...</strong></div>",
       "<div class='meta-item'><span>최근 수정자</span><strong id='meta-last-author'>조회 중...</strong></div>",
       "<div class='meta-item'><span>최근 수정일</span><strong id='meta-last-date'>조회 중...</strong></div>",
+      "</div>",
+      "<div class='page-history-panel'>",
+      "<div class='page-history-head'>최근 변경 히스토리</div>",
+      "<div id='page-history-list' class='page-history-list'>조회 중...</div>",
+      "<a id='page-history-more' class='page-history-more' href='#' hidden>전체 히스토리 보기</a>",
       "</div>"
     ].join("");
     return container;
@@ -67,6 +72,12 @@
     var target = document.getElementById(id);
     if (target) {
       target.textContent = value || "-";
+    }
+  }
+
+  function clearChildren(node) {
+    while (node.firstChild) {
+      node.removeChild(node.firstChild);
     }
   }
 
@@ -97,6 +108,62 @@
     }
 
     return "정보 없음";
+  }
+
+  function createHistoryLink(url, text, className) {
+    var element;
+
+    if (url) {
+      element = document.createElement("a");
+      element.href = url;
+      element.target = "_blank";
+      element.rel = "noopener noreferrer";
+    } else {
+      element = document.createElement("span");
+    }
+
+    element.className = className;
+    element.textContent = text || "제목 없음";
+    return element;
+  }
+
+  function renderHistory(entries, historyUrl) {
+    var list = document.getElementById("page-history-list");
+    var more = document.getElementById("page-history-more");
+    if (!list || !more) return;
+
+    clearChildren(list);
+
+    if (!Array.isArray(entries) || !entries.length) {
+      list.textContent = "히스토리 정보 없음";
+      more.hidden = true;
+      more.removeAttribute("href");
+      return;
+    }
+
+    entries.forEach(function (entry) {
+      var item = document.createElement("article");
+      item.className = "page-history-item";
+
+      var title = createHistoryLink(entry.commit_url, entry.message || "제목 없음", "page-history-link");
+      var meta = document.createElement("div");
+      meta.className = "page-history-meta";
+      meta.textContent = (entry.author || "작성자 정보 없음") + " · " + formatDate(entry.date);
+
+      item.appendChild(title);
+      item.appendChild(meta);
+      list.appendChild(item);
+    });
+
+    if (historyUrl) {
+      more.hidden = false;
+      more.href = historyUrl;
+      more.target = "_blank";
+      more.rel = "noopener noreferrer";
+    } else {
+      more.hidden = true;
+      more.removeAttribute("href");
+    }
   }
 
   function updateAuthorRank(authorName, authors) {
@@ -171,6 +238,7 @@
         setText("meta-last-date", "정보 없음");
         setText("meta-level", "정보 없음");
         setText("meta-post-count", "최초 작성자 기여 문서: 정보 없음 | SCORE: 정보 없음 | EXP: 정보 없음");
+        renderHistory([], "");
         updateExpBar(0, 1, 0);
         return;
       }
@@ -182,6 +250,7 @@
       setText("meta-first-date", formatDate(meta.first_date));
       setText("meta-last-author", meta.latest_author || "정보 없음");
       setText("meta-last-date", formatDate(meta.latest_date));
+      renderHistory(meta.history_entries, meta.history_url);
       updateAuthorRank(firstAuthor, authors);
     })
     .catch(function () {
@@ -192,6 +261,7 @@
       setText("meta-last-date", "조회 실패");
       setText("meta-level", "조회 실패");
       setText("meta-post-count", "최초 작성자 기여 문서: 조회 실패 | SCORE: 조회 실패 | EXP: 조회 실패");
+      renderHistory([], "");
       updateExpBar(0, 1, 0);
     });
 })();

@@ -356,6 +356,64 @@ a:hover {
   overflow-wrap: anywhere;
 }
 
+.page-history-panel {
+  border-top: 1px solid #d8e7ef;
+  padding: 0.8rem;
+  background: linear-gradient(180deg, rgba(244, 251, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.page-history-head {
+  font-family: "Rajdhani", "Noto Sans KR", sans-serif;
+  font-size: 0.86rem;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: #3f5966;
+  margin-bottom: 0.65rem;
+}
+
+.page-history-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.page-history-item {
+  border: 1px dashed #bdd6e5;
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.page-history-link {
+  display: block;
+  font-weight: 700;
+  color: #0b5874;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.page-history-link:hover {
+  text-decoration: underline;
+}
+
+.page-history-meta {
+  margin-top: 0.18rem;
+  color: #5b7281;
+  font-size: 0.82rem;
+}
+
+.page-history-more {
+  display: inline-flex;
+  margin-top: 0.7rem;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.page-history-more:hover {
+  text-decoration: underline;
+}
+
 .post,
 .page {
   background: rgba(255, 255, 255, 0.92);
