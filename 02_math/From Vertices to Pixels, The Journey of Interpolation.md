@@ -8,10 +8,12 @@
 ### 1. Linear Interpolation + affine combination
 가장 기초가 되는 선형 보간(Lerp)은 두 점을 잇는 직선 위에서 특정 지점의 값을 결정한다.\
 선형 보간의 수식은 다음과 같다.
+
 $$
 두\ 점\ P_0,\ P_1과\ 매개변수\ t \in [0, 1]에\ 대해\\
 P(t) = (1 - t)P_0 + tP_1
 $$
+
 Lerp라는 이름이 익숙하다면 기하학적 접근 외에도 수식이 여기저기 두루 사용된다는 걸 알 수 있을 테다.
 
 위 식은 결국 두 점에 합이 1이 되는 계수를 곱해서 더하는 것인데 이건 곧 아핀 결합(Affine Combination)이다.\
@@ -51,7 +53,7 @@ vertex들의 attribute를 interpolation하게 되고 fragment가 탄생한다.\
 
 하드웨어 래스터라이저는 화면 공간으로 투영된 삼각형의 각 pixel이 세 vertex으로부터\
 어느 정도 비중(Weight)을 갖는지 계산한다. 이 과정에서 단순히 좌표만 사용하는 게 아니라\
-Color, Normal, UV Coordinate 같은 Vertex Attribute도 함께 보간되어 각 픽셀에 고유한 값을 만든다.\
+Color, Normal, UV Coordinate 같은 Vertex Attribute도 함께 보간되어 각 픽셀에 고유한 값을 만든다.
 
 ### 3. Perspective Correct Interpolation
 Perspective Divide가 수행되면 3차원 공간의 직선이 화면(2D) 공간에서는 비선형적으로 투영된다.\
@@ -60,7 +62,7 @@ Perspective Divide가 수행되면 3차원 공간의 직선이 화면(2D) 공간
 래스터라이저는 화면 공간에서 속성을 직접 보간하는 대신, 다음 두 값을 선형 보간한다.
 
 $$
-1/w\ \\
+1/w\\
 A/w
 $$
 
