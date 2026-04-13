@@ -29,10 +29,24 @@
     return "https://github.com/" + repo + "/issues?q=" + encodeURIComponent(q);
   }
 
+  function getNewIssueUrl(pathname) {
+    var title = pathname;
+    var body = [
+      "## Document Recommendation",
+      "",
+      "- target: `" + pathname + "`",
+      "- reaction: +1",
+      "",
+      "이 이슈에 👍 반응을 남겨 추천을 집계합니다."
+    ].join("\n");
+    return "https://github.com/" + repo + "/issues/new?title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(body);
+  }
+
   function setFallback(pathname) {
     countEl.textContent = "0";
-    linkEl.href = getSearchUrl(pathname);
-    noteEl.textContent = "아직 문서 이슈가 없어서, 이슈 목록 검색 페이지로 이동합니다.";
+    linkEl.href = getNewIssueUrl(pathname);
+    linkEl.textContent = "추천 이슈 만들기";
+    noteEl.textContent = "아직 문서 이슈가 없어, 클릭하면 새 이슈 작성 화면이 바로 열립니다.";
   }
 
   function findBestIssue(items, pathname) {
@@ -55,6 +69,7 @@
 
     countEl.textContent = String(plusOne);
     linkEl.href = issue.html_url || "#";
+    linkEl.textContent = "추천(👍) 남기기";
     noteEl.textContent = "추천은 GitHub 이슈의 👍 반응 수를 기준으로 표시됩니다.";
   }
 
