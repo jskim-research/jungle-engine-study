@@ -18,5 +18,5 @@
 * [Serialization](./serialization.md)
   - 객체 상태 저장/복원, 복제, GC 추적의 기반 메커니즘
 
-* [CDO](./CDO(Class Default Object).md)
+* [CDO](./CDO.md)
   - UObject 기반 클래스의 기본값과 기본 구조를 담고 있는 원본 객체
