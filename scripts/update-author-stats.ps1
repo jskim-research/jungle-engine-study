@@ -232,7 +232,8 @@ foreach ($file in $files) {
   } else {
     # Uncommitted markdown file fallback: show provisional author metadata locally.
     $provisionalAuthor = $fallbackAuthor
-    $provisionalDate = (Get-Date).ToString("o")
+    $fileInfo = Get-Item -LiteralPath $file
+    $provisionalDate = $fileInfo.LastWriteTime.ToString("o")
     $contentLines = @($content -split "`r?`n" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }).Count
     if ($contentLines -gt 0) {
       $lineOwners[$provisionalAuthor] = $contentLines

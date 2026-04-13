@@ -1,46 +1,46 @@
 ﻿{
-    "generated_at":  "2026-04-13T11:39:29.9110641+09:00",
+    "generated_at":  "2026-04-13T15:53:20.9124067+09:00",
     "scoring_version":  "v3",
     "authors":  {
+                    "DDing-Ho":  {
+                                     "concept_doc_count":  1,
+                                     "content_line_count":  82,
+                                     "lead_doc_count":  1,
+                                     "quality_score":  26,
+                                     "collaboration_score":  0,
+                                     "total_score":  145,
+                                     "exp":  3625,
+                                     "exp_current":  3625,
+                                     "exp_next":  4500,
+                                     "level":  "Slime Apprentice",
+                                     "monster":  "Slime"
+                                 },
+                    "Minjun Jang":  {
+                                        "concept_doc_count":  1,
+                                        "content_line_count":  107,
+                                        "lead_doc_count":  0,
+                                        "quality_score":  14,
+                                        "collaboration_score":  5,
+                                        "total_score":  143,
+                                        "exp":  3575,
+                                        "exp_current":  3575,
+                                        "exp_next":  4500,
+                                        "level":  "Slime Apprentice",
+                                        "monster":  "Slime"
+                                    },
                     "Myeoungho Kang (강명호)":  {
                                                  "concept_doc_count":  2,
                                                  "content_line_count":  397,
                                                  "lead_doc_count":  2,
-                                                 "quality_score":  44,
+                                                 "quality_score":  48,
                                                  "collaboration_score":  0,
-                                                 "total_score":  303,
-                                                 "exp":  7575,
-                                                 "exp_current":  3075,
+                                                 "total_score":  307,
+                                                 "exp":  7675,
+                                                 "exp_current":  3175,
                                                  "exp_next":  3500,
                                                  "level":  "Wolf Vanguard",
                                                  "monster":  "Wolf"
                                              },
-                    "LEE SangHoon":  {
-                                         "concept_doc_count":  16,
-                                         "content_line_count":  1065,
-                                         "lead_doc_count":  15,
-                                         "quality_score":  265,
-                                         "collaboration_score":  5,
-                                         "total_score":  812,
-                                         "exp":  20300,
-                                         "exp_current":  1300,
-                                         "exp_next":  null,
-                                         "level":  "Dragon Sovereign",
-                                         "monster":  "Dragon"
-                                     },
-                    "jskim-research":  {
-                                           "concept_doc_count":  10,
-                                           "content_line_count":  95,
-                                           "lead_doc_count":  9,
-                                           "quality_score":  33,
-                                           "collaboration_score":  5,
-                                           "total_score":  245,
-                                           "exp":  6125,
-                                           "exp_current":  1625,
-                                           "exp_next":  3500,
-                                           "level":  "Wolf Vanguard",
-                                           "monster":  "Wolf"
-                                       },
                     "Jisoo Kim":  {
                                       "concept_doc_count":  1,
                                       "content_line_count":  1,
@@ -54,18 +54,31 @@
                                       "level":  "Slime Apprentice",
                                       "monster":  "Slime"
                                   },
-                    "Minjun Jang":  {
-                                        "concept_doc_count":  1,
-                                        "content_line_count":  107,
-                                        "lead_doc_count":  0,
-                                        "quality_score":  14,
-                                        "collaboration_score":  5,
-                                        "total_score":  143,
-                                        "exp":  3575,
-                                        "exp_current":  3575,
-                                        "exp_next":  4500,
-                                        "level":  "Slime Apprentice",
-                                        "monster":  "Slime"
-                                    }
+                    "LEE SangHoon":  {
+                                         "concept_doc_count":  16,
+                                         "content_line_count":  1065,
+                                         "lead_doc_count":  15,
+                                         "quality_score":  277,
+                                         "collaboration_score":  5,
+                                         "total_score":  824,
+                                         "exp":  20600,
+                                         "exp_current":  1600,
+                                         "exp_next":  null,
+                                         "level":  "Dragon Sovereign",
+                                         "monster":  "Dragon"
+                                     },
+                    "jskim-research":  {
+                                           "concept_doc_count":  10,
+                                           "content_line_count":  95,
+                                           "lead_doc_count":  9,
+                                           "quality_score":  35,
+                                           "collaboration_score":  5,
+                                           "total_score":  247,
+                                           "exp":  6175,
+                                           "exp_current":  1675,
+                                           "exp_next":  3500,
+                                           "level":  "Wolf Vanguard",
+                                           "monster":  "Wolf"
+                                       }
                 }
 }

@@ -17,3 +17,5 @@
 
 * [Wireframe Outline Rendering](./Wireframe%20Outline%20Rendering.md)
   - z-fighting 문제와 screen-space/barycentric 기반 외곽선 표현
+* [Theme Visibility Test](./Theme%20Visibility%20Test.md)
+  - inline code, fenced code, table, blockquote, and math visibility checks for theme QA

@@ -378,8 +378,10 @@ async function runManualContrastAudit(page, maxIssuesPerPage) {
 async function auditPage(browser, options, pageInfo, axeSource, screenshotsDir) {
   const results = [];
   const modes = [
-    { name: "system-dark", storageTheme: "system" },
-    { name: "explicit-dark", storageTheme: "dark" }
+    { name: "system-light", storageTheme: "system", systemTheme: "light" },
+    { name: "explicit-light", storageTheme: "light", systemTheme: "light" },
+    { name: "system-dark", storageTheme: "system", systemTheme: "dark" },
+    { name: "explicit-dark", storageTheme: "dark", systemTheme: "dark" }
   ];
 
   for (const mode of modes) {
@@ -387,7 +389,7 @@ async function auditPage(browser, options, pageInfo, axeSource, screenshotsDir) 
 
     try {
       await page.setViewport({ width: 1440, height: 1100, deviceScaleFactor: 1 });
-      await page.emulateMediaFeatures([{ name: "prefers-color-scheme", value: "dark" }]);
+      await page.emulateMediaFeatures([{ name: "prefers-color-scheme", value: mode.systemTheme }]);
       await page.evaluateOnNewDocument((theme) => {
         try {
           if (theme === "system") {
@@ -402,10 +404,11 @@ async function auditPage(browser, options, pageInfo, axeSource, screenshotsDir) 
 
       await page.goto(pageInfo.url, { waitUntil: "load", timeout: 60000 });
       await page.waitForFunction(() => document.readyState === "complete", { timeout: 10000 }).catch(() => {});
-      await page.waitForFunction(() => {
+      const expectedResolvedTheme = mode.storageTheme === "system" ? mode.systemTheme : mode.storageTheme;
+      await page.waitForFunction((resolvedTheme) => {
         const root = document.documentElement;
-        return root.style.colorScheme === "dark";
-      }, { timeout: 10000 }).catch(() => {});
+        return root.style.colorScheme === resolvedTheme;
+      }, { timeout: 10000 }, expectedResolvedTheme).catch(() => {});
       await page.waitForSelector("body", { timeout: 10000 });
 
       const [axeResult, manualIssues, title] = await Promise.all([
@@ -452,7 +455,7 @@ async function auditPage(browser, options, pageInfo, axeSource, screenshotsDir) 
 function formatConsoleSummary(report) {
   const flagged = report.results.filter((entry) => entry.axeIssues.length > 0 || entry.manualIssues.length > 0);
   const lines = [
-    `Audited ${report.pagesAudited} pages across ${report.modesAudited} dark-mode states.`,
+    `Audited ${report.pagesAudited} pages across ${report.modesAudited} theme states.`,
     `Flagged results: ${flagged.length}`
   ];
 
@@ -517,7 +520,7 @@ async function main() {
       baseUrl: options.baseUrl,
       chromePath,
       pagesAudited: pages.length,
-      modesAudited: 2,
+      modesAudited: 4,
       results
     };
 
