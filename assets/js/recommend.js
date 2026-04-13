@@ -24,17 +24,17 @@
     return normalized;
   }
 
-  function getSearchUrl(pathname) {
-    var q = 'is:issue in:title "' + pathname + '"';
-    return "https://github.com/" + repo + "/issues?q=" + encodeURIComponent(q);
+  function getTargetLine(pathname) {
+    return "- target: `" + pathname + "`";
   }
 
   function getNewIssueUrl(pathname) {
     var title = pathname;
+    var targetLine = getTargetLine(pathname);
     var body = [
       "## Document Recommendation",
       "",
-      "- target: `" + pathname + "`",
+      targetLine,
       "- reaction: +1",
       "",
       "이 이슈에 👍 반응을 남겨 추천을 집계합니다."
@@ -49,18 +49,22 @@
     noteEl.textContent = "아직 문서 이슈가 없어, 클릭하면 새 이슈 작성 화면이 바로 열립니다.";
   }
 
+  function bodyHasTarget(issue, pathname) {
+    var body = (issue && issue.body) || "";
+    return body.indexOf(getTargetLine(pathname)) >= 0;
+  }
+
   function findBestIssue(items, pathname) {
     if (!Array.isArray(items) || !items.length) {
       return null;
     }
 
     for (var i = 0; i < items.length; i++) {
-      if (items[i] && items[i].title === pathname) {
+      if (items[i] && bodyHasTarget(items[i], pathname)) {
         return items[i];
       }
     }
-
-    return items[0];
+    return null;
   }
 
   function updateFromIssue(issue) {
@@ -73,9 +77,31 @@
     noteEl.textContent = "추천은 GitHub 이슈의 👍 반응 수를 기준으로 표시됩니다.";
   }
 
+  function fetchIssueDetail(issue) {
+    if (!issue || !issue.url) {
+      return Promise.resolve(null);
+    }
+
+    return fetch(issue.url, {
+      headers: {
+        Accept: "application/vnd.github+json"
+      }
+    })
+      .then(function (res) {
+        if (!res.ok) {
+          return null;
+        }
+        return res.json();
+      })
+      .catch(function () {
+        return null;
+      });
+  }
+
   function loadRecommendation() {
     var pathname = getIssuePathname();
-    var api = "https://api.github.com/search/issues?q=" + encodeURIComponent('repo:' + repo + ' is:issue in:title "' + pathname + '"');
+    var targetLine = getTargetLine(pathname);
+    var api = "https://api.github.com/search/issues?q=" + encodeURIComponent('repo:' + repo + ' is:issue in:body "' + targetLine + '"');
 
     fetch(api, {
       headers: {
@@ -95,7 +121,13 @@
           return;
         }
 
-        updateFromIssue(issue);
+        return fetchIssueDetail(issue).then(function (detail) {
+          if (!detail) {
+            setFallback(pathname);
+            return;
+          }
+          updateFromIssue(detail);
+        });
       })
       .catch(function () {
         setFallback(pathname);
