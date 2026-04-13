@@ -17,3 +17,6 @@
 
 * [Serialization](./serialization.md)
   - 객체 상태 저장/복원, 복제, GC 추적의 기반 메커니즘
+
+* [Actor](./actor.md)
+  - Actor, Component, Root Component 구조 정리
