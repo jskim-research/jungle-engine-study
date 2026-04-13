@@ -35,7 +35,8 @@
       repo: "{{ site.github.repository_name | default: 'jungle-engine-study' }}",
       baseurl: "{{ site.baseurl | default: '' }}",
       pagePath: {{ page.path | jsonify }},
-      pageUrl: {{ page.url | jsonify }}
+      pageUrl: {{ page.url | jsonify }},
+      pageMetaEnabled: {% if page.page_meta == false %}false{% else %}true{% endif %}
     };
     window.MathJax = {
       tex: {
@@ -51,4 +52,5 @@
   <script src="{{ '/assets/js/page-meta.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/comments.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/write-page.js' | relative_url }}" defer></script>
 </head>

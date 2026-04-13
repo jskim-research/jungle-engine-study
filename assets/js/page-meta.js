@@ -2,9 +2,10 @@
   var cfg = window.JUNGLE_PAGE_META || {};
   var pagePath = cfg.pagePath || "";
   var pageUrl = cfg.pageUrl || "";
+  var pageMetaEnabled = cfg.pageMetaEnabled !== false;
 
   // Skip homepage and non-markdown pages.
-  if (!pagePath || !/\.md$/i.test(pagePath) || pagePath.toLowerCase() === "index.md" || pageUrl === "/") {
+  if (!pageMetaEnabled || !pagePath || !/\.md$/i.test(pagePath) || pagePath.toLowerCase() === "index.md" || pageUrl === "/") {
     return;
   }
 
