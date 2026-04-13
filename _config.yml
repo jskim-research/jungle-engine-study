@@ -1,4 +1,4 @@
-title: Jungle Engine Tech Lab
+title: Jungle Game Tech Lab 3기
 description: 그래픽스, 렌더링, 수학, 엔진 구조 학습 아카이브
 theme: minima
 url: "https://jskim-research.github.io"
@@ -11,3 +11,20 @@ kramdown:
   math_engine: mathjax
 show_excerpts: true
 header_pages: []
+comments:
+  enabled: true
+  provider: utterances
+  repo: "jskim-research/jungle-engine-study"
+  issue_term: pathname
+  lang: ko
+  utterances:
+    theme_light: github-light
+    theme_dark: github-dark
+  giscus:
+    repo_id: "R_kgDOR0pZnA"
+    category: ""
+    category_id: ""
+    mapping: pathname
+    strict: 0
+    reactions_enabled: 1
+    input_position: bottom

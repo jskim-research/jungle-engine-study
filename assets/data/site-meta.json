@@ -1,7 +1,35 @@
 ﻿{
-    "generated_at":  "2026-04-13T11:39:29.9120640+09:00",
+    "generated_at":  "2026-04-13T19:21:53.5666064+09:00",
     "scoring_version":  "v3",
     "authors":  {
+                    "DDing-Ho":  {
+                                     "concept_doc_count":  1,
+                                     "content_line_count":  82,
+                                     "lead_doc_count":  1,
+                                     "quality_score":  26,
+                                     "collaboration_score":  0,
+                                     "total_score":  145,
+                                     "exp":  3625,
+                                     "exp_current":  1725,
+                                     "exp_next":  1900,
+                                     "level":  "Slime Apprentice",
+                                     "level_no":  2,
+                                     "monster":  "Slime"
+                                 },
+                    "Minjun Jang":  {
+                                        "concept_doc_count":  1,
+                                        "content_line_count":  107,
+                                        "lead_doc_count":  0,
+                                        "quality_score":  14,
+                                        "collaboration_score":  5,
+                                        "total_score":  143,
+                                        "exp":  3575,
+                                        "exp_current":  1675,
+                                        "exp_next":  1900,
+                                        "level":  "Slime Apprentice",
+                                        "level_no":  2,
+                                        "monster":  "Slime"
+                                    },
                     "Myeoungho Kang (강명호)":  {
                                                  "concept_doc_count":  2,
                                                  "content_line_count":  397,
@@ -10,37 +38,12 @@
                                                  "collaboration_score":  0,
                                                  "total_score":  303,
                                                  "exp":  7575,
-                                                 "exp_current":  3075,
-                                                 "exp_next":  3500,
-                                                 "level":  "Wolf Vanguard",
-                                                 "monster":  "Wolf"
+                                                 "exp_current":  1875,
+                                                 "exp_next":  1900,
+                                                 "level":  "Slime Apprentice",
+                                                 "level_no":  4,
+                                                 "monster":  "Slime"
                                              },
-                    "LEE SangHoon":  {
-                                         "concept_doc_count":  16,
-                                         "content_line_count":  1065,
-                                         "lead_doc_count":  15,
-                                         "quality_score":  265,
-                                         "collaboration_score":  5,
-                                         "total_score":  812,
-                                         "exp":  20300,
-                                         "exp_current":  1300,
-                                         "exp_next":  null,
-                                         "level":  "Dragon Sovereign",
-                                         "monster":  "Dragon"
-                                     },
-                    "jskim-research":  {
-                                           "concept_doc_count":  10,
-                                           "content_line_count":  95,
-                                           "lead_doc_count":  9,
-                                           "quality_score":  33,
-                                           "collaboration_score":  5,
-                                           "total_score":  245,
-                                           "exp":  6125,
-                                           "exp_current":  1625,
-                                           "exp_next":  3500,
-                                           "level":  "Wolf Vanguard",
-                                           "monster":  "Wolf"
-                                       },
                     "Jisoo Kim":  {
                                       "concept_doc_count":  1,
                                       "content_line_count":  1,
@@ -50,23 +53,39 @@
                                       "total_score":  17,
                                       "exp":  425,
                                       "exp_current":  425,
-                                      "exp_next":  4500,
+                                      "exp_next":  1900,
                                       "level":  "Slime Apprentice",
+                                      "level_no":  1,
                                       "monster":  "Slime"
                                   },
-                    "Minjun Jang":  {
-                                        "concept_doc_count":  1,
-                                        "content_line_count":  107,
-                                        "lead_doc_count":  0,
-                                        "quality_score":  14,
-                                        "collaboration_score":  5,
-                                        "total_score":  143,
-                                        "exp":  3575,
-                                        "exp_current":  3575,
-                                        "exp_next":  4500,
-                                        "level":  "Slime Apprentice",
-                                        "monster":  "Slime"
-                                    }
+                    "LEE SangHoon":  {
+                                         "concept_doc_count":  16,
+                                         "content_line_count":  1065,
+                                         "lead_doc_count":  15,
+                                         "quality_score":  265,
+                                         "collaboration_score":  5,
+                                         "total_score":  812,
+                                         "exp":  20300,
+                                         "exp_current":  1300,
+                                         "exp_next":  1900,
+                                         "level":  "Wolf Vanguard",
+                                         "level_no":  11,
+                                         "monster":  "Wolf"
+                                     },
+                    "jskim-research":  {
+                                           "concept_doc_count":  10,
+                                           "content_line_count":  95,
+                                           "lead_doc_count":  9,
+                                           "quality_score":  33,
+                                           "collaboration_score":  5,
+                                           "total_score":  245,
+                                           "exp":  6125,
+                                           "exp_current":  425,
+                                           "exp_next":  1900,
+                                           "level":  "Slime Apprentice",
+                                           "level_no":  4,
+                                           "monster":  "Slime"
+                                       }
                 },
     "pages":  {
                   "04_optimization/LOD.md":  {
@@ -106,89 +125,6 @@
                                                  "quality_score":  23,
                                                  "word_count":  685
                                              },
-                  "01_rendering/HDR.md":  {
-                                              "first_author":  "LEE SangHoon",
-                                              "first_date":  "2026-04-13T11:23:32+09:00",
-                                              "lead_authors":  [
-                                                                   "LEE SangHoon"
-                                                               ],
-                                              "lead_line_count":  8,
-                                              "history_entries":  [
-                                                                      {
-                                                                          "sha":  "2d1c843a1aee505fd8599eb4e4aee44ac0287531",
-                                                                          "message":  "Feat: automatically add new files to index.md",
-                                                                          "author":  "jskim-research",
-                                                                          "date":  "2026-04-13T11:36:35+09:00",
-                                                                          "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/2d1c843a1aee505fd8599eb4e4aee44ac0287531"
-                                                                      },
-                                                                      {
-                                                                          "sha":  "76010b6d57d126bab23fdab0d7f2e794c8ab3220",
-                                                                          "message":  "Docs: RTV and SRV, HDR",
-                                                                          "author":  "LEE SangHoon",
-                                                                          "date":  "2026-04-13T11:23:32+09:00",
-                                                                          "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/76010b6d57d126bab23fdab0d7f2e794c8ab3220"
-                                                                      }
-                                                                  ],
-                                              "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/01_rendering/HDR.md",
-                                              "latest_author":  "jskim-research",
-                                              "latest_date":  "2026-04-13T11:36:35+09:00",
-                                              "revision_count":  2,
-                                              "quality_score":  6,
-                                              "word_count":  68
-                                          },
-                  "03_engine/CDO.md":  {
-                                           "first_author":  "Myeoungho Kang (강명호)",
-                                           "first_date":  "2026-04-13T11:05:27+09:00",
-                                           "lead_authors":  [
-                                                                "Myeoungho Kang (강명호)"
-                                                            ],
-                                           "lead_line_count":  244,
-                                           "history_entries":  [
-                                                                   {
-                                                                       "sha":  "151a40fe8e1296145fbcae1b4c0b511c6940fe5c",
-                                                                       "message":  "Rename CDO(Class Default Object).md to CDO.md",
-                                                                       "author":  "Myeoungho Kang (강명호)",
-                                                                       "date":  "2026-04-13T11:18:21+09:00",
-                                                                       "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/151a40fe8e1296145fbcae1b4c0b511c6940fe5c"
-                                                                   },
-                                                                   {
-                                                                       "sha":  "6a3a95f8a7c117be4398f4f1b57939331902274d",
-                                                                       "message":  "Create CDO(Class Default Object).md",
-                                                                       "author":  "Myeoungho Kang (강명호)",
-                                                                       "date":  "2026-04-13T11:05:27+09:00",
-                                                                       "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/6a3a95f8a7c117be4398f4f1b57939331902274d"
-                                                                   }
-                                                               ],
-                                           "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/03_engine/CDO.md",
-                                           "latest_author":  "Myeoungho Kang (강명호)",
-                                           "latest_date":  "2026-04-13T11:18:21+09:00",
-                                           "revision_count":  2,
-                                           "quality_score":  24,
-                                           "word_count":  1118
-                                       },
-                  "03_engine/reflection.md":  {
-                                                  "first_author":  "LEE SangHoon",
-                                                  "first_date":  "2026-04-11T03:12:02+09:00",
-                                                  "lead_authors":  [
-                                                                       "LEE SangHoon"
-                                                                   ],
-                                                  "lead_line_count":  2,
-                                                  "history_entries":  [
-                                                                          {
-                                                                              "sha":  "909dca634ff17ba34add85fddaf9c78b8c21da32",
-                                                                              "message":  "Docs: add links",
-                                                                              "author":  "LEE SangHoon",
-                                                                              "date":  "2026-04-11T03:12:02+09:00",
-                                                                              "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/909dca634ff17ba34add85fddaf9c78b8c21da32"
-                                                                          }
-                                                                      ],
-                                                  "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/03_engine/reflection.md",
-                                                  "latest_author":  "LEE SangHoon",
-                                                  "latest_date":  "2026-04-11T03:12:02+09:00",
-                                                  "revision_count":  1,
-                                                  "quality_score":  2,
-                                                  "word_count":  16
-                                              },
                   "03_engine/RTV and SRV.md":  {
                                                    "first_author":  "LEE SangHoon",
                                                    "first_date":  "2026-04-13T11:23:32+09:00",
@@ -219,36 +155,36 @@
                                                    "quality_score":  16,
                                                    "word_count":  231
                                                },
-                  "04_optimization/SIMD.md":  {
-                                                  "first_author":  "LEE SangHoon",
-                                                  "first_date":  "2026-04-09T18:42:10+09:00",
-                                                  "lead_authors":  [
-                                                                       "LEE SangHoon"
-                                                                   ],
-                                                  "lead_line_count":  59,
-                                                  "history_entries":  [
-                                                                          {
-                                                                              "sha":  "e0138c33d01aa69d7bf30e6f093d786513900f62",
-                                                                              "message":  "Docs: Mesh BVH",
-                                                                              "author":  "LEE SangHoon",
-                                                                              "date":  "2026-04-09T21:57:00+09:00",
-                                                                              "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e0138c33d01aa69d7bf30e6f093d786513900f62"
-                                                                          },
-                                                                          {
-                                                                              "sha":  "6ca73c0d54085a018c76c3a23272ec74c820e893",
-                                                                              "message":  "Docs: SIMD",
-                                                                              "author":  "LEE SangHoon",
-                                                                              "date":  "2026-04-09T18:42:10+09:00",
-                                                                              "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/6ca73c0d54085a018c76c3a23272ec74c820e893"
-                                                                          }
-                                                                      ],
-                                                  "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/04_optimization/SIMD.md",
-                                                  "latest_author":  "LEE SangHoon",
-                                                  "latest_date":  "2026-04-09T21:57:00+09:00",
-                                                  "revision_count":  2,
-                                                  "quality_score":  19,
-                                                  "word_count":  416
-                                              },
+                  "04_optimization/fname.md":  {
+                                                   "first_author":  "jskim-research",
+                                                   "first_date":  "2026-03-30T19:49:27+09:00",
+                                                   "lead_authors":  [
+                                                                        "jskim-research"
+                                                                    ],
+                                                   "lead_line_count":  5,
+                                                   "history_entries":  [
+                                                                           {
+                                                                               "sha":  "0c0c24d63693712dd37e6eefe28c6262ee1cd694",
+                                                                               "message":  "upload some missing files",
+                                                                               "author":  "jskim-research",
+                                                                               "date":  "2026-03-30T19:51:34+09:00",
+                                                                               "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/0c0c24d63693712dd37e6eefe28c6262ee1cd694"
+                                                                           },
+                                                                           {
+                                                                               "sha":  "42a420c92eea6d85c04591abc718febbf81b2bd7",
+                                                                               "message":  "upload jungle week1~3 concepts",
+                                                                               "author":  "jskim-research",
+                                                                               "date":  "2026-03-30T19:49:27+09:00",
+                                                                               "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/42a420c92eea6d85c04591abc718febbf81b2bd7"
+                                                                           }
+                                                                       ],
+                                                   "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/04_optimization/fname.md",
+                                                   "latest_author":  "jskim-research",
+                                                   "latest_date":  "2026-03-30T19:51:34+09:00",
+                                                   "revision_count":  2,
+                                                   "quality_score":  2,
+                                                   "word_count":  56
+                                               },
                   "03_engine/uuid.md":  {
                                             "first_author":  "jskim-research",
                                             "first_date":  "2026-03-30T19:49:27+09:00",
@@ -286,36 +222,6 @@
                                             "quality_score":  2,
                                             "word_count":  50
                                         },
-                  "01_rendering/pipeline.md":  {
-                                                   "first_author":  "jskim-research",
-                                                   "first_date":  "2026-03-30T19:49:27+09:00",
-                                                   "lead_authors":  [
-                                                                        "jskim-research"
-                                                                    ],
-                                                   "lead_line_count":  15,
-                                                   "history_entries":  [
-                                                                           {
-                                                                               "sha":  "0c0c24d63693712dd37e6eefe28c6262ee1cd694",
-                                                                               "message":  "upload some missing files",
-                                                                               "author":  "jskim-research",
-                                                                               "date":  "2026-03-30T19:51:34+09:00",
-                                                                               "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/0c0c24d63693712dd37e6eefe28c6262ee1cd694"
-                                                                           },
-                                                                           {
-                                                                               "sha":  "42a420c92eea6d85c04591abc718febbf81b2bd7",
-                                                                               "message":  "upload jungle week1~3 concepts",
-                                                                               "author":  "jskim-research",
-                                                                               "date":  "2026-03-30T19:49:27+09:00",
-                                                                               "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/42a420c92eea6d85c04591abc718febbf81b2bd7"
-                                                                           }
-                                                                       ],
-                                                   "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/01_rendering/pipeline.md",
-                                                   "latest_author":  "jskim-research",
-                                                   "latest_date":  "2026-03-30T19:51:34+09:00",
-                                                   "revision_count":  2,
-                                                   "quality_score":  7,
-                                                   "word_count":  233
-                                               },
                   "04_optimization/batch_rendering.md":  {
                                                              "first_author":  "jskim-research",
                                                              "first_date":  "2026-03-30T19:49:27+09:00",
@@ -346,327 +252,29 @@
                                                              "quality_score":  2,
                                                              "word_count":  29
                                                          },
-                  "04_optimization/fname.md":  {
-                                                   "first_author":  "jskim-research",
-                                                   "first_date":  "2026-03-30T19:49:27+09:00",
-                                                   "lead_authors":  [
-                                                                        "jskim-research"
-                                                                    ],
-                                                   "lead_line_count":  5,
-                                                   "history_entries":  [
-                                                                           {
-                                                                               "sha":  "0c0c24d63693712dd37e6eefe28c6262ee1cd694",
-                                                                               "message":  "upload some missing files",
-                                                                               "author":  "jskim-research",
-                                                                               "date":  "2026-03-30T19:51:34+09:00",
-                                                                               "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/0c0c24d63693712dd37e6eefe28c6262ee1cd694"
-                                                                           },
-                                                                           {
-                                                                               "sha":  "42a420c92eea6d85c04591abc718febbf81b2bd7",
-                                                                               "message":  "upload jungle week1~3 concepts",
-                                                                               "author":  "jskim-research",
-                                                                               "date":  "2026-03-30T19:49:27+09:00",
-                                                                               "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/42a420c92eea6d85c04591abc718febbf81b2bd7"
-                                                                           }
-                                                                       ],
-                                                   "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/04_optimization/fname.md",
-                                                   "latest_author":  "jskim-research",
-                                                   "latest_date":  "2026-03-30T19:51:34+09:00",
-                                                   "revision_count":  2,
-                                                   "quality_score":  2,
-                                                   "word_count":  56
-                                               },
-                  "04_optimization/texture_atlas.md":  {
-                                                           "first_author":  "jskim-research",
-                                                           "first_date":  "2026-03-30T19:49:27+09:00",
-                                                           "lead_authors":  [
-                                                                                "jskim-research"
-                                                                            ],
-                                                           "lead_line_count":  3,
-                                                           "history_entries":  [
-                                                                                   {
-                                                                                       "sha":  "42a420c92eea6d85c04591abc718febbf81b2bd7",
-                                                                                       "message":  "upload jungle week1~3 concepts",
-                                                                                       "author":  "jskim-research",
-                                                                                       "date":  "2026-03-30T19:49:27+09:00",
-                                                                                       "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/42a420c92eea6d85c04591abc718febbf81b2bd7"
-                                                                                   }
-                                                                               ],
-                                                           "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/04_optimization/texture_atlas.md",
-                                                           "latest_author":  "jskim-research",
-                                                           "latest_date":  "2026-03-30T19:49:27+09:00",
-                                                           "revision_count":  1,
-                                                           "quality_score":  2,
-                                                           "word_count":  18
-                                                       },
-                  "05_misc/Dynamic Glyph Atlas for Korean Text Rendering.md":  {
-                                                                                   "first_author":  "LEE SangHoon",
-                                                                                   "first_date":  "2026-03-31T17:12:28+09:00",
-                                                                                   "lead_authors":  [
-                                                                                                        "LEE SangHoon"
-                                                                                                    ],
-                                                                                   "lead_line_count":  29,
-                                                                                   "history_entries":  [
-                                                                                                           {
-                                                                                                               "sha":  "5045de54a1c1604a3125e9aca3cbc35fa766b4ff",
-                                                                                                               "message":  "Docs: Texture is Data, Material is Behavior",
-                                                                                                               "author":  "LEE SangHoon",
-                                                                                                               "date":  "2026-04-01T10:39:10+09:00",
-                                                                                                               "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/5045de54a1c1604a3125e9aca3cbc35fa766b4ff"
-                                                                                                           },
-                                                                                                           {
-                                                                                                               "sha":  "e57cc9172e03120f004244ef5e498a2842b4e308",
-                                                                                                               "message":  "Docs: Dynamic Glyph Atlas for Korean Text Rendering",
-                                                                                                               "author":  "LEE SangHoon",
-                                                                                                               "date":  "2026-03-31T17:12:28+09:00",
-                                                                                                               "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e57cc9172e03120f004244ef5e498a2842b4e308"
-                                                                                                           }
-                                                                                                       ],
-                                                                                   "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/05_misc/Dynamic%20Glyph%20Atlas%20for%20Korean%20Text%20Rendering.md",
-                                                                                   "latest_author":  "LEE SangHoon",
-                                                                                   "latest_date":  "2026-04-01T10:39:10+09:00",
-                                                                                   "revision_count":  2,
-                                                                                   "quality_score":  14,
-                                                                                   "word_count":  319
-                                                                               },
-                  "02_math/ray_casting.md":  {
-                                                 "first_author":  "jskim-research",
-                                                 "first_date":  "2026-03-30T19:49:27+09:00",
-                                                 "lead_authors":  [
-                                                                      "LEE SangHoon"
-                                                                  ],
-                                                 "lead_line_count":  158,
-                                                 "history_entries":  [
-                                                                         {
-                                                                             "sha":  "fb1c1926bc68a31796d20a287d465a1d42ea38ad",
-                                                                             "message":  "fix: latex in ray casting docs4",
-                                                                             "author":  "LEE SangHoon",
-                                                                             "date":  "2026-04-10T01:58:23+09:00",
-                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/fb1c1926bc68a31796d20a287d465a1d42ea38ad"
-                                                                         },
-                                                                         {
-                                                                             "sha":  "106c6ab3affe6abb64ec33e72db3a0f3845cabda",
-                                                                             "message":  "fix: latex in ray casting docs3",
-                                                                             "author":  "LEE SangHoon",
-                                                                             "date":  "2026-04-10T01:55:16+09:00",
-                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/106c6ab3affe6abb64ec33e72db3a0f3845cabda"
-                                                                         },
-                                                                         {
-                                                                             "sha":  "7f346143a538ec0d4554c0bf8ef95fb27901d98d",
-                                                                             "message":  "fix: latex in ray casting docs2",
-                                                                             "author":  "LEE SangHoon",
-                                                                             "date":  "2026-04-10T01:45:06+09:00",
-                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/7f346143a538ec0d4554c0bf8ef95fb27901d98d"
-                                                                         },
-                                                                         {
-                                                                             "sha":  "eb738abc74236dec0b8752c49984236e7cd82743",
-                                                                             "message":  "fix: latex in ray casting docs",
-                                                                             "author":  "LEE SangHoon",
-                                                                             "date":  "2026-04-10T01:29:34+09:00",
-                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/eb738abc74236dec0b8752c49984236e7cd82743"
-                                                                         },
-                                                                         {
-                                                                             "sha":  "4e2c2c2bf8233f15a850f8c447532f1b794c4cbb",
-                                                                             "message":  "Docs: ray casting",
-                                                                             "author":  "Minjun Jang",
-                                                                             "date":  "2026-04-10T00:02:01+09:00",
-                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/4e2c2c2bf8233f15a850f8c447532f1b794c4cbb"
-                                                                         }
-                                                                     ],
-                                                 "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/02_math/ray_casting.md",
-                                                 "latest_author":  "LEE SangHoon",
-                                                 "latest_date":  "2026-04-10T01:58:23+09:00",
-                                                 "revision_count":  6,
-                                                 "quality_score":  34,
-                                                 "word_count":  1795
-                                             },
-                  "04_optimization/Scene BVH.md":  {
-                                                       "first_author":  "LEE SangHoon",
-                                                       "first_date":  "2026-04-08T01:01:14+09:00",
-                                                       "lead_authors":  [
-                                                                            "LEE SangHoon"
-                                                                        ],
-                                                       "lead_line_count":  60,
-                                                       "history_entries":  [
-                                                                               {
-                                                                                   "sha":  "09666cc45eb92d261f4eabca1d8c338ea46cd3f6",
-                                                                                   "message":  "Docs: merge with Decal.md",
-                                                                                   "author":  "LEE SangHoon",
-                                                                                   "date":  "2026-04-10T20:47:12+09:00",
-                                                                                   "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/09666cc45eb92d261f4eabca1d8c338ea46cd3f6"
-                                                                               },
-                                                                               {
-                                                                                   "sha":  "e6e600f81e0c3c1e5e67c5a1b8d87d55b5f69394",
-                                                                                   "message":  "Docs: Scene BVH",
-                                                                                   "author":  "LEE SangHoon",
-                                                                                   "date":  "2026-04-08T01:01:14+09:00",
-                                                                                   "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e6e600f81e0c3c1e5e67c5a1b8d87d55b5f69394"
-                                                                               }
-                                                                           ],
-                                                       "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/04_optimization/Scene%20BVH.md",
-                                                       "latest_author":  "LEE SangHoon",
-                                                       "latest_date":  "2026-04-10T20:47:12+09:00",
-                                                       "revision_count":  2,
-                                                       "quality_score":  19,
-                                                       "word_count":  580
-                                                   },
-                  "01_rendering/Decal.md":  {
-                                                "first_author":  "Myeoungho Kang (강명호)",
-                                                "first_date":  "2026-04-10T19:22:31+09:00",
-                                                "lead_authors":  [
-                                                                     "Myeoungho Kang (강명호)"
-                                                                 ],
-                                                "lead_line_count":  153,
-                                                "history_entries":  [
-                                                                        {
-                                                                            "sha":  "09666cc45eb92d261f4eabca1d8c338ea46cd3f6",
-                                                                            "message":  "Docs: merge with Decal.md",
-                                                                            "author":  "LEE SangHoon",
-                                                                            "date":  "2026-04-10T20:47:12+09:00",
-                                                                            "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/09666cc45eb92d261f4eabca1d8c338ea46cd3f6"
-                                                                        },
-                                                                        {
-                                                                            "sha":  "b7fb550f431aea26a1e2a55515177891e945e8ce",
-                                                                            "message":  "Create Decal.md",
-                                                                            "author":  "Myeoungho Kang (강명호)",
-                                                                            "date":  "2026-04-10T19:22:31+09:00",
-                                                                            "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/b7fb550f431aea26a1e2a55515177891e945e8ce"
-                                                                        }
-                                                                    ],
-                                                "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/01_rendering/Decal.md",
-                                                "latest_author":  "LEE SangHoon",
-                                                "latest_date":  "2026-04-10T20:47:12+09:00",
-                                                "revision_count":  2,
-                                                "quality_score":  40,
-                                                "word_count":  1591
-                                            },
-                  "05_misc/Texture is Data, Material is Behavior.md":  {
-                                                                           "first_author":  "LEE SangHoon",
-                                                                           "first_date":  "2026-04-01T10:39:10+09:00",
-                                                                           "lead_authors":  [
-                                                                                                "LEE SangHoon"
-                                                                                            ],
-                                                                           "lead_line_count":  37,
-                                                                           "history_entries":  [
-                                                                                                   {
-                                                                                                       "sha":  "5ec34ee16f125412cec8a66892310143c0ffdd78",
-                                                                                                       "message":  "fix: wrong extension(md)",
-                                                                                                       "author":  "LEE SangHoon",
-                                                                                                       "date":  "2026-04-01T13:03:00+09:00",
-                                                                                                       "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/5ec34ee16f125412cec8a66892310143c0ffdd78"
-                                                                                                   },
-                                                                                                   {
-                                                                                                       "sha":  "26087ef38e377d22e306f23309bc08da35d5e013",
-                                                                                                       "message":  "style: add a image to Docs",
-                                                                                                       "author":  "LEE SangHoon",
-                                                                                                       "date":  "2026-04-01T10:49:22+09:00",
-                                                                                                       "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/26087ef38e377d22e306f23309bc08da35d5e013"
-                                                                                                   },
-                                                                                                   {
-                                                                                                       "sha":  "5045de54a1c1604a3125e9aca3cbc35fa766b4ff",
-                                                                                                       "message":  "Docs: Texture is Data, Material is Behavior",
-                                                                                                       "author":  "LEE SangHoon",
-                                                                                                       "date":  "2026-04-01T10:39:10+09:00",
-                                                                                                       "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/5045de54a1c1604a3125e9aca3cbc35fa766b4ff"
-                                                                                                   }
-                                                                                               ],
-                                                                           "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/05_misc/Texture%20is%20Data%2C%20Material%20is%20Behavior.md",
-                                                                           "latest_author":  "LEE SangHoon",
-                                                                           "latest_date":  "2026-04-01T13:03:00+09:00",
-                                                                           "revision_count":  3,
-                                                                           "quality_score":  10,
-                                                                           "word_count":  361
-                                                                       },
-                  "03_engine/actor.md":  {
-                                             "first_author":  "LEE SangHoon",
-                                             "first_date":  "2026-04-12T20:28:10+09:00",
-                                             "lead_authors":  [
-                                                                  "LEE SangHoon"
-                                                              ],
-                                             "lead_line_count":  145,
-                                             "history_entries":  [
-                                                                     {
-                                                                         "sha":  "048d4752574f9fd03cf4fe87d9e2b7790821fa6f",
-                                                                         "message":  "Docs: actor",
-                                                                         "author":  "LEE SangHoon",
-                                                                         "date":  "2026-04-12T20:28:10+09:00",
-                                                                         "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/048d4752574f9fd03cf4fe87d9e2b7790821fa6f"
-                                                                     }
-                                                                 ],
-                                             "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/03_engine/actor.md",
-                                             "latest_author":  "LEE SangHoon",
-                                             "latest_date":  "2026-04-12T20:28:10+09:00",
-                                             "revision_count":  1,
-                                             "quality_score":  20,
-                                             "word_count":  853
-                                         },
-                  "05_misc/obj.md":  {
-                                         "first_author":  "LEE SangHoon",
-                                         "first_date":  "2026-04-01T01:29:30+09:00",
-                                         "lead_authors":  [
-                                                              "LEE SangHoon"
-                                                          ],
-                                         "lead_line_count":  120,
-                                         "history_entries":  [
-                                                                 {
-                                                                     "sha":  "1b4691963374e807a2469d681a1ef12be4ec22d1",
-                                                                     "message":  "fix: add a graph",
-                                                                     "author":  "LEE SangHoon",
-                                                                     "date":  "2026-04-02T01:08:28+09:00",
-                                                                     "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/1b4691963374e807a2469d681a1ef12be4ec22d1"
-                                                                 },
-                                                                 {
-                                                                     "sha":  "5045de54a1c1604a3125e9aca3cbc35fa766b4ff",
-                                                                     "message":  "Docs: Texture is Data, Material is Behavior",
-                                                                     "author":  "LEE SangHoon",
-                                                                     "date":  "2026-04-01T10:39:10+09:00",
-                                                                     "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/5045de54a1c1604a3125e9aca3cbc35fa766b4ff"
-                                                                 },
-                                                                 {
-                                                                     "sha":  "e4583cc988f1551da1c3119c671c1ef35703b6ae",
-                                                                     "message":  "Docs: obj",
-                                                                     "author":  "LEE SangHoon",
-                                                                     "date":  "2026-04-01T01:29:30+09:00",
-                                                                     "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e4583cc988f1551da1c3119c671c1ef35703b6ae"
-                                                                 }
-                                                             ],
-                                         "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/05_misc/obj.md",
-                                         "latest_author":  "LEE SangHoon",
-                                         "latest_date":  "2026-04-02T01:08:28+09:00",
-                                         "revision_count":  3,
-                                         "quality_score":  26,
-                                         "word_count":  360
-                                     },
-                  "04_optimization/Mesh BVH.md":  {
-                                                      "first_author":  "LEE SangHoon",
-                                                      "first_date":  "2026-04-09T21:57:00+09:00",
-                                                      "lead_authors":  [
-                                                                           "LEE SangHoon"
-                                                                       ],
-                                                      "lead_line_count":  40,
-                                                      "history_entries":  [
-                                                                              {
-                                                                                  "sha":  "e43e03fab6b75a141cc556a5c914ef09f3969b8b",
-                                                                                  "message":  "style: unify formatting",
-                                                                                  "author":  "LEE SangHoon",
-                                                                                  "date":  "2026-04-10T08:35:02+09:00",
-                                                                                  "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e43e03fab6b75a141cc556a5c914ef09f3969b8b"
-                                                                              },
-                                                                              {
-                                                                                  "sha":  "e0138c33d01aa69d7bf30e6f093d786513900f62",
-                                                                                  "message":  "Docs: Mesh BVH",
-                                                                                  "author":  "LEE SangHoon",
-                                                                                  "date":  "2026-04-09T21:57:00+09:00",
-                                                                                  "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e0138c33d01aa69d7bf30e6f093d786513900f62"
-                                                                              }
-                                                                          ],
-                                                      "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/04_optimization/Mesh%20BVH.md",
-                                                      "latest_author":  "LEE SangHoon",
-                                                      "latest_date":  "2026-04-10T08:35:02+09:00",
-                                                      "revision_count":  2,
-                                                      "quality_score":  12,
-                                                      "word_count":  380
-                                                  },
+                  "00_conventions/graphics_conventions.md":  {
+                                                                 "first_author":  "jskim-research",
+                                                                 "first_date":  "2026-03-30T19:49:27+09:00",
+                                                                 "lead_authors":  [
+                                                                                      "jskim-research"
+                                                                                  ],
+                                                                 "lead_line_count":  4,
+                                                                 "history_entries":  [
+                                                                                         {
+                                                                                             "sha":  "42a420c92eea6d85c04591abc718febbf81b2bd7",
+                                                                                             "message":  "upload jungle week1~3 concepts",
+                                                                                             "author":  "jskim-research",
+                                                                                             "date":  "2026-03-30T19:49:27+09:00",
+                                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/42a420c92eea6d85c04591abc718febbf81b2bd7"
+                                                                                         }
+                                                                                     ],
+                                                                 "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/00_conventions/graphics_conventions.md",
+                                                                 "latest_author":  "jskim-research",
+                                                                 "latest_date":  "2026-03-30T19:49:27+09:00",
+                                                                 "revision_count":  1,
+                                                                 "quality_score":  2,
+                                                                 "word_count":  36
+                                                             },
                   "02_math/bounding_volume.md":  {
                                                      "first_author":  "jskim-research",
                                                      "first_date":  "2026-03-30T19:49:27+09:00",
@@ -741,117 +349,110 @@
                                             "quality_score":  12,
                                             "word_count":  186
                                         },
-                  "03_engine/serialization.md":  {
-                                                     "first_author":  "LEE SangHoon",
-                                                     "first_date":  "2026-04-10T00:26:32+09:00",
-                                                     "lead_authors":  [
-                                                                          "LEE SangHoon"
+                  "04_optimization/Mesh BVH.md":  {
+                                                      "first_author":  "LEE SangHoon",
+                                                      "first_date":  "2026-04-09T21:57:00+09:00",
+                                                      "lead_authors":  [
+                                                                           "LEE SangHoon"
+                                                                       ],
+                                                      "lead_line_count":  40,
+                                                      "history_entries":  [
+                                                                              {
+                                                                                  "sha":  "e43e03fab6b75a141cc556a5c914ef09f3969b8b",
+                                                                                  "message":  "style: unify formatting",
+                                                                                  "author":  "LEE SangHoon",
+                                                                                  "date":  "2026-04-10T08:35:02+09:00",
+                                                                                  "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e43e03fab6b75a141cc556a5c914ef09f3969b8b"
+                                                                              },
+                                                                              {
+                                                                                  "sha":  "e0138c33d01aa69d7bf30e6f093d786513900f62",
+                                                                                  "message":  "Docs: Mesh BVH",
+                                                                                  "author":  "LEE SangHoon",
+                                                                                  "date":  "2026-04-09T21:57:00+09:00",
+                                                                                  "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e0138c33d01aa69d7bf30e6f093d786513900f62"
+                                                                              }
+                                                                          ],
+                                                      "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/04_optimization/Mesh%20BVH.md",
+                                                      "latest_author":  "LEE SangHoon",
+                                                      "latest_date":  "2026-04-10T08:35:02+09:00",
+                                                      "revision_count":  2,
+                                                      "quality_score":  12,
+                                                      "word_count":  380
+                                                  },
+                  "02_math/ray_casting.md":  {
+                                                 "first_author":  "jskim-research",
+                                                 "first_date":  "2026-03-30T19:49:27+09:00",
+                                                 "lead_authors":  [
+                                                                      "LEE SangHoon"
+                                                                  ],
+                                                 "lead_line_count":  158,
+                                                 "history_entries":  [
+                                                                         {
+                                                                             "sha":  "fb1c1926bc68a31796d20a287d465a1d42ea38ad",
+                                                                             "message":  "fix: latex in ray casting docs4",
+                                                                             "author":  "LEE SangHoon",
+                                                                             "date":  "2026-04-10T01:58:23+09:00",
+                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/fb1c1926bc68a31796d20a287d465a1d42ea38ad"
+                                                                         },
+                                                                         {
+                                                                             "sha":  "106c6ab3affe6abb64ec33e72db3a0f3845cabda",
+                                                                             "message":  "fix: latex in ray casting docs3",
+                                                                             "author":  "LEE SangHoon",
+                                                                             "date":  "2026-04-10T01:55:16+09:00",
+                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/106c6ab3affe6abb64ec33e72db3a0f3845cabda"
+                                                                         },
+                                                                         {
+                                                                             "sha":  "7f346143a538ec0d4554c0bf8ef95fb27901d98d",
+                                                                             "message":  "fix: latex in ray casting docs2",
+                                                                             "author":  "LEE SangHoon",
+                                                                             "date":  "2026-04-10T01:45:06+09:00",
+                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/7f346143a538ec0d4554c0bf8ef95fb27901d98d"
+                                                                         },
+                                                                         {
+                                                                             "sha":  "eb738abc74236dec0b8752c49984236e7cd82743",
+                                                                             "message":  "fix: latex in ray casting docs",
+                                                                             "author":  "LEE SangHoon",
+                                                                             "date":  "2026-04-10T01:29:34+09:00",
+                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/eb738abc74236dec0b8752c49984236e7cd82743"
+                                                                         },
+                                                                         {
+                                                                             "sha":  "4e2c2c2bf8233f15a850f8c447532f1b794c4cbb",
+                                                                             "message":  "Docs: ray casting",
+                                                                             "author":  "Minjun Jang",
+                                                                             "date":  "2026-04-10T00:02:01+09:00",
+                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/4e2c2c2bf8233f15a850f8c447532f1b794c4cbb"
+                                                                         }
+                                                                     ],
+                                                 "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/02_math/ray_casting.md",
+                                                 "latest_author":  "LEE SangHoon",
+                                                 "latest_date":  "2026-04-10T01:58:23+09:00",
+                                                 "revision_count":  6,
+                                                 "quality_score":  34,
+                                                 "word_count":  1795
+                                             },
+                  "03_engine/reflection.md":  {
+                                                  "first_author":  "LEE SangHoon",
+                                                  "first_date":  "2026-04-11T03:12:02+09:00",
+                                                  "lead_authors":  [
+                                                                       "LEE SangHoon"
+                                                                   ],
+                                                  "lead_line_count":  2,
+                                                  "history_entries":  [
+                                                                          {
+                                                                              "sha":  "909dca634ff17ba34add85fddaf9c78b8c21da32",
+                                                                              "message":  "Docs: add links",
+                                                                              "author":  "LEE SangHoon",
+                                                                              "date":  "2026-04-11T03:12:02+09:00",
+                                                                              "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/909dca634ff17ba34add85fddaf9c78b8c21da32"
+                                                                          }
                                                                       ],
-                                                     "lead_line_count":  46,
-                                                     "history_entries":  [
-                                                                             {
-                                                                                 "sha":  "e43e03fab6b75a141cc556a5c914ef09f3969b8b",
-                                                                                 "message":  "style: unify formatting",
-                                                                                 "author":  "LEE SangHoon",
-                                                                                 "date":  "2026-04-10T08:35:02+09:00",
-                                                                                 "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e43e03fab6b75a141cc556a5c914ef09f3969b8b"
-                                                                             },
-                                                                             {
-                                                                                 "sha":  "14eedbf0ef24d2cc7d689b1f5b116537e048135e",
-                                                                                 "message":  "Docs: serialization",
-                                                                                 "author":  "LEE SangHoon",
-                                                                                 "date":  "2026-04-10T00:26:32+09:00",
-                                                                                 "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/14eedbf0ef24d2cc7d689b1f5b116537e048135e"
-                                                                             }
-                                                                         ],
-                                                     "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/03_engine/serialization.md",
-                                                     "latest_author":  "LEE SangHoon",
-                                                     "latest_date":  "2026-04-10T08:35:02+09:00",
-                                                     "revision_count":  2,
-                                                     "quality_score":  12,
-                                                     "word_count":  344
-                                                 },
-                  "05_misc/Wireframe Outline Rendering.md":  {
-                                                                 "first_author":  "LEE SangHoon",
-                                                                 "first_date":  "2026-03-30T23:02:40+09:00",
-                                                                 "lead_authors":  [
-                                                                                      "LEE SangHoon"
-                                                                                  ],
-                                                                 "lead_line_count":  49,
-                                                                 "history_entries":  [
-                                                                                         {
-                                                                                             "sha":  "e43e03fab6b75a141cc556a5c914ef09f3969b8b",
-                                                                                             "message":  "style: unify formatting",
-                                                                                             "author":  "LEE SangHoon",
-                                                                                             "date":  "2026-04-10T08:35:02+09:00",
-                                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e43e03fab6b75a141cc556a5c914ef09f3969b8b"
-                                                                                         },
-                                                                                         {
-                                                                                             "sha":  "1b4691963374e807a2469d681a1ef12be4ec22d1",
-                                                                                             "message":  "fix: add a graph",
-                                                                                             "author":  "LEE SangHoon",
-                                                                                             "date":  "2026-04-02T01:08:28+09:00",
-                                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/1b4691963374e807a2469d681a1ef12be4ec22d1"
-                                                                                         },
-                                                                                         {
-                                                                                             "sha":  "c58af16490388cb3e321181333f8d5cf8e6b89c7",
-                                                                                             "message":  "Docs: From Vertices to Pixels, The Journey of Interpolation",
-                                                                                             "author":  "LEE SangHoon",
-                                                                                             "date":  "2026-04-01T20:45:17+09:00",
-                                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/c58af16490388cb3e321181333f8d5cf8e6b89c7"
-                                                                                         },
-                                                                                         {
-                                                                                             "sha":  "d7eb3a2088aed2e9d105083136eca329fcd55c54",
-                                                                                             "message":  "fix: add details on Docs(Wireframe Outline Rendering)",
-                                                                                             "author":  "LEE SangHoon",
-                                                                                             "date":  "2026-04-01T17:35:25+09:00",
-                                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/d7eb3a2088aed2e9d105083136eca329fcd55c54"
-                                                                                         },
-                                                                                         {
-                                                                                             "sha":  "5045de54a1c1604a3125e9aca3cbc35fa766b4ff",
-                                                                                             "message":  "Docs: Texture is Data, Material is Behavior",
-                                                                                             "author":  "LEE SangHoon",
-                                                                                             "date":  "2026-04-01T10:39:10+09:00",
-                                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/5045de54a1c1604a3125e9aca3cbc35fa766b4ff"
-                                                                                         }
-                                                                                     ],
-                                                                 "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/05_misc/Wireframe%20Outline%20Rendering.md",
-                                                                 "latest_author":  "LEE SangHoon",
-                                                                 "latest_date":  "2026-04-10T08:35:02+09:00",
-                                                                 "revision_count":  8,
-                                                                 "quality_score":  19,
-                                                                 "word_count":  468
-                                                             },
-                  "01_rendering/ui.md":  {
-                                             "first_author":  "jskim-research",
-                                             "first_date":  "2026-03-30T19:49:27+09:00",
-                                             "lead_authors":  [
-                                                                  "jskim-research"
-                                                              ],
-                                             "lead_line_count":  5,
-                                             "history_entries":  [
-                                                                     {
-                                                                         "sha":  "0c0c24d63693712dd37e6eefe28c6262ee1cd694",
-                                                                         "message":  "upload some missing files",
-                                                                         "author":  "jskim-research",
-                                                                         "date":  "2026-03-30T19:51:34+09:00",
-                                                                         "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/0c0c24d63693712dd37e6eefe28c6262ee1cd694"
-                                                                     },
-                                                                     {
-                                                                         "sha":  "42a420c92eea6d85c04591abc718febbf81b2bd7",
-                                                                         "message":  "upload jungle week1~3 concepts",
-                                                                         "author":  "jskim-research",
-                                                                         "date":  "2026-03-30T19:49:27+09:00",
-                                                                         "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/42a420c92eea6d85c04591abc718febbf81b2bd7"
-                                                                     }
-                                                                 ],
-                                             "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/01_rendering/ui.md",
-                                             "latest_author":  "jskim-research",
-                                             "latest_date":  "2026-03-30T19:51:34+09:00",
-                                             "revision_count":  2,
-                                             "quality_score":  2,
-                                             "word_count":  38
-                                         },
+                                                  "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/03_engine/reflection.md",
+                                                  "latest_author":  "LEE SangHoon",
+                                                  "latest_date":  "2026-04-11T03:12:02+09:00",
+                                                  "revision_count":  1,
+                                                  "quality_score":  2,
+                                                  "word_count":  16
+                                              },
                   "02_math/From Vertices to Pixels, The Journey of Interpolation.md":  {
                                                                                            "first_author":  "LEE SangHoon",
                                                                                            "first_date":  "2026-04-01T20:45:17+09:00",
@@ -903,28 +504,469 @@
                                                                                            "quality_score":  27,
                                                                                            "word_count":  437
                                                                                        },
-                  "00_conventions/graphics_conventions.md":  {
-                                                                 "first_author":  "jskim-research",
-                                                                 "first_date":  "2026-03-30T19:49:27+09:00",
+                  "04_optimization/SIMD.md":  {
+                                                  "first_author":  "LEE SangHoon",
+                                                  "first_date":  "2026-04-09T18:42:10+09:00",
+                                                  "lead_authors":  [
+                                                                       "LEE SangHoon"
+                                                                   ],
+                                                  "lead_line_count":  59,
+                                                  "history_entries":  [
+                                                                          {
+                                                                              "sha":  "e0138c33d01aa69d7bf30e6f093d786513900f62",
+                                                                              "message":  "Docs: Mesh BVH",
+                                                                              "author":  "LEE SangHoon",
+                                                                              "date":  "2026-04-09T21:57:00+09:00",
+                                                                              "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e0138c33d01aa69d7bf30e6f093d786513900f62"
+                                                                          },
+                                                                          {
+                                                                              "sha":  "6ca73c0d54085a018c76c3a23272ec74c820e893",
+                                                                              "message":  "Docs: SIMD",
+                                                                              "author":  "LEE SangHoon",
+                                                                              "date":  "2026-04-09T18:42:10+09:00",
+                                                                              "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/6ca73c0d54085a018c76c3a23272ec74c820e893"
+                                                                          }
+                                                                      ],
+                                                  "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/04_optimization/SIMD.md",
+                                                  "latest_author":  "LEE SangHoon",
+                                                  "latest_date":  "2026-04-09T21:57:00+09:00",
+                                                  "revision_count":  2,
+                                                  "quality_score":  19,
+                                                  "word_count":  416
+                                              },
+                  "03_engine/actor.md":  {
+                                             "first_author":  "LEE SangHoon",
+                                             "first_date":  "2026-04-12T20:28:10+09:00",
+                                             "lead_authors":  [
+                                                                  "LEE SangHoon"
+                                                              ],
+                                             "lead_line_count":  145,
+                                             "history_entries":  [
+                                                                     {
+                                                                         "sha":  "048d4752574f9fd03cf4fe87d9e2b7790821fa6f",
+                                                                         "message":  "Docs: actor",
+                                                                         "author":  "LEE SangHoon",
+                                                                         "date":  "2026-04-12T20:28:10+09:00",
+                                                                         "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/048d4752574f9fd03cf4fe87d9e2b7790821fa6f"
+                                                                     }
+                                                                 ],
+                                             "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/03_engine/actor.md",
+                                             "latest_author":  "LEE SangHoon",
+                                             "latest_date":  "2026-04-12T20:28:10+09:00",
+                                             "revision_count":  1,
+                                             "quality_score":  20,
+                                             "word_count":  853
+                                         },
+                  "05_misc/obj.md":  {
+                                         "first_author":  "LEE SangHoon",
+                                         "first_date":  "2026-04-01T01:29:30+09:00",
+                                         "lead_authors":  [
+                                                              "LEE SangHoon"
+                                                          ],
+                                         "lead_line_count":  120,
+                                         "history_entries":  [
+                                                                 {
+                                                                     "sha":  "1b4691963374e807a2469d681a1ef12be4ec22d1",
+                                                                     "message":  "fix: add a graph",
+                                                                     "author":  "LEE SangHoon",
+                                                                     "date":  "2026-04-02T01:08:28+09:00",
+                                                                     "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/1b4691963374e807a2469d681a1ef12be4ec22d1"
+                                                                 },
+                                                                 {
+                                                                     "sha":  "5045de54a1c1604a3125e9aca3cbc35fa766b4ff",
+                                                                     "message":  "Docs: Texture is Data, Material is Behavior",
+                                                                     "author":  "LEE SangHoon",
+                                                                     "date":  "2026-04-01T10:39:10+09:00",
+                                                                     "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/5045de54a1c1604a3125e9aca3cbc35fa766b4ff"
+                                                                 },
+                                                                 {
+                                                                     "sha":  "e4583cc988f1551da1c3119c671c1ef35703b6ae",
+                                                                     "message":  "Docs: obj",
+                                                                     "author":  "LEE SangHoon",
+                                                                     "date":  "2026-04-01T01:29:30+09:00",
+                                                                     "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e4583cc988f1551da1c3119c671c1ef35703b6ae"
+                                                                 }
+                                                             ],
+                                         "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/05_misc/obj.md",
+                                         "latest_author":  "LEE SangHoon",
+                                         "latest_date":  "2026-04-02T01:08:28+09:00",
+                                         "revision_count":  3,
+                                         "quality_score":  26,
+                                         "word_count":  360
+                                     },
+                  "01_rendering/pipeline.md":  {
+                                                   "first_author":  "jskim-research",
+                                                   "first_date":  "2026-03-30T19:49:27+09:00",
+                                                   "lead_authors":  [
+                                                                        "jskim-research"
+                                                                    ],
+                                                   "lead_line_count":  15,
+                                                   "history_entries":  [
+                                                                           {
+                                                                               "sha":  "0c0c24d63693712dd37e6eefe28c6262ee1cd694",
+                                                                               "message":  "upload some missing files",
+                                                                               "author":  "jskim-research",
+                                                                               "date":  "2026-03-30T19:51:34+09:00",
+                                                                               "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/0c0c24d63693712dd37e6eefe28c6262ee1cd694"
+                                                                           },
+                                                                           {
+                                                                               "sha":  "42a420c92eea6d85c04591abc718febbf81b2bd7",
+                                                                               "message":  "upload jungle week1~3 concepts",
+                                                                               "author":  "jskim-research",
+                                                                               "date":  "2026-03-30T19:49:27+09:00",
+                                                                               "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/42a420c92eea6d85c04591abc718febbf81b2bd7"
+                                                                           }
+                                                                       ],
+                                                   "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/01_rendering/pipeline.md",
+                                                   "latest_author":  "jskim-research",
+                                                   "latest_date":  "2026-03-30T19:51:34+09:00",
+                                                   "revision_count":  2,
+                                                   "quality_score":  7,
+                                                   "word_count":  233
+                                               },
+                  "01_rendering/Decal.md":  {
+                                                "first_author":  "Myeoungho Kang (강명호)",
+                                                "first_date":  "2026-04-10T19:22:31+09:00",
+                                                "lead_authors":  [
+                                                                     "Myeoungho Kang (강명호)"
+                                                                 ],
+                                                "lead_line_count":  153,
+                                                "history_entries":  [
+                                                                        {
+                                                                            "sha":  "09666cc45eb92d261f4eabca1d8c338ea46cd3f6",
+                                                                            "message":  "Docs: merge with Decal.md",
+                                                                            "author":  "LEE SangHoon",
+                                                                            "date":  "2026-04-10T20:47:12+09:00",
+                                                                            "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/09666cc45eb92d261f4eabca1d8c338ea46cd3f6"
+                                                                        },
+                                                                        {
+                                                                            "sha":  "b7fb550f431aea26a1e2a55515177891e945e8ce",
+                                                                            "message":  "Create Decal.md",
+                                                                            "author":  "Myeoungho Kang (강명호)",
+                                                                            "date":  "2026-04-10T19:22:31+09:00",
+                                                                            "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/b7fb550f431aea26a1e2a55515177891e945e8ce"
+                                                                        }
+                                                                    ],
+                                                "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/01_rendering/Decal.md",
+                                                "latest_author":  "LEE SangHoon",
+                                                "latest_date":  "2026-04-10T20:47:12+09:00",
+                                                "revision_count":  2,
+                                                "quality_score":  40,
+                                                "word_count":  1591
+                                            },
+                  "01_rendering/ui.md":  {
+                                             "first_author":  "jskim-research",
+                                             "first_date":  "2026-03-30T19:49:27+09:00",
+                                             "lead_authors":  [
+                                                                  "jskim-research"
+                                                              ],
+                                             "lead_line_count":  5,
+                                             "history_entries":  [
+                                                                     {
+                                                                         "sha":  "0c0c24d63693712dd37e6eefe28c6262ee1cd694",
+                                                                         "message":  "upload some missing files",
+                                                                         "author":  "jskim-research",
+                                                                         "date":  "2026-03-30T19:51:34+09:00",
+                                                                         "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/0c0c24d63693712dd37e6eefe28c6262ee1cd694"
+                                                                     },
+                                                                     {
+                                                                         "sha":  "42a420c92eea6d85c04591abc718febbf81b2bd7",
+                                                                         "message":  "upload jungle week1~3 concepts",
+                                                                         "author":  "jskim-research",
+                                                                         "date":  "2026-03-30T19:49:27+09:00",
+                                                                         "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/42a420c92eea6d85c04591abc718febbf81b2bd7"
+                                                                     }
+                                                                 ],
+                                             "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/01_rendering/ui.md",
+                                             "latest_author":  "jskim-research",
+                                             "latest_date":  "2026-03-30T19:51:34+09:00",
+                                             "revision_count":  2,
+                                             "quality_score":  2,
+                                             "word_count":  38
+                                         },
+                  "04_optimization/Scene BVH.md":  {
+                                                       "first_author":  "LEE SangHoon",
+                                                       "first_date":  "2026-04-08T01:01:14+09:00",
+                                                       "lead_authors":  [
+                                                                            "LEE SangHoon"
+                                                                        ],
+                                                       "lead_line_count":  60,
+                                                       "history_entries":  [
+                                                                               {
+                                                                                   "sha":  "09666cc45eb92d261f4eabca1d8c338ea46cd3f6",
+                                                                                   "message":  "Docs: merge with Decal.md",
+                                                                                   "author":  "LEE SangHoon",
+                                                                                   "date":  "2026-04-10T20:47:12+09:00",
+                                                                                   "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/09666cc45eb92d261f4eabca1d8c338ea46cd3f6"
+                                                                               },
+                                                                               {
+                                                                                   "sha":  "e6e600f81e0c3c1e5e67c5a1b8d87d55b5f69394",
+                                                                                   "message":  "Docs: Scene BVH",
+                                                                                   "author":  "LEE SangHoon",
+                                                                                   "date":  "2026-04-08T01:01:14+09:00",
+                                                                                   "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e6e600f81e0c3c1e5e67c5a1b8d87d55b5f69394"
+                                                                               }
+                                                                           ],
+                                                       "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/04_optimization/Scene%20BVH.md",
+                                                       "latest_author":  "LEE SangHoon",
+                                                       "latest_date":  "2026-04-10T20:47:12+09:00",
+                                                       "revision_count":  2,
+                                                       "quality_score":  19,
+                                                       "word_count":  580
+                                                   },
+                  "03_engine/serialization.md":  {
+                                                     "first_author":  "LEE SangHoon",
+                                                     "first_date":  "2026-04-10T00:26:32+09:00",
+                                                     "lead_authors":  [
+                                                                          "LEE SangHoon"
+                                                                      ],
+                                                     "lead_line_count":  46,
+                                                     "history_entries":  [
+                                                                             {
+                                                                                 "sha":  "e43e03fab6b75a141cc556a5c914ef09f3969b8b",
+                                                                                 "message":  "style: unify formatting",
+                                                                                 "author":  "LEE SangHoon",
+                                                                                 "date":  "2026-04-10T08:35:02+09:00",
+                                                                                 "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e43e03fab6b75a141cc556a5c914ef09f3969b8b"
+                                                                             },
+                                                                             {
+                                                                                 "sha":  "14eedbf0ef24d2cc7d689b1f5b116537e048135e",
+                                                                                 "message":  "Docs: serialization",
+                                                                                 "author":  "LEE SangHoon",
+                                                                                 "date":  "2026-04-10T00:26:32+09:00",
+                                                                                 "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/14eedbf0ef24d2cc7d689b1f5b116537e048135e"
+                                                                             }
+                                                                         ],
+                                                     "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/03_engine/serialization.md",
+                                                     "latest_author":  "LEE SangHoon",
+                                                     "latest_date":  "2026-04-10T08:35:02+09:00",
+                                                     "revision_count":  2,
+                                                     "quality_score":  12,
+                                                     "word_count":  344
+                                                 },
+                  "03_engine/CDO.md":  {
+                                           "first_author":  "Myeoungho Kang (강명호)",
+                                           "first_date":  "2026-04-13T11:05:27+09:00",
+                                           "lead_authors":  [
+                                                                "Myeoungho Kang (강명호)"
+                                                            ],
+                                           "lead_line_count":  244,
+                                           "history_entries":  [
+                                                                   {
+                                                                       "sha":  "151a40fe8e1296145fbcae1b4c0b511c6940fe5c",
+                                                                       "message":  "Rename CDO(Class Default Object).md to CDO.md",
+                                                                       "author":  "Myeoungho Kang (강명호)",
+                                                                       "date":  "2026-04-13T11:18:21+09:00",
+                                                                       "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/151a40fe8e1296145fbcae1b4c0b511c6940fe5c"
+                                                                   },
+                                                                   {
+                                                                       "sha":  "6a3a95f8a7c117be4398f4f1b57939331902274d",
+                                                                       "message":  "Create CDO(Class Default Object).md",
+                                                                       "author":  "Myeoungho Kang (강명호)",
+                                                                       "date":  "2026-04-13T11:05:27+09:00",
+                                                                       "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/6a3a95f8a7c117be4398f4f1b57939331902274d"
+                                                                   }
+                                                               ],
+                                           "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/03_engine/CDO.md",
+                                           "latest_author":  "Myeoungho Kang (강명호)",
+                                           "latest_date":  "2026-04-13T11:18:21+09:00",
+                                           "revision_count":  2,
+                                           "quality_score":  24,
+                                           "word_count":  1118
+                                       },
+                  "05_misc/Dynamic Glyph Atlas for Korean Text Rendering.md":  {
+                                                                                   "first_author":  "LEE SangHoon",
+                                                                                   "first_date":  "2026-03-31T17:12:28+09:00",
+                                                                                   "lead_authors":  [
+                                                                                                        "LEE SangHoon"
+                                                                                                    ],
+                                                                                   "lead_line_count":  29,
+                                                                                   "history_entries":  [
+                                                                                                           {
+                                                                                                               "sha":  "5045de54a1c1604a3125e9aca3cbc35fa766b4ff",
+                                                                                                               "message":  "Docs: Texture is Data, Material is Behavior",
+                                                                                                               "author":  "LEE SangHoon",
+                                                                                                               "date":  "2026-04-01T10:39:10+09:00",
+                                                                                                               "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/5045de54a1c1604a3125e9aca3cbc35fa766b4ff"
+                                                                                                           },
+                                                                                                           {
+                                                                                                               "sha":  "e57cc9172e03120f004244ef5e498a2842b4e308",
+                                                                                                               "message":  "Docs: Dynamic Glyph Atlas for Korean Text Rendering",
+                                                                                                               "author":  "LEE SangHoon",
+                                                                                                               "date":  "2026-03-31T17:12:28+09:00",
+                                                                                                               "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e57cc9172e03120f004244ef5e498a2842b4e308"
+                                                                                                           }
+                                                                                                       ],
+                                                                                   "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/05_misc/Dynamic%20Glyph%20Atlas%20for%20Korean%20Text%20Rendering.md",
+                                                                                   "latest_author":  "LEE SangHoon",
+                                                                                   "latest_date":  "2026-04-01T10:39:10+09:00",
+                                                                                   "revision_count":  2,
+                                                                                   "quality_score":  14,
+                                                                                   "word_count":  319
+                                                                               },
+                  "01_rendering/HDR.md":  {
+                                              "first_author":  "LEE SangHoon",
+                                              "first_date":  "2026-04-13T11:23:32+09:00",
+                                              "lead_authors":  [
+                                                                   "LEE SangHoon"
+                                                               ],
+                                              "lead_line_count":  8,
+                                              "history_entries":  [
+                                                                      {
+                                                                          "sha":  "2d1c843a1aee505fd8599eb4e4aee44ac0287531",
+                                                                          "message":  "Feat: automatically add new files to index.md",
+                                                                          "author":  "jskim-research",
+                                                                          "date":  "2026-04-13T11:36:35+09:00",
+                                                                          "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/2d1c843a1aee505fd8599eb4e4aee44ac0287531"
+                                                                      },
+                                                                      {
+                                                                          "sha":  "76010b6d57d126bab23fdab0d7f2e794c8ab3220",
+                                                                          "message":  "Docs: RTV and SRV, HDR",
+                                                                          "author":  "LEE SangHoon",
+                                                                          "date":  "2026-04-13T11:23:32+09:00",
+                                                                          "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/76010b6d57d126bab23fdab0d7f2e794c8ab3220"
+                                                                      }
+                                                                  ],
+                                              "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/01_rendering/HDR.md",
+                                              "latest_author":  "jskim-research",
+                                              "latest_date":  "2026-04-13T11:36:35+09:00",
+                                              "revision_count":  2,
+                                              "quality_score":  6,
+                                              "word_count":  68
+                                          },
+                  "05_misc/Texture is Data, Material is Behavior.md":  {
+                                                                           "first_author":  "LEE SangHoon",
+                                                                           "first_date":  "2026-04-01T10:39:10+09:00",
+                                                                           "lead_authors":  [
+                                                                                                "LEE SangHoon"
+                                                                                            ],
+                                                                           "lead_line_count":  37,
+                                                                           "history_entries":  [
+                                                                                                   {
+                                                                                                       "sha":  "5ec34ee16f125412cec8a66892310143c0ffdd78",
+                                                                                                       "message":  "fix: wrong extension(md)",
+                                                                                                       "author":  "LEE SangHoon",
+                                                                                                       "date":  "2026-04-01T13:03:00+09:00",
+                                                                                                       "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/5ec34ee16f125412cec8a66892310143c0ffdd78"
+                                                                                                   },
+                                                                                                   {
+                                                                                                       "sha":  "26087ef38e377d22e306f23309bc08da35d5e013",
+                                                                                                       "message":  "style: add a image to Docs",
+                                                                                                       "author":  "LEE SangHoon",
+                                                                                                       "date":  "2026-04-01T10:49:22+09:00",
+                                                                                                       "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/26087ef38e377d22e306f23309bc08da35d5e013"
+                                                                                                   },
+                                                                                                   {
+                                                                                                       "sha":  "5045de54a1c1604a3125e9aca3cbc35fa766b4ff",
+                                                                                                       "message":  "Docs: Texture is Data, Material is Behavior",
+                                                                                                       "author":  "LEE SangHoon",
+                                                                                                       "date":  "2026-04-01T10:39:10+09:00",
+                                                                                                       "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/5045de54a1c1604a3125e9aca3cbc35fa766b4ff"
+                                                                                                   }
+                                                                                               ],
+                                                                           "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/05_misc/Texture%20is%20Data%2C%20Material%20is%20Behavior.md",
+                                                                           "latest_author":  "LEE SangHoon",
+                                                                           "latest_date":  "2026-04-01T13:03:00+09:00",
+                                                                           "revision_count":  3,
+                                                                           "quality_score":  10,
+                                                                           "word_count":  361
+                                                                       },
+                  "04_optimization/texture_atlas.md":  {
+                                                           "first_author":  "jskim-research",
+                                                           "first_date":  "2026-03-30T19:49:27+09:00",
+                                                           "lead_authors":  [
+                                                                                "jskim-research"
+                                                                            ],
+                                                           "lead_line_count":  3,
+                                                           "history_entries":  [
+                                                                                   {
+                                                                                       "sha":  "42a420c92eea6d85c04591abc718febbf81b2bd7",
+                                                                                       "message":  "upload jungle week1~3 concepts",
+                                                                                       "author":  "jskim-research",
+                                                                                       "date":  "2026-03-30T19:49:27+09:00",
+                                                                                       "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/42a420c92eea6d85c04591abc718febbf81b2bd7"
+                                                                                   }
+                                                                               ],
+                                                           "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/04_optimization/texture_atlas.md",
+                                                           "latest_author":  "jskim-research",
+                                                           "latest_date":  "2026-03-30T19:49:27+09:00",
+                                                           "revision_count":  1,
+                                                           "quality_score":  2,
+                                                           "word_count":  18
+                                                       },
+                  "05_misc/Wireframe Outline Rendering.md":  {
+                                                                 "first_author":  "LEE SangHoon",
+                                                                 "first_date":  "2026-03-30T23:02:40+09:00",
                                                                  "lead_authors":  [
-                                                                                      "jskim-research"
+                                                                                      "LEE SangHoon"
                                                                                   ],
-                                                                 "lead_line_count":  4,
+                                                                 "lead_line_count":  49,
                                                                  "history_entries":  [
                                                                                          {
-                                                                                             "sha":  "42a420c92eea6d85c04591abc718febbf81b2bd7",
-                                                                                             "message":  "upload jungle week1~3 concepts",
-                                                                                             "author":  "jskim-research",
-                                                                                             "date":  "2026-03-30T19:49:27+09:00",
-                                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/42a420c92eea6d85c04591abc718febbf81b2bd7"
+                                                                                             "sha":  "e43e03fab6b75a141cc556a5c914ef09f3969b8b",
+                                                                                             "message":  "style: unify formatting",
+                                                                                             "author":  "LEE SangHoon",
+                                                                                             "date":  "2026-04-10T08:35:02+09:00",
+                                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/e43e03fab6b75a141cc556a5c914ef09f3969b8b"
+                                                                                         },
+                                                                                         {
+                                                                                             "sha":  "1b4691963374e807a2469d681a1ef12be4ec22d1",
+                                                                                             "message":  "fix: add a graph",
+                                                                                             "author":  "LEE SangHoon",
+                                                                                             "date":  "2026-04-02T01:08:28+09:00",
+                                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/1b4691963374e807a2469d681a1ef12be4ec22d1"
+                                                                                         },
+                                                                                         {
+                                                                                             "sha":  "c58af16490388cb3e321181333f8d5cf8e6b89c7",
+                                                                                             "message":  "Docs: From Vertices to Pixels, The Journey of Interpolation",
+                                                                                             "author":  "LEE SangHoon",
+                                                                                             "date":  "2026-04-01T20:45:17+09:00",
+                                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/c58af16490388cb3e321181333f8d5cf8e6b89c7"
+                                                                                         },
+                                                                                         {
+                                                                                             "sha":  "d7eb3a2088aed2e9d105083136eca329fcd55c54",
+                                                                                             "message":  "fix: add details on Docs(Wireframe Outline Rendering)",
+                                                                                             "author":  "LEE SangHoon",
+                                                                                             "date":  "2026-04-01T17:35:25+09:00",
+                                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/d7eb3a2088aed2e9d105083136eca329fcd55c54"
+                                                                                         },
+                                                                                         {
+                                                                                             "sha":  "5045de54a1c1604a3125e9aca3cbc35fa766b4ff",
+                                                                                             "message":  "Docs: Texture is Data, Material is Behavior",
+                                                                                             "author":  "LEE SangHoon",
+                                                                                             "date":  "2026-04-01T10:39:10+09:00",
+                                                                                             "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/5045de54a1c1604a3125e9aca3cbc35fa766b4ff"
                                                                                          }
                                                                                      ],
-                                                                 "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/00_conventions/graphics_conventions.md",
-                                                                 "latest_author":  "jskim-research",
-                                                                 "latest_date":  "2026-03-30T19:49:27+09:00",
-                                                                 "revision_count":  1,
-                                                                 "quality_score":  2,
-                                                                 "word_count":  36
-                                                             }
+                                                                 "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/05_misc/Wireframe%20Outline%20Rendering.md",
+                                                                 "latest_author":  "LEE SangHoon",
+                                                                 "latest_date":  "2026-04-10T08:35:02+09:00",
+                                                                 "revision_count":  8,
+                                                                 "quality_score":  19,
+                                                                 "word_count":  468
+                                                             },
+                  "05_misc/Theme Visibility Test.md":  {
+                                                           "first_author":  "DDing-Ho",
+                                                           "first_date":  "2026-04-13T15:59:17+09:00",
+                                                           "lead_authors":  [
+                                                                                "DDing-Ho"
+                                                                            ],
+                                                           "lead_line_count":  82,
+                                                           "history_entries":  [
+                                                                                   {
+                                                                                       "sha":  "131d47655bfc8cd8e9da74b2e76889174e65a965",
+                                                                                       "message":  "테마 가시성 테스트 페이지와 라이트·다크 전수 감사 보강",
+                                                                                       "author":  "DDing-Ho",
+                                                                                       "date":  "2026-04-13T15:59:17+09:00",
+                                                                                       "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/131d47655bfc8cd8e9da74b2e76889174e65a965"
+                                                                                   }
+                                                                               ],
+                                                           "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/05_misc/Theme%20Visibility%20Test.md",
+                                                           "latest_author":  "DDing-Ho",
+                                                           "latest_date":  "2026-04-13T15:59:17+09:00",
+                                                           "revision_count":  1,
+                                                           "quality_score":  26,
+                                                           "word_count":  347
+                                                       }
               }
 }

@@ -17,8 +17,12 @@ function Get-ConceptDocs {
     Sort-Object -Unique)
 
   foreach ($path in $allDocs) {
+    if (-not (Test-Path -LiteralPath $path)) {
+      continue
+    }
+
     $baseName = [System.IO.Path]::GetFileName($path)
-    if ($path -eq "index.md" -or $path -eq "README.md" -or $baseName -ieq "README.md") {
+    if ($path -eq "index.md" -or $path -eq "README.md" -or $baseName -ieq "README.md" -or $baseName -ieq "write.md") {
       continue
     }
 

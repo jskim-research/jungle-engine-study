@@ -1,0 +1,13 @@
+{
+  "name": "jungle-engine-study",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "audit:visual": "node ./scripts/visual-audit.mjs",
+    "preview:site": "node ./scripts/preview-server.mjs"
+  },
+  "devDependencies": {
+    "axe-core": "^4.11.0",
+    "puppeteer-core": "^24.7.2"
+  }
+}

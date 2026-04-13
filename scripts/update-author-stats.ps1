@@ -23,6 +23,9 @@ $authorStats = @{}
 $pageMeta = @{}
 $authorDocSets = @{}
 $historyEntryLimit = 5
+$maxLevel = 50
+$levelsPerMonster = 10
+$pointsPerLevel = 76
 
 function Get-GitHubRepoInfo {
   $defaultBranch = "main"
@@ -65,20 +68,31 @@ function Convert-ToGitHubPath([string]$path) {
   return (($segments | ForEach-Object { [System.Uri]::EscapeDataString($_) }) -join '/')
 }
 
-function Get-RankInfo([int]$score) {
-  if ($score -ge 760) {
-    return [ordered]@{ level = "Dragon Sovereign"; monster = "Dragon"; floor = 760; next = $null }
+function Get-RankInfo([int]$score, [int]$maxLevelParam, [int]$levelsPerMonsterParam, [int]$pointsPerLevelParam) {
+  $clamped = [Math]::Max($score, 0)
+  $levelNo = [Math]::Min($maxLevelParam, [int][Math]::Floor($clamped / $pointsPerLevelParam) + 1)
+  $floor = ($levelNo - 1) * $pointsPerLevelParam
+  $next = if ($levelNo -ge $maxLevelParam) { $null } else { $levelNo * $pointsPerLevelParam }
+
+  $tier = [int][Math]::Floor(($levelNo - 1) / $levelsPerMonsterParam)
+  $monster = "Slime"
+  $level = "Slime Apprentice"
+
+  switch ($tier) {
+    0 { $monster = "Slime"; $level = "Slime Apprentice" }
+    1 { $monster = "Wolf"; $level = "Wolf Vanguard" }
+    2 { $monster = "Golem"; $level = "Golem Strategist" }
+    3 { $monster = "Wyvern"; $level = "Wyvern Marshal" }
+    default { $monster = "Dragon"; $level = "Dragon Sovereign" }
   }
-  if ($score -ge 520) {
-    return [ordered]@{ level = "Wyvern Marshal"; monster = "Wyvern"; floor = 520; next = 760 }
+
+  return [ordered]@{
+    level = $level
+    level_no = $levelNo
+    monster = $monster
+    floor = $floor
+    next = $next
   }
-  if ($score -ge 320) {
-    return [ordered]@{ level = "Golem Strategist"; monster = "Golem"; floor = 320; next = 520 }
-  }
-  if ($score -ge 180) {
-    return [ordered]@{ level = "Wolf Vanguard"; monster = "Wolf"; floor = 180; next = 320 }
-  }
-  return [ordered]@{ level = "Slime Apprentice"; monster = "Slime"; floor = 0; next = 180 }
 }
 
 function Get-FallbackAuthor {
@@ -105,8 +119,9 @@ function Ensure-Author([string]$name) {
       total_score = 0
       exp = 0
       exp_current = 0
-      exp_next = 180
+      exp_next = $pointsPerLevel * 25
       level = "Slime Apprentice"
+      level_no = 1
       monster = "Slime"
     }
   }
@@ -150,8 +165,12 @@ $repoInfo = Get-GitHubRepoInfo
 $fallbackAuthor = Get-FallbackAuthor
 
 foreach ($file in $files) {
+  if (-not (Test-Path -LiteralPath $file)) {
+    continue
+  }
+
   $baseName = [System.IO.Path]::GetFileName($file)
-  if ($file -eq "index.md" -or $file -eq "README.md" -or $baseName -ieq "README.md") {
+  if ($file -eq "index.md" -or $file -eq "README.md" -or $baseName -ieq "README.md" -or $baseName -ieq "write.md") {
     continue
   }
 
@@ -232,7 +251,8 @@ foreach ($file in $files) {
   } else {
     # Uncommitted markdown file fallback: show provisional author metadata locally.
     $provisionalAuthor = $fallbackAuthor
-    $provisionalDate = (Get-Date).ToString("o")
+    $fileInfo = Get-Item -LiteralPath $file
+    $provisionalDate = $fileInfo.LastWriteTime.ToString("o")
     $contentLines = @($content -split "`r?`n" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }).Count
     if ($contentLines -gt 0) {
       $lineOwners[$provisionalAuthor] = $contentLines
@@ -312,7 +332,7 @@ foreach ($name in $authorStats.Keys) {
   }
 
   $total = $contentScore + $quality + $leadBonus + $collab
-  $rank = Get-RankInfo $total
+  $rank = Get-RankInfo -score $total -maxLevelParam $maxLevel -levelsPerMonsterParam $levelsPerMonster -pointsPerLevelParam $pointsPerLevel
   $exp = $total * 25
 
   if ($null -eq $rank.next) {
@@ -329,6 +349,7 @@ foreach ($name in $authorStats.Keys) {
   $authorStats[$name].exp_current = $expCurrent
   $authorStats[$name].exp_next = $expNext
   $authorStats[$name].level = $rank.level
+  $authorStats[$name].level_no = $rank.level_no
   $authorStats[$name].monster = $rank.monster
 }
 

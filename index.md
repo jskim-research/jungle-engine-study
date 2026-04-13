@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Jungle Engine Tech Lab
+title: Jungle Game Tech Lab 3기
 ---
 
 <section class="hero">
   <p class="hero-kicker">Jungle Engine Study Archive</p>
-  <h1>Jungle Engine Tech Lab</h1>
+  <h1>Jungle Game Tech Lab 3기</h1>
   <p class="hero-desc">게임테크랩에서 학습한 그래픽스, 렌더링, 수학, 엔진 구조 문서를 카테고리별로 정리한 기술 아카이브입니다.</p>
 </section>
 
