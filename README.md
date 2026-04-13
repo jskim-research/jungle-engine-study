@@ -27,21 +27,6 @@ Batch Rendering, Texture Atlas, FName 등 성능 최적화
 기타 개념
 
 ## 깃허브 페이지 관련 가이드
-- 파일 카테고리 추가
-```
-./01_rendering/Test.md 파일을 추가했다고 했을 때 다음과 같이 index.md 파일에서 항목 추가 가능
-
-<article class="category-card">
-<h2>01. Rendering</h2>
-<p>렌더링 파이프라인과 GPU 동작 개념.</p>
-<ul>
-    <li><a href="./01_rendering/pipeline">Pipeline</a></li>
-    <li><a href="./01_rendering/Decal">Decal</a></li>
-    <li><a href="./01_rendering/ui">UI</a></li>
-    <li><a href="./01_rendering/Test">Test</a></li>  // 추가
-</ul>
-</article>
-```
 
 - 깃허브 페이지 테스트 프로그램 설치
 ```
