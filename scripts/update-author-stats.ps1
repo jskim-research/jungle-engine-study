@@ -6,7 +6,19 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-$files = git ls-files -- "*.md"
+function Get-MarkdownFiles {
+  $tracked = @(git ls-files -- "*.md")
+  $untracked = @(git ls-files --others --exclude-standard -- "*.md")
+
+  $all = @($tracked + $untracked |
+    Where-Object { -not [string]::IsNullOrWhiteSpace($_) } |
+    Where-Object { $_ -notmatch '^_site/' } |
+    Sort-Object -Unique)
+
+  return $all
+}
+
+$files = Get-MarkdownFiles
 $authorStats = @{}
 $pageMeta = @{}
 $authorDocSets = @{}

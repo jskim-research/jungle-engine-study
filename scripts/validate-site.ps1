@@ -9,8 +9,14 @@ $ErrorActionPreference = "Stop"
 
 function Get-ConceptDocs {
   $docs = New-Object System.Collections.Generic.List[string]
+  $tracked = @(git ls-files -- "*.md")
+  $untracked = @(git ls-files --others --exclude-standard -- "*.md")
+  $allDocs = @($tracked + $untracked |
+    Where-Object { -not [string]::IsNullOrWhiteSpace($_) } |
+    Where-Object { $_ -notmatch '^_site/' } |
+    Sort-Object -Unique)
 
-  foreach ($path in (git ls-files -- "*.md")) {
+  foreach ($path in $allDocs) {
     $baseName = [System.IO.Path]::GetFileName($path)
     if ($path -eq "index.md" -or $path -eq "README.md" -or $baseName -ieq "README.md") {
       continue
@@ -43,6 +49,37 @@ function Get-IndexLinkedDocs([string]$content) {
   return $docs
 }
 
+function Get-DynamicIndexDirs([string]$content) {
+  $matches = [regex]::Matches($content, "p\.dir\s*==\s*'/(?<dir>0[1-5]_[^/]+)/'")
+  $whereMatches = [regex]::Matches($content, "where:\s*""dir""\s*,\s*""/(?<dir>0[1-5]_[^/]+)/""")
+  $containsMatches = [regex]::Matches($content, "doc\.path\s+contains\s+'/?(?<dir>0[1-5]_[^/]+)/'")
+  $dirs = New-Object System.Collections.Generic.HashSet[string]
+
+  foreach ($match in $matches) {
+    $null = $dirs.Add($match.Groups["dir"].Value)
+  }
+
+  foreach ($match in $whereMatches) {
+    $null = $dirs.Add($match.Groups["dir"].Value)
+  }
+
+  foreach ($match in $containsMatches) {
+    $null = $dirs.Add($match.Groups["dir"].Value)
+  }
+
+  return @($dirs)
+}
+
+function Is-CoveredByDynamicDir([string]$docPath, [string[]]$dynamicDirs) {
+  foreach ($dir in $dynamicDirs) {
+    if ($docPath.StartsWith("$dir/", [System.StringComparison]::OrdinalIgnoreCase)) {
+      return $true
+    }
+  }
+
+  return $false
+}
+
 function Get-NormalizedJson([string]$path) {
   if (-not (Test-Path -LiteralPath $path)) {
     throw "Missing JSON file: $path"
@@ -63,6 +100,7 @@ function Get-NormalizedJson([string]$path) {
 $conceptDocs = Get-ConceptDocs
 $indexContent = Get-Content -LiteralPath $IndexPath -Raw -Encoding UTF8
 $linkedDocs = @(Get-IndexLinkedDocs $indexContent)
+$dynamicDirs = @(Get-DynamicIndexDirs $indexContent)
 $issues = New-Object System.Collections.Generic.List[string]
 
 $linkCounts = @{}
@@ -74,6 +112,10 @@ foreach ($doc in $linkedDocs) {
 }
 
 foreach ($doc in $conceptDocs) {
+  if (Is-CoveredByDynamicDir -docPath $doc -dynamicDirs $dynamicDirs) {
+    continue
+  }
+
   $count = 0
   if ($linkCounts.ContainsKey($doc)) {
     $count = [int]$linkCounts[$doc]
