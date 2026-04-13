@@ -77,11 +77,12 @@ EXP:
 - `EXP = 총점 * 25`
 
 레벨/몬스터:
-- `0~179`: Slime Apprentice (Slime)
-- `180~319`: Wolf Vanguard (Wolf)
-- `320~519`: Golem Strategist (Golem)
-- `520~759`: Wyvern Marshal (Wyvern)
-- `760+`: Dragon Sovereign (Dragon)
+- 점수 `76`당 레벨 `+1` (최대 Lv.50)
+- Lv.1~10: Slime Apprentice (Slime)
+- Lv.11~20: Wolf Vanguard (Wolf)
+- Lv.21~30: Golem Strategist (Golem)
+- Lv.31~40: Wyvern Marshal (Wyvern)
+- Lv.41~50: Dragon Sovereign (Dragon)
 
 실행 커맨드(한 번에 전체 업데이트):
 ```

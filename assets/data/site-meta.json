@@ -1,5 +1,5 @@
 ﻿{
-    "generated_at":  "2026-04-13T15:53:20.9135577+09:00",
+    "generated_at":  "2026-04-13T19:21:53.5666064+09:00",
     "scoring_version":  "v3",
     "authors":  {
                     "DDing-Ho":  {
@@ -10,9 +10,10 @@
                                      "collaboration_score":  0,
                                      "total_score":  145,
                                      "exp":  3625,
-                                     "exp_current":  3625,
-                                     "exp_next":  4500,
+                                     "exp_current":  1725,
+                                     "exp_next":  1900,
                                      "level":  "Slime Apprentice",
+                                     "level_no":  2,
                                      "monster":  "Slime"
                                  },
                     "Minjun Jang":  {
@@ -23,23 +24,25 @@
                                         "collaboration_score":  5,
                                         "total_score":  143,
                                         "exp":  3575,
-                                        "exp_current":  3575,
-                                        "exp_next":  4500,
+                                        "exp_current":  1675,
+                                        "exp_next":  1900,
                                         "level":  "Slime Apprentice",
+                                        "level_no":  2,
                                         "monster":  "Slime"
                                     },
                     "Myeoungho Kang (강명호)":  {
                                                  "concept_doc_count":  2,
                                                  "content_line_count":  397,
                                                  "lead_doc_count":  2,
-                                                 "quality_score":  48,
+                                                 "quality_score":  44,
                                                  "collaboration_score":  0,
-                                                 "total_score":  307,
-                                                 "exp":  7675,
-                                                 "exp_current":  3175,
-                                                 "exp_next":  3500,
-                                                 "level":  "Wolf Vanguard",
-                                                 "monster":  "Wolf"
+                                                 "total_score":  303,
+                                                 "exp":  7575,
+                                                 "exp_current":  1875,
+                                                 "exp_next":  1900,
+                                                 "level":  "Slime Apprentice",
+                                                 "level_no":  4,
+                                                 "monster":  "Slime"
                                              },
                     "Jisoo Kim":  {
                                       "concept_doc_count":  1,
@@ -50,35 +53,38 @@
                                       "total_score":  17,
                                       "exp":  425,
                                       "exp_current":  425,
-                                      "exp_next":  4500,
+                                      "exp_next":  1900,
                                       "level":  "Slime Apprentice",
+                                      "level_no":  1,
                                       "monster":  "Slime"
                                   },
                     "LEE SangHoon":  {
                                          "concept_doc_count":  16,
                                          "content_line_count":  1065,
                                          "lead_doc_count":  15,
-                                         "quality_score":  277,
+                                         "quality_score":  265,
                                          "collaboration_score":  5,
-                                         "total_score":  824,
-                                         "exp":  20600,
-                                         "exp_current":  1600,
-                                         "exp_next":  null,
-                                         "level":  "Dragon Sovereign",
-                                         "monster":  "Dragon"
+                                         "total_score":  812,
+                                         "exp":  20300,
+                                         "exp_current":  1300,
+                                         "exp_next":  1900,
+                                         "level":  "Wolf Vanguard",
+                                         "level_no":  11,
+                                         "monster":  "Wolf"
                                      },
                     "jskim-research":  {
                                            "concept_doc_count":  10,
                                            "content_line_count":  95,
                                            "lead_doc_count":  9,
-                                           "quality_score":  35,
+                                           "quality_score":  33,
                                            "collaboration_score":  5,
-                                           "total_score":  247,
-                                           "exp":  6175,
-                                           "exp_current":  1675,
-                                           "exp_next":  3500,
-                                           "level":  "Wolf Vanguard",
-                                           "monster":  "Wolf"
+                                           "total_score":  245,
+                                           "exp":  6125,
+                                           "exp_current":  425,
+                                           "exp_next":  1900,
+                                           "level":  "Slime Apprentice",
+                                           "level_no":  4,
+                                           "monster":  "Slime"
                                        }
                 },
     "pages":  {
@@ -117,7 +123,7 @@
                                                  "latest_date":  "2026-04-12T18:37:19+09:00",
                                                  "revision_count":  3,
                                                  "quality_score":  23,
-                                                 "word_count":  798
+                                                 "word_count":  685
                                              },
                   "03_engine/RTV and SRV.md":  {
                                                    "first_author":  "LEE SangHoon",
@@ -147,7 +153,7 @@
                                                    "latest_date":  "2026-04-13T11:36:35+09:00",
                                                    "revision_count":  2,
                                                    "quality_score":  16,
-                                                   "word_count":  261
+                                                   "word_count":  231
                                                },
                   "04_optimization/fname.md":  {
                                                    "first_author":  "jskim-research",
@@ -214,7 +220,7 @@
                                             "latest_date":  "2026-03-30T19:53:11+09:00",
                                             "revision_count":  3,
                                             "quality_score":  2,
-                                            "word_count":  53
+                                            "word_count":  50
                                         },
                   "04_optimization/batch_rendering.md":  {
                                                              "first_author":  "jskim-research",
@@ -244,7 +250,7 @@
                                                              "latest_date":  "2026-03-30T19:51:34+09:00",
                                                              "revision_count":  2,
                                                              "quality_score":  2,
-                                                             "word_count":  28
+                                                             "word_count":  29
                                                          },
                   "00_conventions/graphics_conventions.md":  {
                                                                  "first_author":  "jskim-research",
@@ -267,7 +273,7 @@
                                                                  "latest_date":  "2026-03-30T19:49:27+09:00",
                                                                  "revision_count":  1,
                                                                  "quality_score":  2,
-                                                                 "word_count":  37
+                                                                 "word_count":  36
                                                              },
                   "02_math/bounding_volume.md":  {
                                                      "first_author":  "jskim-research",
@@ -290,7 +296,7 @@
                                                      "latest_date":  "2026-03-30T19:49:27+09:00",
                                                      "revision_count":  1,
                                                      "quality_score":  2,
-                                                     "word_count":  49
+                                                     "word_count":  48
                                                  },
                   "03_engine/RTTI.md":  {
                                             "first_author":  "jskim-research",
@@ -340,8 +346,8 @@
                                             "latest_author":  "Jisoo Kim",
                                             "latest_date":  "2026-04-11T14:29:56+09:00",
                                             "revision_count":  7,
-                                            "quality_score":  14,
-                                            "word_count":  219
+                                            "quality_score":  12,
+                                            "word_count":  186
                                         },
                   "04_optimization/Mesh BVH.md":  {
                                                       "first_author":  "LEE SangHoon",
@@ -370,8 +376,8 @@
                                                       "latest_author":  "LEE SangHoon",
                                                       "latest_date":  "2026-04-10T08:35:02+09:00",
                                                       "revision_count":  2,
-                                                      "quality_score":  15,
-                                                      "word_count":  449
+                                                      "quality_score":  12,
+                                                      "word_count":  380
                                                   },
                   "02_math/ray_casting.md":  {
                                                  "first_author":  "jskim-research",
@@ -422,7 +428,7 @@
                                                  "latest_date":  "2026-04-10T01:58:23+09:00",
                                                  "revision_count":  6,
                                                  "quality_score":  34,
-                                                 "word_count":  1971
+                                                 "word_count":  1795
                                              },
                   "03_engine/reflection.md":  {
                                                   "first_author":  "LEE SangHoon",
@@ -496,7 +502,7 @@
                                                                                            "latest_date":  "2026-04-12T18:18:21+09:00",
                                                                                            "revision_count":  6,
                                                                                            "quality_score":  27,
-                                                                                           "word_count":  497
+                                                                                           "word_count":  437
                                                                                        },
                   "04_optimization/SIMD.md":  {
                                                   "first_author":  "LEE SangHoon",
@@ -526,7 +532,7 @@
                                                   "latest_date":  "2026-04-09T21:57:00+09:00",
                                                   "revision_count":  2,
                                                   "quality_score":  19,
-                                                  "word_count":  495
+                                                  "word_count":  416
                                               },
                   "03_engine/actor.md":  {
                                              "first_author":  "LEE SangHoon",
@@ -549,7 +555,7 @@
                                              "latest_date":  "2026-04-12T20:28:10+09:00",
                                              "revision_count":  1,
                                              "quality_score":  20,
-                                             "word_count":  964
+                                             "word_count":  853
                                          },
                   "05_misc/obj.md":  {
                                          "first_author":  "LEE SangHoon",
@@ -585,8 +591,8 @@
                                          "latest_author":  "LEE SangHoon",
                                          "latest_date":  "2026-04-02T01:08:28+09:00",
                                          "revision_count":  3,
-                                         "quality_score":  29,
-                                         "word_count":  411
+                                         "quality_score":  26,
+                                         "word_count":  360
                                      },
                   "01_rendering/pipeline.md":  {
                                                    "first_author":  "jskim-research",
@@ -616,7 +622,7 @@
                                                    "latest_date":  "2026-03-30T19:51:34+09:00",
                                                    "revision_count":  2,
                                                    "quality_score":  7,
-                                                   "word_count":  255
+                                                   "word_count":  233
                                                },
                   "01_rendering/Decal.md":  {
                                                 "first_author":  "Myeoungho Kang (강명호)",
@@ -646,7 +652,7 @@
                                                 "latest_date":  "2026-04-10T20:47:12+09:00",
                                                 "revision_count":  2,
                                                 "quality_score":  40,
-                                                "word_count":  1792
+                                                "word_count":  1591
                                             },
                   "01_rendering/ui.md":  {
                                              "first_author":  "jskim-research",
@@ -676,7 +682,7 @@
                                              "latest_date":  "2026-03-30T19:51:34+09:00",
                                              "revision_count":  2,
                                              "quality_score":  2,
-                                             "word_count":  36
+                                             "word_count":  38
                                          },
                   "04_optimization/Scene BVH.md":  {
                                                        "first_author":  "LEE SangHoon",
@@ -706,7 +712,7 @@
                                                        "latest_date":  "2026-04-10T20:47:12+09:00",
                                                        "revision_count":  2,
                                                        "quality_score":  19,
-                                                       "word_count":  702
+                                                       "word_count":  580
                                                    },
                   "03_engine/serialization.md":  {
                                                      "first_author":  "LEE SangHoon",
@@ -735,8 +741,8 @@
                                                      "latest_author":  "LEE SangHoon",
                                                      "latest_date":  "2026-04-10T08:35:02+09:00",
                                                      "revision_count":  2,
-                                                     "quality_score":  15,
-                                                     "word_count":  402
+                                                     "quality_score":  12,
+                                                     "word_count":  344
                                                  },
                   "03_engine/CDO.md":  {
                                            "first_author":  "Myeoungho Kang (강명호)",
@@ -765,8 +771,8 @@
                                            "latest_author":  "Myeoungho Kang (강명호)",
                                            "latest_date":  "2026-04-13T11:18:21+09:00",
                                            "revision_count":  2,
-                                           "quality_score":  28,
-                                           "word_count":  1322
+                                           "quality_score":  24,
+                                           "word_count":  1118
                                        },
                   "05_misc/Dynamic Glyph Atlas for Korean Text Rendering.md":  {
                                                                                    "first_author":  "LEE SangHoon",
@@ -796,7 +802,7 @@
                                                                                    "latest_date":  "2026-04-01T10:39:10+09:00",
                                                                                    "revision_count":  2,
                                                                                    "quality_score":  14,
-                                                                                   "word_count":  394
+                                                                                   "word_count":  319
                                                                                },
                   "01_rendering/HDR.md":  {
                                               "first_author":  "LEE SangHoon",
@@ -826,7 +832,7 @@
                                               "latest_date":  "2026-04-13T11:36:35+09:00",
                                               "revision_count":  2,
                                               "quality_score":  6,
-                                              "word_count":  84
+                                              "word_count":  68
                                           },
                   "05_misc/Texture is Data, Material is Behavior.md":  {
                                                                            "first_author":  "LEE SangHoon",
@@ -862,8 +868,8 @@
                                                                            "latest_author":  "LEE SangHoon",
                                                                            "latest_date":  "2026-04-01T13:03:00+09:00",
                                                                            "revision_count":  3,
-                                                                           "quality_score":  13,
-                                                                           "word_count":  442
+                                                                           "quality_score":  10,
+                                                                           "word_count":  361
                                                                        },
                   "04_optimization/texture_atlas.md":  {
                                                            "first_author":  "jskim-research",
@@ -886,7 +892,7 @@
                                                            "latest_date":  "2026-03-30T19:49:27+09:00",
                                                            "revision_count":  1,
                                                            "quality_score":  2,
-                                                           "word_count":  22
+                                                           "word_count":  18
                                                        },
                   "05_misc/Wireframe Outline Rendering.md":  {
                                                                  "first_author":  "LEE SangHoon",
@@ -937,22 +943,28 @@
                                                                  "latest_date":  "2026-04-10T08:35:02+09:00",
                                                                  "revision_count":  8,
                                                                  "quality_score":  19,
-                                                                 "word_count":  561
+                                                                 "word_count":  468
                                                              },
                   "05_misc/Theme Visibility Test.md":  {
                                                            "first_author":  "DDing-Ho",
-                                                           "first_date":  "2026-04-13T15:50:47.6088231+09:00",
+                                                           "first_date":  "2026-04-13T15:59:17+09:00",
                                                            "lead_authors":  [
                                                                                 "DDing-Ho"
                                                                             ],
                                                            "lead_line_count":  82,
                                                            "history_entries":  [
-
+                                                                                   {
+                                                                                       "sha":  "131d47655bfc8cd8e9da74b2e76889174e65a965",
+                                                                                       "message":  "테마 가시성 테스트 페이지와 라이트·다크 전수 감사 보강",
+                                                                                       "author":  "DDing-Ho",
+                                                                                       "date":  "2026-04-13T15:59:17+09:00",
+                                                                                       "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/131d47655bfc8cd8e9da74b2e76889174e65a965"
+                                                                                   }
                                                                                ],
-                                                           "history_url":  "",
+                                                           "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/05_misc/Theme%20Visibility%20Test.md",
                                                            "latest_author":  "DDing-Ho",
-                                                           "latest_date":  "2026-04-13T15:50:47.6088231+09:00",
-                                                           "revision_count":  0,
+                                                           "latest_date":  "2026-04-13T15:59:17+09:00",
+                                                           "revision_count":  1,
                                                            "quality_score":  26,
                                                            "word_count":  347
                                                        }

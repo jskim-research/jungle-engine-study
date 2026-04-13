@@ -1,5 +1,5 @@
 ﻿{
-    "generated_at":  "2026-04-13T15:53:20.9124067+09:00",
+    "generated_at":  "2026-04-13T19:21:53.5656146+09:00",
     "scoring_version":  "v3",
     "authors":  {
                     "DDing-Ho":  {
@@ -10,9 +10,10 @@
                                      "collaboration_score":  0,
                                      "total_score":  145,
                                      "exp":  3625,
-                                     "exp_current":  3625,
-                                     "exp_next":  4500,
+                                     "exp_current":  1725,
+                                     "exp_next":  1900,
                                      "level":  "Slime Apprentice",
+                                     "level_no":  2,
                                      "monster":  "Slime"
                                  },
                     "Minjun Jang":  {
@@ -23,23 +24,25 @@
                                         "collaboration_score":  5,
                                         "total_score":  143,
                                         "exp":  3575,
-                                        "exp_current":  3575,
-                                        "exp_next":  4500,
+                                        "exp_current":  1675,
+                                        "exp_next":  1900,
                                         "level":  "Slime Apprentice",
+                                        "level_no":  2,
                                         "monster":  "Slime"
                                     },
                     "Myeoungho Kang (강명호)":  {
                                                  "concept_doc_count":  2,
                                                  "content_line_count":  397,
                                                  "lead_doc_count":  2,
-                                                 "quality_score":  48,
+                                                 "quality_score":  44,
                                                  "collaboration_score":  0,
-                                                 "total_score":  307,
-                                                 "exp":  7675,
-                                                 "exp_current":  3175,
-                                                 "exp_next":  3500,
-                                                 "level":  "Wolf Vanguard",
-                                                 "monster":  "Wolf"
+                                                 "total_score":  303,
+                                                 "exp":  7575,
+                                                 "exp_current":  1875,
+                                                 "exp_next":  1900,
+                                                 "level":  "Slime Apprentice",
+                                                 "level_no":  4,
+                                                 "monster":  "Slime"
                                              },
                     "Jisoo Kim":  {
                                       "concept_doc_count":  1,
@@ -50,35 +53,38 @@
                                       "total_score":  17,
                                       "exp":  425,
                                       "exp_current":  425,
-                                      "exp_next":  4500,
+                                      "exp_next":  1900,
                                       "level":  "Slime Apprentice",
+                                      "level_no":  1,
                                       "monster":  "Slime"
                                   },
                     "LEE SangHoon":  {
                                          "concept_doc_count":  16,
                                          "content_line_count":  1065,
                                          "lead_doc_count":  15,
-                                         "quality_score":  277,
+                                         "quality_score":  265,
                                          "collaboration_score":  5,
-                                         "total_score":  824,
-                                         "exp":  20600,
-                                         "exp_current":  1600,
-                                         "exp_next":  null,
-                                         "level":  "Dragon Sovereign",
-                                         "monster":  "Dragon"
+                                         "total_score":  812,
+                                         "exp":  20300,
+                                         "exp_current":  1300,
+                                         "exp_next":  1900,
+                                         "level":  "Wolf Vanguard",
+                                         "level_no":  11,
+                                         "monster":  "Wolf"
                                      },
                     "jskim-research":  {
                                            "concept_doc_count":  10,
                                            "content_line_count":  95,
                                            "lead_doc_count":  9,
-                                           "quality_score":  35,
+                                           "quality_score":  33,
                                            "collaboration_score":  5,
-                                           "total_score":  247,
-                                           "exp":  6175,
-                                           "exp_current":  1675,
-                                           "exp_next":  3500,
-                                           "level":  "Wolf Vanguard",
-                                           "monster":  "Wolf"
+                                           "total_score":  245,
+                                           "exp":  6125,
+                                           "exp_current":  425,
+                                           "exp_next":  1900,
+                                           "level":  "Slime Apprentice",
+                                           "level_no":  4,
+                                           "monster":  "Slime"
                                        }
                 }
 }

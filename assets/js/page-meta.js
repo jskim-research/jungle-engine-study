@@ -82,20 +82,18 @@
     }
   }
 
-  function getLevel(totalScore) {
-    if (totalScore >= 760) return "Dragon Sovereign";
-    if (totalScore >= 520) return "Wyvern Marshal";
-    if (totalScore >= 320) return "Golem Strategist";
-    if (totalScore >= 180) return "Wolf Vanguard";
+  function getTierName(levelNo) {
+    if (levelNo >= 41) return "Dragon Sovereign";
+    if (levelNo >= 31) return "Wyvern Marshal";
+    if (levelNo >= 21) return "Golem Strategist";
+    if (levelNo >= 11) return "Wolf Vanguard";
     return "Slime Apprentice";
   }
 
   function getLevelNumber(totalScore) {
-    if (totalScore >= 760) return 5;
-    if (totalScore >= 520) return 4;
-    if (totalScore >= 320) return 3;
-    if (totalScore >= 180) return 2;
-    return 1;
+    var pointsPerLevel = 76;
+    var raw = Math.floor(Math.max(totalScore || 0, 0) / pointsPerLevel) + 1;
+    return Math.max(1, Math.min(50, raw));
   }
 
   function formatLeadAuthors(leadAuthors) {
@@ -175,8 +173,8 @@
     var expCurrent = profile.exp_current || 0;
     var expNext = profile.exp_next;
     var monster = profile.monster || "Slime";
-    var level = profile.level || getLevel(totalScore);
-    var levelNo = getLevelNumber(totalScore);
+    var levelNo = profile.level_no || getLevelNumber(totalScore);
+    var level = profile.level || getTierName(levelNo);
     setText("meta-level", "Lv." + levelNo + " " + level);
     setText("meta-post-count", "최초 작성자 기여 문서: " + docCount + "개 | SCORE: " + totalScore + " | EXP: " + exp);
     updateMonsterImage(monster);
