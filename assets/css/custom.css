@@ -84,6 +84,7 @@
   --code-operator: #617a8a;
   --code-error-bg: rgba(194, 72, 72, 0.12);
   --code-error-border: rgba(194, 72, 72, 0.4);
+  --code-error-ink: #8f2424;
   --blockquote-bg: rgba(231, 245, 252, 0.85);
   --table-head-bg: rgba(225, 239, 247, 0.92);
   --table-row-alt-bg: rgba(240, 248, 253, 0.8);
@@ -184,6 +185,7 @@ html[data-theme="dark"] {
   --code-operator: #9ec0cf;
   --code-error-bg: rgba(255, 104, 104, 0.18);
   --code-error-border: rgba(255, 135, 135, 0.45);
+  --code-error-ink: #ffd9d9;
   --blockquote-bg: rgba(17, 38, 50, 0.92);
   --table-head-bg: rgba(19, 42, 55, 0.96);
   --table-row-alt-bg: rgba(14, 31, 42, 0.82);
@@ -281,6 +283,7 @@ html[data-theme="dark"] {
     --code-operator: #9ec0cf;
     --code-error-bg: rgba(255, 104, 104, 0.18);
     --code-error-border: rgba(255, 135, 135, 0.45);
+    --code-error-ink: #ffd9d9;
     --blockquote-bg: rgba(17, 38, 50, 0.92);
     --table-head-bg: rgba(19, 42, 55, 0.96);
     --table-row-alt-bg: rgba(14, 31, 42, 0.82);
@@ -884,18 +887,7 @@ a:hover {
   color: var(--code-ink);
 }
 
-.post-content p code,
-.post-content li > code,
-.post-content li p code,
-.post-content h1 code,
-.post-content h2 code,
-.post-content h3 code,
-.post-content h4 code,
-.post-content h5 code,
-.post-content h6 code,
-.post-content td code,
-.post-content th code,
-.post-content blockquote code {
+.post-content :not(pre) > code {
   background: var(--inline-code-bg);
   border: 1px solid var(--inline-code-border);
   color: var(--inline-code-ink);
@@ -1003,8 +995,10 @@ a:hover {
 
 .highlight .err {
   background: var(--code-error-bg);
+  color: var(--code-error-ink);
   border-radius: 4px;
   box-shadow: inset 0 0 0 1px var(--code-error-border);
+  padding: 0 0.14em;
 }
 
 .post-content blockquote {

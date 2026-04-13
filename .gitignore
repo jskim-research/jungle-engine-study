@@ -11,5 +11,9 @@ _site/
 vendor/bundle/
 Gemfile.lock
 
+# Node / browser audit tooling
+node_modules/
+.visual-audit/
+
 # OS/editor noise
 .DS_Store
