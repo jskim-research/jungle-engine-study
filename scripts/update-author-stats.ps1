@@ -81,6 +81,15 @@ function Get-RankInfo([int]$score) {
   return [ordered]@{ level = "Slime Apprentice"; monster = "Slime"; floor = 0; next = 180 }
 }
 
+function Get-FallbackAuthor {
+  $name = (git config user.name 2>$null)
+  if (-not [string]::IsNullOrWhiteSpace($name)) {
+    return $name.Trim()
+  }
+
+  return "Unknown Author"
+}
+
 function Ensure-Author([string]$name) {
   if ([string]::IsNullOrWhiteSpace($name)) {
     return
@@ -138,6 +147,7 @@ function Get-QualityScore([string]$content) {
 }
 
 $repoInfo = Get-GitHubRepoInfo
+$fallbackAuthor = Get-FallbackAuthor
 
 foreach ($file in $files) {
   $baseName = [System.IO.Path]::GetFileName($file)
@@ -154,45 +164,85 @@ foreach ($file in $files) {
   }
   $qualityScore = Get-QualityScore $content
   $history = git log --follow --format="%H%x1f%an%x1f%aI%x1f%s" -- "$file"
-  if (-not $history) {
-    continue
-  }
-
   $lines = @($history | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })
-  if ($lines.Count -eq 0) {
-    continue
-  }
-
-  $latestParts = $lines[0].Split([char]0x1f, 4)
-  $firstParts = $lines[$lines.Count - 1].Split([char]0x1f, 4)
-
-  $latestAuthor = if ($latestParts.Count -gt 1) { $latestParts[1] } else { "" }
-  $latestDate = if ($latestParts.Count -gt 2) { $latestParts[2] } else { "" }
-  $firstAuthor = if ($firstParts.Count -gt 1) { $firstParts[1] } else { "" }
-  $firstDate = if ($firstParts.Count -gt 2) { $firstParts[2] } else { "" }
-
-  $blame = git blame --line-porcelain -- "$file"
   $lineOwners = @{}
   $owner = ""
   $totalContentLines = 0
+  $latestAuthor = ""
+  $latestDate = ""
+  $firstAuthor = ""
+  $firstDate = ""
+  $historyEntries = New-Object System.Collections.Generic.List[object]
+  $historyUrl = ""
 
-  foreach ($blameLine in $blame) {
-    if ($blameLine.StartsWith("author ")) {
-      $owner = $blameLine.Substring(7)
-      Ensure-Author $owner
-      continue
-    }
+  if ($lines.Count -gt 0) {
+    $latestParts = $lines[0].Split([char]0x1f, 4)
+    $firstParts = $lines[$lines.Count - 1].Split([char]0x1f, 4)
 
-    if ($blameLine.StartsWith("`t")) {
-      $txt = $blameLine.Substring(1)
-      if (-not [string]::IsNullOrWhiteSpace($txt)) {
-        if (-not $lineOwners.ContainsKey($owner)) {
-          $lineOwners[$owner] = 0
+    $latestAuthor = if ($latestParts.Count -gt 1) { $latestParts[1] } else { "" }
+    $latestDate = if ($latestParts.Count -gt 2) { $latestParts[2] } else { "" }
+    $firstAuthor = if ($firstParts.Count -gt 1) { $firstParts[1] } else { "" }
+    $firstDate = if ($firstParts.Count -gt 2) { $firstParts[2] } else { "" }
+
+    $blame = git blame --line-porcelain -- "$file"
+    foreach ($blameLine in $blame) {
+      if ($blameLine.StartsWith("author ")) {
+        $owner = $blameLine.Substring(7)
+        Ensure-Author $owner
+        continue
+      }
+
+      if ($blameLine.StartsWith("`t")) {
+        $txt = $blameLine.Substring(1)
+        if (-not [string]::IsNullOrWhiteSpace($txt)) {
+          if (-not $lineOwners.ContainsKey($owner)) {
+            $lineOwners[$owner] = 0
+          }
+          $lineOwners[$owner]++
+          $totalContentLines++
         }
-        $lineOwners[$owner]++
-        $totalContentLines++
       }
     }
+
+    $historyCount = [Math]::Min($historyEntryLimit, $lines.Count)
+    for ($i = 0; $i -lt $historyCount; $i++) {
+      $parts = $lines[$i].Split([char]0x1f, 4)
+      $sha = if ($parts.Count -gt 0) { $parts[0] } else { "" }
+      $author = if ($parts.Count -gt 1) { $parts[1] } else { "" }
+      $date = if ($parts.Count -gt 2) { $parts[2] } else { "" }
+      $message = if ($parts.Count -gt 3) { $parts[3] } else { "" }
+      $commitUrl = ""
+
+      if (-not [string]::IsNullOrWhiteSpace($repoInfo.base_url) -and -not [string]::IsNullOrWhiteSpace($sha)) {
+        $commitUrl = "$($repoInfo.base_url)/commit/$sha"
+      }
+
+      $historyEntries.Add([ordered]@{
+        sha = $sha
+        message = $message
+        author = $author
+        date = $date
+        commit_url = $commitUrl
+      })
+    }
+
+    if (-not [string]::IsNullOrWhiteSpace($repoInfo.base_url)) {
+      $historyUrl = "{0}/commits/{1}/{2}" -f $repoInfo.base_url, $repoInfo.default_branch, (Convert-ToGitHubPath $file)
+    }
+  } else {
+    # Uncommitted markdown file fallback: show provisional author metadata locally.
+    $provisionalAuthor = $fallbackAuthor
+    $provisionalDate = (Get-Date).ToString("o")
+    $contentLines = @($content -split "`r?`n" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }).Count
+    if ($contentLines -gt 0) {
+      $lineOwners[$provisionalAuthor] = $contentLines
+      $totalContentLines = $contentLines
+    }
+
+    $latestAuthor = $provisionalAuthor
+    $latestDate = $provisionalDate
+    $firstAuthor = $provisionalAuthor
+    $firstDate = $provisionalDate
   }
 
   $leadLineCount = 0
@@ -208,34 +258,6 @@ foreach ($file in $files) {
       Where-Object { [int]$lineOwners[$_] -eq $leadLineCount -and $leadLineCount -gt 0 } |
       Sort-Object
   )
-
-  $historyEntries = New-Object System.Collections.Generic.List[object]
-  $historyCount = [Math]::Min($historyEntryLimit, $lines.Count)
-  for ($i = 0; $i -lt $historyCount; $i++) {
-    $parts = $lines[$i].Split([char]0x1f, 4)
-    $sha = if ($parts.Count -gt 0) { $parts[0] } else { "" }
-    $author = if ($parts.Count -gt 1) { $parts[1] } else { "" }
-    $date = if ($parts.Count -gt 2) { $parts[2] } else { "" }
-    $message = if ($parts.Count -gt 3) { $parts[3] } else { "" }
-    $commitUrl = ""
-
-    if (-not [string]::IsNullOrWhiteSpace($repoInfo.base_url) -and -not [string]::IsNullOrWhiteSpace($sha)) {
-      $commitUrl = "$($repoInfo.base_url)/commit/$sha"
-    }
-
-    $historyEntries.Add([ordered]@{
-      sha = $sha
-      message = $message
-      author = $author
-      date = $date
-      commit_url = $commitUrl
-    })
-  }
-
-  $historyUrl = ""
-  if (-not [string]::IsNullOrWhiteSpace($repoInfo.base_url)) {
-    $historyUrl = "{0}/commits/{1}/{2}" -f $repoInfo.base_url, $repoInfo.default_branch, (Convert-ToGitHubPath $file)
-  }
 
   foreach ($name in $lineOwners.Keys) {
     Ensure-Author $name

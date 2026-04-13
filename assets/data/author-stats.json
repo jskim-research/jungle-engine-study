@@ -1,5 +1,5 @@
 ﻿{
-    "generated_at":  "2026-04-13T11:35:41.0367177+09:00",
+    "generated_at":  "2026-04-13T11:39:29.9110641+09:00",
     "scoring_version":  "v3",
     "authors":  {
                     "Myeoungho Kang (강명호)":  {
@@ -16,14 +16,14 @@
                                                  "monster":  "Wolf"
                                              },
                     "LEE SangHoon":  {
-                                         "concept_doc_count":  14,
-                                         "content_line_count":  1031,
-                                         "lead_doc_count":  13,
-                                         "quality_score":  243,
+                                         "concept_doc_count":  16,
+                                         "content_line_count":  1065,
+                                         "lead_doc_count":  15,
+                                         "quality_score":  265,
                                          "collaboration_score":  5,
-                                         "total_score":  763,
-                                         "exp":  19075,
-                                         "exp_current":  75,
+                                         "total_score":  812,
+                                         "exp":  20300,
+                                         "exp_current":  1300,
                                          "exp_next":  null,
                                          "level":  "Dragon Sovereign",
                                          "monster":  "Dragon"
