@@ -3,6 +3,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
+  <script>
+    (function () {
+      var storageKey = "jungle-theme";
+      var root = document.documentElement;
+      var storedTheme = "system";
+
+      try {
+        var saved = localStorage.getItem(storageKey);
+        if (saved === "light" || saved === "dark") {
+          storedTheme = saved;
+        }
+      } catch (e) {
+        storedTheme = "system";
+      }
+
+      if (storedTheme === "light" || storedTheme === "dark") {
+        root.setAttribute("data-theme", storedTheme);
+      } else {
+        root.removeAttribute("data-theme");
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
   <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
@@ -27,4 +49,5 @@
   </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script src="{{ '/assets/js/page-meta.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}" defer></script>
 </head>

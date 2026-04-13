@@ -1,5 +1,11 @@
 <header class="site-header" role="banner">
   <div class="wrapper">
     <a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+    <div class="site-controls">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-live="polite">
+        <span class="theme-toggle-label">테마</span>
+        <span class="theme-toggle-value" data-theme-toggle-value>시스템</span>
+      </button>
+    </div>
   </div>
 </header>
