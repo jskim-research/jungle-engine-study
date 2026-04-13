@@ -1188,6 +1188,59 @@ a:hover {
   font-size: 0.95rem;
 }
 
+.page-recommend {
+  margin: 0.8rem 1rem 0;
+  padding: 0.78rem 0.9rem;
+  border: 1px dashed var(--line-strong);
+  border-radius: 12px;
+  background: var(--history-bg);
+}
+
+.page-recommend-head {
+  font-family: "Rajdhani", "Noto Sans KR", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-strong);
+}
+
+.page-recommend-meta,
+.page-recommend-note,
+.page-recommend-actions {
+  margin: 0;
+  margin-top: 0.42rem;
+}
+
+.page-recommend-meta {
+  color: var(--ink);
+}
+
+.page-recommend-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.page-recommend-link,
+.page-recommend-link:visited {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.72rem;
+  border-radius: 999px;
+  border: 1px solid var(--button-border);
+  background: var(--button-bg);
+  color: var(--button-ink);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.page-recommend-link:hover,
+.page-recommend-link:focus-visible {
+  background: var(--button-bg-hover);
+  color: var(--button-ink);
+}
+
 .page-comments-actions {
   margin: 0;
   padding: 0.7rem 1rem 0;

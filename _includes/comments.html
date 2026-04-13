@@ -16,6 +16,20 @@
 <section class="page-comments" aria-label="Document discussion">
   <div class="page-comments-head">Document Discussion</div>
   <p class="page-comments-note">GitHub 계정으로 댓글을 작성합니다.</p>
+  <div
+    class="page-recommend"
+    data-recommend-shell
+    data-recommend-repo="{{ site.comments.repo | default: '' | escape }}"
+  >
+    <div class="page-recommend-head">문서 추천</div>
+    <p class="page-recommend-meta">
+      현재 추천 수: <strong data-recommend-count>조회 중...</strong>
+    </p>
+    <p class="page-recommend-note" data-recommend-note>GitHub 이슈의 👍 반응을 집계합니다.</p>
+    <p class="page-recommend-actions">
+      <a class="page-recommend-link" data-recommend-link href="#" target="_blank" rel="noopener noreferrer">추천(👍) 남기기</a>
+    </p>
+  </div>
   <p class="page-comments-actions">
     <a
       class="page-comments-compose-link"
