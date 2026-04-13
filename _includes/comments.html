@@ -1,0 +1,34 @@
+{%- assign page_path = page.path | default: "" | downcase -%}
+{%- assign comments_enabled = site.comments.enabled | default: false -%}
+{%- assign show_comments = false -%}
+
+{%- if comments_enabled and page_path != "" and page_path != "index.md" -%}
+  {%- unless page_path contains "readme.md" -%}
+    {%- assign show_comments = true -%}
+  {%- endunless -%}
+{%- endif -%}
+
+{%- if show_comments -%}
+<section class="page-comments" aria-label="Document discussion">
+  <div class="page-comments-head">Document Discussion</div>
+  <p class="page-comments-note">GitHub 계정으로 댓글을 작성합니다.</p>
+  <div
+    class="page-comments-shell"
+    data-comments-provider="{{ site.comments.provider | default: 'utterances' | escape }}"
+    data-comments-repo="{{ site.comments.repo | default: '' | escape }}"
+    data-comments-issue-term="{{ site.comments.issue_term | default: 'pathname' | escape }}"
+    data-comments-lang="{{ site.comments.lang | default: 'ko' | escape }}"
+    data-comments-utterances-theme-light="{{ site.comments.utterances.theme_light | default: 'github-light' | escape }}"
+    data-comments-utterances-theme-dark="{{ site.comments.utterances.theme_dark | default: 'github-dark' | escape }}"
+    data-comments-giscus-repo-id="{{ site.comments.giscus.repo_id | default: '' | escape }}"
+    data-comments-giscus-category="{{ site.comments.giscus.category | default: '' | escape }}"
+    data-comments-giscus-category-id="{{ site.comments.giscus.category_id | default: '' | escape }}"
+    data-comments-giscus-mapping="{{ site.comments.giscus.mapping | default: 'pathname' | escape }}"
+    data-comments-giscus-strict="{{ site.comments.giscus.strict | default: 0 | escape }}"
+    data-comments-giscus-reactions-enabled="{{ site.comments.giscus.reactions_enabled | default: 1 | escape }}"
+    data-comments-giscus-input-position="{{ site.comments.giscus.input_position | default: 'bottom' | escape }}"
+  >
+    <div class="page-comments-mount" data-comments-mount></div>
+  </div>
+</section>
+{%- endif -%}

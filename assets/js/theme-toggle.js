@@ -95,9 +95,21 @@
     button.setAttribute("title", "테마 모드 전환");
   }
 
+  function notifyThemeChange(theme, resolvedTheme) {
+    window.dispatchEvent(
+      new CustomEvent("jungle:theme-change", {
+        detail: {
+          theme: theme,
+          resolvedTheme: resolvedTheme
+        }
+      })
+    );
+  }
+
   function syncTheme(theme) {
     var resolvedTheme = applyTheme(theme);
     updateButton(theme, resolvedTheme);
+    notifyThemeChange(theme, resolvedTheme);
   }
 
   var activeTheme = getStoredTheme();

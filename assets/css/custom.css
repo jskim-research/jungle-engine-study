@@ -1135,6 +1135,42 @@ a:hover {
   color: var(--ink) !important;
 }
 
+.page-comments {
+  margin-top: 1.6rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+
+.page-comments-head {
+  padding: 0.78rem 1rem;
+  background: var(--meta-head-bg);
+  border-bottom: 1px solid var(--line-strong);
+  font-family: "Rajdhani", "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-strong);
+}
+
+.page-comments-note {
+  margin: 0;
+  padding: 0.9rem 1rem 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.page-comments-shell {
+  padding: 1rem;
+}
+
+.page-comments-shell iframe {
+  width: 100%;
+}
+
 @media (max-width: 700px) {
   .site-header .wrapper {
     min-height: 72px;
@@ -1166,6 +1202,10 @@ a:hover {
 
   .page-meta-grid {
     grid-template-columns: 1fr;
+  }
+
+  .page-comments-shell {
+    padding: 0.9rem 0.6rem;
   }
 
   .author-rank {
