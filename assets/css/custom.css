@@ -62,6 +62,9 @@
   --post-bg: rgba(255, 255, 255, 0.92);
   --content-bg: #ffffff;
   --content-border: #e1edf3;
+  --content-link: #0a6280;
+  --content-link-hover: #084a62;
+  --content-link-visited: #6f4ca5;
   --code-bg: #f4fbff;
   --code-border: #d7e7ef;
   --code-ink: #1c2f3b;
@@ -82,6 +85,10 @@
   --code-error-bg: rgba(194, 72, 72, 0.12);
   --code-error-border: rgba(194, 72, 72, 0.4);
   --blockquote-bg: rgba(231, 245, 252, 0.85);
+  --table-head-bg: rgba(225, 239, 247, 0.92);
+  --table-row-alt-bg: rgba(240, 248, 253, 0.8);
+  --mark-bg: #fff1a8;
+  --mark-ink: #3b2f00;
   --selection-bg: rgba(15, 134, 177, 0.2);
   --theme-button-bg: rgba(223, 243, 255, 0.88);
   --theme-button-bg-hover: rgba(200, 235, 255, 0.96);
@@ -155,6 +162,9 @@ html[data-theme="dark"] {
   --post-bg: rgba(11, 21, 29, 0.92);
   --content-bg: #0d1a24;
   --content-border: #203847;
+  --content-link: #98e8ff;
+  --content-link-hover: #d2f7ff;
+  --content-link-visited: #d4bbff;
   --code-bg: #0a151d;
   --code-border: #214054;
   --code-ink: #e5f3fb;
@@ -175,6 +185,10 @@ html[data-theme="dark"] {
   --code-error-bg: rgba(255, 104, 104, 0.18);
   --code-error-border: rgba(255, 135, 135, 0.45);
   --blockquote-bg: rgba(17, 38, 50, 0.92);
+  --table-head-bg: rgba(19, 42, 55, 0.96);
+  --table-row-alt-bg: rgba(14, 31, 42, 0.82);
+  --mark-bg: #6c5200;
+  --mark-ink: #fff5cb;
   --selection-bg: rgba(89, 200, 239, 0.26);
   --theme-button-bg: rgba(18, 51, 69, 0.88);
   --theme-button-bg-hover: rgba(26, 68, 91, 0.96);
@@ -245,9 +259,33 @@ html[data-theme="dark"] {
     --post-bg: rgba(11, 21, 29, 0.92);
     --content-bg: #0d1a24;
     --content-border: #203847;
+    --content-link: #98e8ff;
+    --content-link-hover: #d2f7ff;
+    --content-link-visited: #d4bbff;
     --code-bg: #0a151d;
     --code-border: #214054;
+    --code-ink: #e5f3fb;
+    --code-muted: #86a4b5;
+    --inline-code-bg: rgba(89, 200, 239, 0.12);
+    --inline-code-border: #2a5063;
+    --inline-code-ink: #d8f6ff;
+    --code-keyword: #8fe3ff;
+    --code-string: #ffc37f;
+    --code-number: #d8abff;
+    --code-type: #7ecaff;
+    --code-function: #7be9db;
+    --code-variable: #d7e6ef;
+    --code-constant: #ff9d73;
+    --code-class: #84deff;
+    --code-tag: #ff93b5;
+    --code-operator: #9ec0cf;
+    --code-error-bg: rgba(255, 104, 104, 0.18);
+    --code-error-border: rgba(255, 135, 135, 0.45);
     --blockquote-bg: rgba(17, 38, 50, 0.92);
+    --table-head-bg: rgba(19, 42, 55, 0.96);
+    --table-row-alt-bg: rgba(14, 31, 42, 0.82);
+    --mark-bg: #6c5200;
+    --mark-ink: #fff5cb;
     --selection-bg: rgba(89, 200, 239, 0.26);
     --theme-button-bg: rgba(18, 51, 69, 0.88);
     --theme-button-bg-hover: rgba(26, 68, 91, 0.96);
@@ -754,6 +792,31 @@ a:hover {
   color: var(--ink);
 }
 
+.post-content a,
+.page-content a,
+.site-footer a,
+.post-meta a {
+  color: var(--content-link);
+}
+
+.post-content a:visited,
+.page-content a:visited,
+.site-footer a:visited,
+.post-meta a:visited {
+  color: var(--content-link-visited);
+}
+
+.post-content a:hover,
+.page-content a:hover,
+.site-footer a:hover,
+.post-meta a:hover,
+.post-content a:focus-visible,
+.page-content a:focus-visible,
+.site-footer a:focus-visible,
+.post-meta a:focus-visible {
+  color: var(--content-link-hover);
+}
+
 .post-content h1,
 .post-content h2,
 .post-content h3,
@@ -778,12 +841,17 @@ a:hover {
   background: var(--code-bg);
   border: 1px solid var(--code-border);
   color: var(--code-ink);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   word-break: break-word;
-  overflow-x: hidden;
+  overflow-x: auto;
   padding: 0.85rem;
   border-radius: 10px;
+}
+
+.highlighter-rouge {
+  color: var(--code-ink);
 }
 
 .post-content pre code,
@@ -819,6 +887,12 @@ a:hover {
 .post-content p code,
 .post-content li > code,
 .post-content li p code,
+.post-content h1 code,
+.post-content h2 code,
+.post-content h3 code,
+.post-content h4 code,
+.post-content h5 code,
+.post-content h6 code,
 .post-content td code,
 .post-content th code,
 .post-content blockquote code {
@@ -947,6 +1021,7 @@ a:hover {
 
 .post-content table {
   border-color: var(--line);
+  background: transparent;
 }
 
 .post-content th,
@@ -955,12 +1030,23 @@ a:hover {
 }
 
 .post-content th {
-  background: var(--surface-soft);
+  background: var(--table-head-bg);
 }
 
 .post-content th,
 .post-content td {
   color: var(--ink);
+}
+
+.post-content tbody tr:nth-child(even) {
+  background: var(--table-row-alt-bg);
+}
+
+.post-content mark {
+  background: var(--mark-bg);
+  color: var(--mark-ink);
+  padding: 0.08rem 0.22rem;
+  border-radius: 4px;
 }
 
 .post-content .MathJax {
