@@ -20,3 +20,6 @@
 
 * [Actor](./actor.md)
   - Actor, Component, Root Component 구조 정리
+
+* [CDO](./CDO.md)
+  - UObject 기반 클래스의 기본값과 기본 구조를 담고 있는 원본 객체
