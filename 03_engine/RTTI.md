@@ -37,8 +37,8 @@ private:
   <img src="../99_resource/images/mario_hierarchy.png" width="288" height ="300">
 </p>
 
-어떤 클래스로부터 파생되었는지를 런타임 중에 파악하는 걸 C++에서 제공하는 기능이 아니라\
-직접 구현하게 되면 상위의 개념인 Reflection으로 발전시킬 수 있다.
+후술하겠지만 객체가 어떤 클래스를 상속 받아 만들어 졌는지 확인하는 기능을 직접 구현하게 되면\
+좀 더 상위의 개념인 Reflection으로 발전시킬 수 있다.
 
 ### 2. RTTI에서 Reflection으로
 
