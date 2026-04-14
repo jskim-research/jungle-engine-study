@@ -1,35 +1,7 @@
 ﻿{
-    "generated_at":  "2026-04-13T19:21:53.5666064+09:00",
+    "generated_at":  "2026-04-14T10:48:00.9194453+09:00",
     "scoring_version":  "v3",
     "authors":  {
-                    "DDing-Ho":  {
-                                     "concept_doc_count":  1,
-                                     "content_line_count":  82,
-                                     "lead_doc_count":  1,
-                                     "quality_score":  26,
-                                     "collaboration_score":  0,
-                                     "total_score":  145,
-                                     "exp":  3625,
-                                     "exp_current":  1725,
-                                     "exp_next":  1900,
-                                     "level":  "Slime Apprentice",
-                                     "level_no":  2,
-                                     "monster":  "Slime"
-                                 },
-                    "Minjun Jang":  {
-                                        "concept_doc_count":  1,
-                                        "content_line_count":  107,
-                                        "lead_doc_count":  0,
-                                        "quality_score":  14,
-                                        "collaboration_score":  5,
-                                        "total_score":  143,
-                                        "exp":  3575,
-                                        "exp_current":  1675,
-                                        "exp_next":  1900,
-                                        "level":  "Slime Apprentice",
-                                        "level_no":  2,
-                                        "monster":  "Slime"
-                                    },
                     "Myeoungho Kang (강명호)":  {
                                                  "concept_doc_count":  2,
                                                  "content_line_count":  397,
@@ -44,48 +16,62 @@
                                                  "level_no":  4,
                                                  "monster":  "Slime"
                                              },
-                    "Jisoo Kim":  {
-                                      "concept_doc_count":  1,
-                                      "content_line_count":  1,
-                                      "lead_doc_count":  0,
-                                      "quality_score":  0,
-                                      "collaboration_score":  5,
-                                      "total_score":  17,
-                                      "exp":  425,
-                                      "exp_current":  425,
-                                      "exp_next":  1900,
-                                      "level":  "Slime Apprentice",
-                                      "level_no":  1,
-                                      "monster":  "Slime"
-                                  },
                     "LEE SangHoon":  {
-                                         "concept_doc_count":  16,
-                                         "content_line_count":  1065,
-                                         "lead_doc_count":  15,
-                                         "quality_score":  265,
+                                         "concept_doc_count":  17,
+                                         "content_line_count":  1120,
+                                         "lead_doc_count":  16,
+                                         "quality_score":  278,
                                          "collaboration_score":  5,
-                                         "total_score":  812,
-                                         "exp":  20300,
-                                         "exp_current":  1300,
+                                         "total_score":  845,
+                                         "exp":  21125,
+                                         "exp_current":  225,
                                          "exp_next":  1900,
                                          "level":  "Wolf Vanguard",
-                                         "level_no":  11,
+                                         "level_no":  12,
                                          "monster":  "Wolf"
                                      },
+                    "DDing-Ho":  {
+                                     "concept_doc_count":  1,
+                                     "content_line_count":  82,
+                                     "lead_doc_count":  1,
+                                     "quality_score":  26,
+                                     "collaboration_score":  0,
+                                     "total_score":  145,
+                                     "exp":  3625,
+                                     "exp_current":  1725,
+                                     "exp_next":  1900,
+                                     "level":  "Slime Apprentice",
+                                     "level_no":  2,
+                                     "monster":  "Slime"
+                                 },
                     "jskim-research":  {
-                                           "concept_doc_count":  10,
-                                           "content_line_count":  95,
+                                           "concept_doc_count":  11,
+                                           "content_line_count":  125,
                                            "lead_doc_count":  9,
-                                           "quality_score":  33,
+                                           "quality_score":  47,
                                            "collaboration_score":  5,
-                                           "total_score":  245,
-                                           "exp":  6125,
-                                           "exp_current":  425,
+                                           "total_score":  276,
+                                           "exp":  6900,
+                                           "exp_current":  1200,
                                            "exp_next":  1900,
                                            "level":  "Slime Apprentice",
                                            "level_no":  4,
                                            "monster":  "Slime"
-                                       }
+                                       },
+                    "Minjun Jang":  {
+                                        "concept_doc_count":  1,
+                                        "content_line_count":  107,
+                                        "lead_doc_count":  0,
+                                        "quality_score":  14,
+                                        "collaboration_score":  5,
+                                        "total_score":  143,
+                                        "exp":  3575,
+                                        "exp_current":  1675,
+                                        "exp_next":  1900,
+                                        "level":  "Slime Apprentice",
+                                        "level_no":  2,
+                                        "monster":  "Slime"
+                                    }
                 },
     "pages":  {
                   "04_optimization/LOD.md":  {
@@ -302,10 +288,17 @@
                                             "first_author":  "jskim-research",
                                             "first_date":  "2026-03-30T19:49:27+09:00",
                                             "lead_authors":  [
-                                                                 "jskim-research"
+                                                                 "LEE SangHoon"
                                                              ],
-                                            "lead_line_count":  46,
+                                            "lead_line_count":  55,
                                             "history_entries":  [
+                                                                    {
+                                                                        "sha":  "845429b0fd77509f32d2d9dfe9e60941dbc568a4",
+                                                                        "message":  "Docs: RTTI",
+                                                                        "author":  "LEE SangHoon",
+                                                                        "date":  "2026-04-14T01:09:21+09:00",
+                                                                        "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/845429b0fd77509f32d2d9dfe9e60941dbc568a4"
+                                                                    },
                                                                     {
                                                                         "sha":  "6c85b71c901004c796b1cb37e0f1bf31a99ffea2",
                                                                         "message":  "Chore: change file name",
@@ -333,21 +326,14 @@
                                                                         "author":  "jskim-research",
                                                                         "date":  "2026-04-03T10:07:10+09:00",
                                                                         "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/13e934e4bc7b39ee71b83238e58e68f02ce94349"
-                                                                    },
-                                                                    {
-                                                                        "sha":  "963c6b75d085d6194f572eb454bdb6ee20454cd2",
-                                                                        "message":  "move some files to proper directory",
-                                                                        "author":  "jskim-research",
-                                                                        "date":  "2026-03-30T19:53:11+09:00",
-                                                                        "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/963c6b75d085d6194f572eb454bdb6ee20454cd2"
                                                                     }
                                                                 ],
                                             "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/03_engine/RTTI.md",
-                                            "latest_author":  "Jisoo Kim",
-                                            "latest_date":  "2026-04-11T14:29:56+09:00",
-                                            "revision_count":  7,
-                                            "quality_score":  12,
-                                            "word_count":  186
+                                            "latest_author":  "LEE SangHoon",
+                                            "latest_date":  "2026-04-14T01:09:21+09:00",
+                                            "revision_count":  8,
+                                            "quality_score":  21,
+                                            "word_count":  486
                                         },
                   "04_optimization/Mesh BVH.md":  {
                                                       "first_author":  "LEE SangHoon",
@@ -774,6 +760,29 @@
                                            "quality_score":  24,
                                            "word_count":  1118
                                        },
+                  "04_optimization/HiZ Occlusion Culling.md":  {
+                                                                   "first_author":  "jskim-research",
+                                                                   "first_date":  "2026-04-14T10:30:55+09:00",
+                                                                   "lead_authors":  [
+                                                                                        "jskim-research"
+                                                                                    ],
+                                                                   "lead_line_count":  44,
+                                                                   "history_entries":  [
+                                                                                           {
+                                                                                               "sha":  "a03475aa6ee7572b5817098cdeaacf59082384cb",
+                                                                                               "message":  "Docs: add HiZ document",
+                                                                                               "author":  "jskim-research",
+                                                                                               "date":  "2026-04-14T10:30:55+09:00",
+                                                                                               "commit_url":  "https://github.com/jskim-research/jungle-engine-study/commit/a03475aa6ee7572b5817098cdeaacf59082384cb"
+                                                                                           }
+                                                                                       ],
+                                                                   "history_url":  "https://github.com/jskim-research/jungle-engine-study/commits/main/04_optimization/HiZ%20Occlusion%20Culling.md",
+                                                                   "latest_author":  "jskim-research",
+                                                                   "latest_date":  "2026-04-14T10:30:55+09:00",
+                                                                   "revision_count":  1,
+                                                                   "quality_score":  18,
+                                                                   "word_count":  343
+                                                               },
                   "05_misc/Dynamic Glyph Atlas for Korean Text Rendering.md":  {
                                                                                    "first_author":  "LEE SangHoon",
                                                                                    "first_date":  "2026-03-31T17:12:28+09:00",
