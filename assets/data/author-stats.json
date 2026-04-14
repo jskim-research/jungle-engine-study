@@ -1,35 +1,7 @@
 ﻿{
-    "generated_at":  "2026-04-14T10:48:00.9184453+09:00",
+    "generated_at":  "2026-04-14T10:50:38.1117435+09:00",
     "scoring_version":  "v3",
     "authors":  {
-                    "Myeoungho Kang (강명호)":  {
-                                                 "concept_doc_count":  2,
-                                                 "content_line_count":  397,
-                                                 "lead_doc_count":  2,
-                                                 "quality_score":  44,
-                                                 "collaboration_score":  0,
-                                                 "total_score":  303,
-                                                 "exp":  7575,
-                                                 "exp_current":  1875,
-                                                 "exp_next":  1900,
-                                                 "level":  "Slime Apprentice",
-                                                 "level_no":  4,
-                                                 "monster":  "Slime"
-                                             },
-                    "LEE SangHoon":  {
-                                         "concept_doc_count":  17,
-                                         "content_line_count":  1120,
-                                         "lead_doc_count":  16,
-                                         "quality_score":  278,
-                                         "collaboration_score":  5,
-                                         "total_score":  845,
-                                         "exp":  21125,
-                                         "exp_current":  225,
-                                         "exp_next":  1900,
-                                         "level":  "Wolf Vanguard",
-                                         "level_no":  12,
-                                         "monster":  "Wolf"
-                                     },
                     "DDing-Ho":  {
                                      "concept_doc_count":  1,
                                      "content_line_count":  82,
@@ -58,6 +30,20 @@
                                            "level_no":  4,
                                            "monster":  "Slime"
                                        },
+                    "LEE SangHoon":  {
+                                         "concept_doc_count":  17,
+                                         "content_line_count":  1120,
+                                         "lead_doc_count":  16,
+                                         "quality_score":  278,
+                                         "collaboration_score":  5,
+                                         "total_score":  845,
+                                         "exp":  21125,
+                                         "exp_current":  225,
+                                         "exp_next":  1900,
+                                         "level":  "Wolf Vanguard",
+                                         "level_no":  12,
+                                         "monster":  "Wolf"
+                                     },
                     "Minjun Jang":  {
                                         "concept_doc_count":  1,
                                         "content_line_count":  107,
@@ -71,6 +57,20 @@
                                         "level":  "Slime Apprentice",
                                         "level_no":  2,
                                         "monster":  "Slime"
-                                    }
+                                    },
+                    "Myeoungho Kang (강명호)":  {
+                                                 "concept_doc_count":  2,
+                                                 "content_line_count":  397,
+                                                 "lead_doc_count":  2,
+                                                 "quality_score":  44,
+                                                 "collaboration_score":  0,
+                                                 "total_score":  303,
+                                                 "exp":  7575,
+                                                 "exp_current":  1875,
+                                                 "exp_next":  1900,
+                                                 "level":  "Slime Apprentice",
+                                                 "level_no":  4,
+                                                 "monster":  "Slime"
+                                             }
                 }
 }

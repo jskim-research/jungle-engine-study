@@ -353,6 +353,16 @@ foreach ($name in $authorStats.Keys) {
   $authorStats[$name].monster = $rank.monster
 }
 
+$sortedAuthorStats = [ordered]@{}
+foreach ($name in ($authorStats.Keys | Sort-Object)) {
+  $sortedAuthorStats[$name] = $authorStats[$name]
+}
+
+$sortedPageMeta = [ordered]@{}
+foreach ($path in ($pageMeta.Keys | Sort-Object)) {
+  $sortedPageMeta[$path] = $pageMeta[$path]
+}
+
 $authorOutputDir = Split-Path -Path $AuthorStatsOutputPath -Parent
 $siteOutputDir = Split-Path -Path $SiteMetaOutputPath -Parent
 
@@ -367,14 +377,14 @@ if (-not [string]::IsNullOrWhiteSpace($siteOutputDir)) {
 $authorPayload = [ordered]@{
   generated_at = (Get-Date).ToString("o")
   scoring_version = "v3"
-  authors = $authorStats
+  authors = $sortedAuthorStats
 }
 
 $sitePayload = [ordered]@{
   generated_at = (Get-Date).ToString("o")
   scoring_version = "v3"
-  authors = $authorStats
-  pages = $pageMeta
+  authors = $sortedAuthorStats
+  pages = $sortedPageMeta
 }
 
 $authorPayload | ConvertTo-Json -Depth 8 | Set-Content -Path $AuthorStatsOutputPath -Encoding UTF8
