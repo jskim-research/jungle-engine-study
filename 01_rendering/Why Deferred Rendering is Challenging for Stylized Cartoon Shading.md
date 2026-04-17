@@ -2,7 +2,7 @@
 
 게임 그래픽 기술이 발전하면서 현실감 있는 렌더링 결과를 보여주는 게임들은 대부분 **디퍼드 렌더링(Deferred Rendering)**을\
 채택하게 되었다. 불필요한 중복 없이 수백 개의 광원을 한번에 처리할 수 있다는 강력한 장점 때문이다. 그럼 디퍼드 렌더링은\
-**포워드 렌더링(Forward Rendering)**에 비해 모든 점에서 나은가?\
+**포워드 렌더링(Forward Rendering)**에 비해 모든 점에서 나은가?
 
 <p>
   <img src="../99_resource/images/zelda_cell_shading.png" width="536" height ="300">
@@ -41,7 +41,7 @@ Depth
 > Ramp Texture 은 카툰 렌더링에서 자주 사용되는데, 밝기를 특정한 색으로 맵핑한 테이블이다.\
 > 따라서 현실감 있는, 실제 물리적인 빛이 아니라 아티스트가 의도한 대로 색상과 톤으로 결과물을 제어할 수 있다.
 
-### 2. ANti-Aliasing(MSAA)  문제
+### 2. Anti-Aliasing(MSAA)  문제
 
 카툰 렌더링에서 가장 중요한 요소 중 하나는 깨끗하고 매끄러운 외곽선이다. 하지만 디퍼드 렌더링의 경우\
 하드웨어 MSAA를 사용했을 때 각 샘플마다 G-buffer를 저장해야 하기 때문에 비용이 너무 크다.
@@ -57,7 +57,7 @@ Depth
 디퍼드에서도 Depth나 normal buffer를 검출해 edge를 다시 그릴 수 있지만, 이 경우 캐릭터 내부의 디테일한 선을 표현하는 데\
 한계가 있으며 아티스트가 선의 굵기나 색상을 세밀하게 제어하기 어렵다.
 
-#### 정확한 edge 표현의 한계에 대한 참고자료 [Wireframe Outline Rendering](<../05_misc/Wireframe Outline Rendering.md>)
+#### 정확한 edge 표현의 한계에 대한 참고자료  >>> [Wireframe Outline Rendering](<../05_misc/Wireframe Outline Rendering.md>)
 
 디퍼드 렌더링은 많은 광원을 효율적으로 처리하는 데 강력한 장점을 가지지만, 카툰 렌더링처럼 스타일 표현이 중요한 경우에는\
 다음과 같은 제약이 존재한다:
