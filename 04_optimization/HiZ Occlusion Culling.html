@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>HiZ Occlusion Culling</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h3 id="hiz-occlusion-culling">HiZ Occlusion Culling</h3>
+<p>화면에 5만 개의 오브젝트가 있다고 가정해보자.<br>
+실제로는 많은 오브젝트가 화면 밖에 있거나 다른 물체에 가려져 있지만, GPU는 기본적으로 &quot;그릴 후보&quot;로 모두 처리하려고 한다.</p>
+<p>이때 <strong>이미 가려져서 결과에 보이지 않을 오브젝트를 미리 제외</strong>하면, 드로우콜과 픽셀 셰이딩 비용을 줄일 수 있다.<br>
+HiZ Occlusion Culling은 이 목적을 위해 Depth 정보를 계층적으로 활용하는 기법이다.</p>
+<p>핵심 요약:</p>
+<ul>
+<li>깊이 텍스처(Depth Map)를 사용해 &quot;가려짐 여부&quot;를 빠르게 판단한다.</li>
+<li>원본 해상도만 쓰지 않고, 축소된 깊이 정보를 함께 사용해 테스트 수를 줄인다.</li>
+</ul>
+<p>렌더링 결과와 대응되는 Depth Map은 다음과 같다.</p>
+<p><img src="file:///c:\jungle-engine-study\99_resource\images\HiZColorMap.png"
+     width="698" height="300"
+     style="display: block; margin: 0 auto;"></p>
+<p><img src="file:///c:\jungle-engine-study\99_resource\images\HiZDepthMap_0.png"
+     width="698" height="300"
+     style="display: block; margin: 0 auto;"></p>
+<h3 id="왜-hierarchical-인가">왜 &quot;Hierarchical&quot; 인가?</h3>
+<p>HiZ를 쓰지 않으면, 오브젝트가 차지하는 화면 영역의 Depth를 거의 픽셀 단위로 확인해야 한다.<br>
+예를 들어 투영된 영역이 80x80이면 최대 6400개의 비교가 필요하다.</p>
+<p>그런데 모든 상황에서 픽셀 단위 검사가 필요할까?</p>
+<p><img src="file:///c:\jungle-engine-study\99_resource\images\HiZExample.png"
+     width="698" height="300"
+     style="display: block; margin: 0 auto;"></p>
+<p>위 그림처럼 오브젝트가 큰 덩어리로 보이는 경우에는, 더 거친 해상도의 깊이 정보만으로도 보수적인 판단이 가능하다.<br>
+오브젝트가 작게 보이는 경우에는 더 작은 블록 단위의 정보를 선택하면 된다.</p>
+<p>즉, 오브젝트의 스크린 크기에 맞춰<br>
+<code>1/1 -&gt; 1/4 -&gt; 1/16 -&gt; ...</code><br>
+처럼 적절한 레벨의 깊이 정보를 선택하면, 정확도는 유지하면서 비교 횟수를 크게 줄일 수 있다.</p>
+<h3 id="hiz-depth-pyramid">HiZ Depth Pyramid</h3>
+<p>Depth Map 하나를 여러 해상도로 축소해 만든 계층 구조(Depth Pyramid, Mip chain)를 미리 준비해두고,<br>
+Occlusion Test 시 필요한 레벨만 골라 사용하는 것이 HiZ의 핵심이다.</p>
+<p>아래는 Depth Mip 4 (74x47) ~ 6 (18x11) 예시다.</p>
+<p><img src="file:///c:\jungle-engine-study\99_resource\images\HiZDepthMap_4.png"
+     width="698" height="300"
+     style="display: block; margin: 0 auto;"></p>
+<p><img src="file:///c:\jungle-engine-study\99_resource\images\HiZDepthMap_5.png"
+     width="698" height="300"
+     style="display: block; margin: 0 auto;"></p>
+<p><img src="file:///c:\jungle-engine-study\99_resource\images\HiZDepthMap_6.png"
+     width="698" height="300"
+     style="display: block; margin: 0 auto;"></p>
+<h3 id="정리">정리</h3>
+<p>HiZ Occlusion Culling은 &quot;보이지 않을 가능성이 높은 오브젝트를 먼저 거르는&quot; 최적화다.<br>
+핵심은 <strong>원본 Depth만 쓰는 것이 아니라, 계층화된 Depth를 오브젝트 크기에 맞춰 선택</strong>한다는 점이다.<br>
+그래서 많은 오브젝트가 존재하는 씬에서 비용 대비 효과가 크다.</p>
+
+            
+            
+        </body>
+        </html>
